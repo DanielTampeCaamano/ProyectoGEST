@@ -55,10 +55,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="RUTFuncionarioJLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="NombreFuncionarioJLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="FuncionarioRegistroJLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="FuncionarioRegistroJLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="IPDJButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="FechaIngresoJLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="FechaJLabel" min="-2" max="-2" attributes="0"/>
@@ -110,10 +116,12 @@
               </Group>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="IPDJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="61" max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="FuncionarioRegistroJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="FechaIngresoJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="NombreFuncionarioJLabel" min="-2" max="-2" attributes="0"/>
@@ -185,7 +193,7 @@
             <StringItem index="11" value="Patologia 12"/>
             <StringItem index="12" value="Patologia 13"/>
             <StringItem index="13" value="Patologia 14"/>
-            <StringItem index="14" value="Patologia 215"/>
+            <StringItem index="14" value="Patologia 15"/>
             <StringItem index="15" value="Patologia 16"/>
             <StringItem index="16" value="Patologia 17"/>
             <StringItem index="17" value="Patologia 18"/>
@@ -209,6 +217,9 @@
         <Property name="text" type="java.lang.String" value="I.P.D."/>
         <Property name="toolTipText" type="java.lang.String" value="Informe Proceso Diagnostico"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IPDJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="FuncionarioRegistroJLabel">
       <Properties>
@@ -234,6 +245,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="dd/mm/aaaa"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Volver"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

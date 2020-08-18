@@ -59,6 +59,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         AceptarJButton.setText("Aceptar");
+        AceptarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarJButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,6 +122,12 @@ public class Login extends javax.swing.JFrame {
     private void ContraseñaJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaJTextFieldActionPerformed
+
+    private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
+        // TODO add your handling code here:
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AceptarJButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -43,10 +43,25 @@ public class Menu extends javax.swing.JFrame {
         MenuJLabel.setText("MENU");
 
         IngresoPacientesJButton.setText("Ingreso de Casos de Pacientes");
+        IngresoPacientesJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresoPacientesJButtonActionPerformed(evt);
+            }
+        });
 
         BusquedaPacientesJButton.setText("Busqueda de Casos de Pacientes");
+        BusquedaPacientesJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaPacientesJButtonActionPerformed(evt);
+            }
+        });
 
         DescargaBaseDatosJButton.setText("Descarga de Base de Datos");
+        DescargaBaseDatosJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DescargaBaseDatosJButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,6 +101,24 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void IngresoPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoPacientesJButtonActionPerformed
+        // TODO add your handling code here:
+        new IngresoCasoPaciente().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_IngresoPacientesJButtonActionPerformed
+
+    private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed
+        new BusquedaPaciente().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BusquedaPacientesJButtonActionPerformed
+
+    private void DescargaBaseDatosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaBaseDatosJButtonActionPerformed
+        // TODO add your handling code here:
+        new DescargabaseDatos().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_DescargaBaseDatosJButtonActionPerformed
 
     /**
      * @param args the command line arguments

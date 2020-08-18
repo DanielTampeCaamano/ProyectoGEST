@@ -86,16 +86,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingreso de Casos de Pacientes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresoPacientesJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BusquedaPacientesJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Busqueda de Casos de Pacientes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaPacientesJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="DescargaBaseDatosJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Descarga de Base de Datos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescargaBaseDatosJButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

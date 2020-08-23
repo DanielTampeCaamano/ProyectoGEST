@@ -50,7 +50,7 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     @Override
-    public boolean registrarPacientes() {
+    public boolean registrarPacientes(Paciente paciente) {
         JOptionPane.showMessageDialog(null, "Usted no posee permiso para esta accion", "Permisos Insuficientes", JOptionPane.ERROR_MESSAGE);
         return false;
     }

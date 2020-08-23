@@ -11,4 +11,22 @@ package ufro.proyectoges.backend.entidades;
  */
 public class Registrador {
     
+    private int id;
+    private String nombre;
+
+    public Registrador(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    
+    
 }

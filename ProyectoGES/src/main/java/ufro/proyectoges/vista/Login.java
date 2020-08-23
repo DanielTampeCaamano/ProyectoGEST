@@ -5,8 +5,11 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
+import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
  *
@@ -160,10 +163,9 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
-        HerramientaMonitor h = new HerramientaMonitor();
-        System.out.println(h.obtenerPacientes());
-        
+         
+        HerramientaRegistrador r = new HerramientaRegistrador();
+        r.registrarRegistrador(new Registrador(1, "nombre"));
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

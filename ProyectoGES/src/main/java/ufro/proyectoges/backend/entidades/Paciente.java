@@ -15,14 +15,22 @@ public class Paciente {
     
     private String nombreCompleto;
     private String rutValidado;
+    private Rut rutSinConvertir;
 
     public Paciente(String nombreCompleto, Rut rut) {
        this.nombreCompleto = nombreCompleto;
+       this.rutSinConvertir = rut;
        this.rutValidado = rut.getRut();
     }
 
     public Paciente() {
     }
+
+    public Rut getRutSinConvertir() {
+        return rutSinConvertir;
+    }
+    
+    
 
     public String getNombreCompleto() {
         return nombreCompleto;

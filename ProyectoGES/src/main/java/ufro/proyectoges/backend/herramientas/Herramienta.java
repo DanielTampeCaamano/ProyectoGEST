@@ -19,7 +19,7 @@ public interface Herramienta {
     public SqlHandler handler = new SqlHandler("127.0.0.1", "ges");
     
     public List<Paciente> obtenerPacientes();
-    public boolean registrarPacientes();
+    public boolean registrarPacientes(Paciente paciente);
     public boolean descargarBasesDeDatos(Date inicio, Date termino);
     
     

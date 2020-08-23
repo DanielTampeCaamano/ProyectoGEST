@@ -5,25 +5,73 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import ufro.proyectoges.backend.connection.SqlHandler;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Registrador;
+import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  *
  * @author shido
  */
-public class HerramientaRegistrador implements Herramienta{
+public class HerramientaRegistrador implements Herramienta {
     
+    private ObjectMapper mapper;
+    private SqlHandler sqlHandler;
+    private Statement statement;
+    private ResultSet queryResult;
+
+    public HerramientaRegistrador() {
+        sqlHandler = Herramienta.handler;
+        statement = sqlHandler.getStatement();
+        
+    }
+    
+    public boolean registrarRegistrador(Registrador r){
+        try{
+            statement.executeUpdate("INSERT INTO registrador (id,nombre) VALUES ('"+r.getId()+"','"+r.getNombre()+"')");
+            return true;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
     
 
     @Override
     public List<Paciente> obtenerPacientes() {
-        return null;
+        List<Paciente> pacientes = new ArrayList<>();
+        try {
+            queryResult = statement.executeQuery("SELECT * FROM paciente");
+            while (queryResult.next()) {
+                Paciente pacienteObt = new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)));
+                pacientes.add(pacienteObt);
+            }
+        } catch (SQLException sqe) {
+            System.out.println("No se pudo ejecutar query");
+        }
+        return pacientes;
     }
 
     @Override
-    public boolean registrarPacientes() {
+    public boolean registrarPacientes(Paciente paciente) {
+        try{
+            if (paciente.getRutSinConvertir().isRutValido()){
+                statement.executeUpdate("INSERT INTO paciente (rut,nombreCompleto) VALUES ('"+paciente.getRutValidado()+"','"+paciente.getNombreCompleto()+"')");
+                //statement.executeUpdate("UPDATE paciente SET rut='"+paciente.getRutValidado()+"', nombreCompleto='"+paciente.getNombreCompleto()+"'");
+                return true;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
         return false;
     }
 
@@ -31,5 +79,5 @@ public class HerramientaRegistrador implements Herramienta{
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         return false;
     }
-    
+
 }

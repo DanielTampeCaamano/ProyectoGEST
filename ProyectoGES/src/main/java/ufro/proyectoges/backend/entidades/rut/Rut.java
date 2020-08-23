@@ -32,11 +32,7 @@ public class Rut {
     }
     
     public String getRut(){
-        if (isRutValido()){
-            return rutSinValidar;
-        }else{
-            return null;
-        }
+        return rutSinValidar;
     }
 
     private String invertirRut() {
@@ -73,6 +69,7 @@ public class Rut {
     
     private String obtenerDigitoVerificado(){
         int DV = 11 - obtenerResto();
+        System.out.println("DV: "+DV);
         if (DV == 11){
             return "0";
         }else if (DV == 10){

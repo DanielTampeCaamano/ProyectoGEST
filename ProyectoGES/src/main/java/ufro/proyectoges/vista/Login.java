@@ -5,6 +5,9 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
+
 /**
  *
  * @author Roald
@@ -157,6 +160,10 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        HerramientaMonitor h = new HerramientaMonitor();
+        System.out.println(h.obtenerPacientes());
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

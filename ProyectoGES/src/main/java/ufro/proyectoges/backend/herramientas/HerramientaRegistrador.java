@@ -5,7 +5,6 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +22,6 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  */
 public class HerramientaRegistrador implements Herramienta {
     
-    private ObjectMapper mapper;
     private SqlHandler sqlHandler;
     private Statement statement;
     private ResultSet queryResult;

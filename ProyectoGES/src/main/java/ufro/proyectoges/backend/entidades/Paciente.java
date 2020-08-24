@@ -16,6 +16,7 @@ public class Paciente {
     private String nombreCompleto;
     private String rutValidado;
     private Rut rutSinConvertir;
+    private IPD ipdPaciente;
 
     public Paciente(String nombreCompleto, Rut rut) {
        this.nombreCompleto = nombreCompleto;
@@ -23,6 +24,15 @@ public class Paciente {
        this.rutValidado = rut.getRut();
     }
 
+    public IPD getIpdPaciente() {
+        return ipdPaciente;
+    }
+
+    public void setIpdPaciente(IPD ipdPaciente) {
+        this.ipdPaciente = ipdPaciente;
+    }
+
+    
     public Paciente() {
     }
 

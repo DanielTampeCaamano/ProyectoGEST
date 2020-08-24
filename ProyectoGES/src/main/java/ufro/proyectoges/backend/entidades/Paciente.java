@@ -16,6 +16,7 @@ public class Paciente extends Persona {
     private String nombreCompleto;
     private String rutValidado;
     private Rut rutSinConvertir;
+    private IPD ipdPaciente;
     
     public Paciente(String nombreCompleto, Rut rut) {
         super(nombreCompleto, rut, "PACIENTE", null);
@@ -36,6 +37,15 @@ public class Paciente extends Persona {
     public String getRutValidado() {
         return rutValidado;
     }
+
+    public IPD getIpdPaciente() {
+        return ipdPaciente;
+    }
+
+    public void setIpdPaciente(IPD ipdPaciente) {
+        this.ipdPaciente = ipdPaciente;
+    }
+    
     
     @Override
     public String toString() {

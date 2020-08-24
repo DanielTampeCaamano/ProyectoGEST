@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
+import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
@@ -32,9 +33,24 @@ public class HerramientaRegistrador implements Herramienta {
         
     }
     
+    public boolean registrarMonitor(Monitor r){
+        try{
+            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"')");
+            statement.executeUpdate("INSERT INTO monitor (identificacion,nombreCompleto) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"')");
+            return true;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    
+    
     public boolean registrarRegistrador(Registrador r){
         try{
-            statement.executeUpdate("INSERT INTO registrador (id,nombre) VALUES ('"+r.getId()+"','"+r.getNombre()+"')");
+            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"')");
+            statement.executeUpdate("INSERT INTO registrador (id,nombre) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"')");
             return true;
         }catch(SQLException e){
             e.printStackTrace();
@@ -62,6 +78,7 @@ public class HerramientaRegistrador implements Herramienta {
     public boolean registrarPacientes(Paciente paciente) {
         try{
             if (paciente.getRutSinConvertir().isRutValido()){
+                statement.executeLargeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+paciente.getRut().getRut()+"','"+paciente.getNombre()+"','"+paciente.getTipo_persona()+"')");
                 statement.executeUpdate("INSERT INTO paciente (rut,nombreCompleto) VALUES ('"+paciente.getRutValidado()+"','"+paciente.getNombreCompleto()+"')");
                 //statement.executeUpdate("UPDATE paciente SET rut='"+paciente.getRutValidado()+"', nombreCompleto='"+paciente.getNombreCompleto()+"'");
                 return true;

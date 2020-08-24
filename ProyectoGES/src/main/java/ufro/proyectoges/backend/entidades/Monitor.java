@@ -11,13 +11,11 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  *
  * @author shido
  */
-public class Registrador extends Persona{
-
-    public Registrador(String nombre, Rut rut) {
-        super(nombre, rut,"REGISTRADOR");
-        super.setTipo_persona("REGISTRADOR");
-    }
+public class Monitor extends Persona{
     
-   
+    public Monitor(String nombre, Rut rut) {
+        super(nombre, rut, "MONITOR");
+        super.setTipo_persona("MONITOR");
+    }
     
 }

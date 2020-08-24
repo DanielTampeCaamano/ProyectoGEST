@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
+import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
@@ -31,6 +32,20 @@ public class HerramientaRegistrador implements Herramienta {
         statement = sqlHandler.getStatement();
         
     }
+    
+    public boolean registrarMonitor(Monitor r){
+        try{
+            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"')");
+            statement.executeUpdate("INSERT INTO monitor (identificacion,nombreCompleto) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"')");
+            return true;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    
     
     public boolean registrarRegistrador(Registrador r){
         try{

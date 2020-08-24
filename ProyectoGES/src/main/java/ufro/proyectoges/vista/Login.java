@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
@@ -164,8 +165,7 @@ public class Login extends javax.swing.JFrame {
 
         /* Create and display the form */
          HerramientaRegistrador h = new HerramientaRegistrador();
-         h.registrarRegistrador(new Registrador("registrador1", new Rut("201061911")));
-         h.registrarPacientes(new Paciente("paciente1", new Rut("188772129")));
+         h.registrarMonitor(new Monitor("monitor1", new Rut("67807081")));
          
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

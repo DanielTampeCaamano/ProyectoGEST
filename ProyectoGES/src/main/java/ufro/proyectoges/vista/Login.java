@@ -5,10 +5,13 @@
  */
 package ufro.proyectoges.vista;
 
+import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.HerramientaLogIn;
 import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
@@ -18,10 +21,13 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  */
 public class Login extends javax.swing.JFrame {
 
+    private HerramientaLogIn herramienta;
+
     /**
      * Creates new form Login
      */
     public Login() {
+        herramienta = new HerramientaLogIn();
         initComponents();
     }
 
@@ -132,8 +138,18 @@ public class Login extends javax.swing.JFrame {
 
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
-        new Menu().setVisible(true);
-        this.dispose();
+        if (Rut.rutBienEscrito(UsuarioJTextField.getText())) {
+            Persona p = herramienta.buscarPersona(new Rut(UsuarioJTextField.getText()));
+            if (p != null && p.getClave().equals(ContraseñaJTextField.getText())) {
+                new Menu().setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Rut Invalido, ocupe formato 123456789", "Error de RUT", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_AceptarJButtonActionPerformed
 
     /**
@@ -164,9 +180,6 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-         HerramientaRegistrador h = new HerramientaRegistrador();
-         h.registrarMonitor(new Monitor("monitor1", new Rut("67807081")));
-         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

@@ -9,6 +9,8 @@ import java.sql.Date;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  *
@@ -20,6 +22,8 @@ public interface Herramienta {
     
     public List<Paciente> obtenerPacientes();
     public boolean registrarPacientes(Paciente paciente);
+    public Persona buscarPersona(Rut rut);
+    public boolean personaExiste(Persona p);
     public boolean descargarBasesDeDatos(Date inicio, Date termino);
     
     

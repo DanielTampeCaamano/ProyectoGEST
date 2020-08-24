@@ -18,7 +18,7 @@ public class Paciente extends Persona {
     private Rut rutSinConvertir;
     
     public Paciente(String nombreCompleto, Rut rut) {
-        super(nombreCompleto, rut, "PACIENTE");
+        super(nombreCompleto, rut, "PACIENTE", null);
         super.setTipo_persona("PACIENTE");
         this.nombreCompleto = nombreCompleto;
         this.rutSinConvertir = rut;

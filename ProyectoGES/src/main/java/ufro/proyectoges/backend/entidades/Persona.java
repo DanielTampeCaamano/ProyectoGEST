@@ -16,11 +16,12 @@ public class Persona {
     protected String nombre;
     protected Rut rut;
     protected String tipo_persona;
-
-    public Persona(String nombre, Rut rut, String tipo_persona) {
+    private String clave;
+    public Persona(String nombre, Rut rut, String tipo_persona,String clave) {
         this.nombre = nombre;
         this.rut = rut;
         this.tipo_persona = null;
+        this.clave = clave;
     }
 
     public String getNombre() {
@@ -30,6 +31,13 @@ public class Persona {
     public Rut getRut() {
         return rut;
     }
+
+    public String getClave() {
+        return clave;
+    }
+
+    
+    
 
     public String getTipo_persona() {
         return tipo_persona;

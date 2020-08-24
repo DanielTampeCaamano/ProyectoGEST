@@ -14,6 +14,7 @@ import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
@@ -35,7 +36,7 @@ public class HerramientaRegistrador implements Herramienta {
     
     public boolean registrarMonitor(Monitor r){
         try{
-            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"')");
+            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona,clave) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"','"+r.getClave()+"')");
             statement.executeUpdate("INSERT INTO monitor (identificacion,nombreCompleto) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"')");
             return true;
         }catch(SQLException e){
@@ -45,11 +46,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
     
     
-    
-    
     public boolean registrarRegistrador(Registrador r){
         try{
-            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"')");
+            statement.executeUpdate("INSERT INTO personas (id,nombre,tipo_persona,clave) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"','"+r.getTipo_persona()+"','"+r.getClave()+"')");
             statement.executeUpdate("INSERT INTO registrador (id,nombre) VALUES ('"+r.getRut().getRut()+"','"+r.getNombre()+"')");
             return true;
         }catch(SQLException e){
@@ -93,6 +92,16 @@ public class HerramientaRegistrador implements Herramienta {
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         return false;
+    }
+
+    @Override
+    public Persona buscarPersona(Rut rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean personaExiste(Persona p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

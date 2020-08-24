@@ -15,6 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.connection.SqlHandler;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
@@ -56,6 +57,33 @@ public class HerramientaMonitor implements Herramienta {
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Persona buscarPersona(Rut rut) {
+        List<Persona> personasObtenidas = new ArrayList<>();
+        try{
+            queryResult = statement.executeQuery("SELECT * FROM personas WHERE id="+rut.getRut());
+            while(queryResult.next()){
+                personasObtenidas.add(new Persona(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3),queryResult.getString(4)));
+            }
+            
+            if (!personasObtenidas.isEmpty()){
+                return personasObtenidas.get(0);
+            }else{
+                return null;
+            }
+            
+            //hecho asi por si despues guardamos una persona en mas de una tabla, no borrar
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public boolean personaExiste(Persona p) {
+        return buscarPersona(p.getRut()) != null;
     }
 
 }

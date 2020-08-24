@@ -13,8 +13,8 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  */
 public class Registrador extends Persona{
 
-    public Registrador(String nombre, Rut rut) {
-        super(nombre, rut,"REGISTRADOR");
+    public Registrador(String nombre, Rut rut, String clave) {
+        super(nombre, rut,"REGISTRADOR", clave);
         super.setTipo_persona("REGISTRADOR");
     }
     

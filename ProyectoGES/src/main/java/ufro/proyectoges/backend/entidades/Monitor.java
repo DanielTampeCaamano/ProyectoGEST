@@ -13,8 +13,8 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  */
 public class Monitor extends Persona{
     
-    public Monitor(String nombre, Rut rut) {
-        super(nombre, rut, "MONITOR");
+    public Monitor(String nombre, Rut rut, String clave) {
+        super(nombre, rut, "MONITOR", clave);
         super.setTipo_persona("MONITOR");
     }
     

@@ -68,6 +68,12 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         PatologiasJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patologia 1", "Patologia 2", "Patologia 3", "Patologia 4", "Patologia 5", "Patologia 6", "Patologia 7", "Patologia 8", "Patologia 9", "Patologia 10", "Patologia 11", "Patologia 12", "Patologia 13", "Patologia 14", "Patologia 15", "Patologia 16", "Patologia 17", "Patologia 18", "Patologia 19", "Patologia 20", "Patologia 21", "Patologia 22", "Patologia 23", "Patologia 24", "Patologia 25" }));
         PatologiasJComboBox.setToolTipText("Seleccione las patologia que desee ingresar");
+        PatologiasJComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PatologiasJComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                agregadorpatologia(evt);
+            }
+        });
 
         IPDJButton.setText("I.P.D.");
         IPDJButton.setToolTipText("Informe Proceso Diagnostico");
@@ -216,6 +222,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         new Menu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
+        // TODO add your handling code here:
+        String texto=PatologiasJTextField.getText();
+        String texto2=PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex());
+        PatologiasJTextField.setText(texto+texto2+",");
+    }//GEN-LAST:event_agregadorpatologia
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.vista;
 
+import java.sql.Date;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
@@ -27,7 +28,6 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
-        herramienta = new HerramientaLogIn();
         initComponents();
     }
 
@@ -180,6 +180,8 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        HerramientaRegistrador h = new HerramientaRegistrador();
+        h.registrarPacientes(new Paciente("paciente1", new Rut("188772129"), new ufro.proyectoges.backend.entidades.IPD("188772129", "paciente1", new Date(120, 5, 20), null, true, true, true, true, "")));
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

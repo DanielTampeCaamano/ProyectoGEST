@@ -17,13 +17,23 @@ public class Paciente extends Persona {
     private String rutValidado;
     private Rut rutSinConvertir;
     private IPD ipdPaciente;
+    private int ipdId;
     
-    public Paciente(String nombreCompleto, Rut rut) {
+    public Paciente(String nombreCompleto, Rut rut, IPD ipd) {
         super(nombreCompleto, rut, "PACIENTE", null);
         super.setTipo_persona("PACIENTE");
         this.nombreCompleto = nombreCompleto;
         this.rutSinConvertir = rut;
         this.rutValidado = rut.getRut();
+        this.ipdPaciente = ipd;
+    }
+    
+    public Paciente(String nombreCompleto, Rut rut, int ipdId){
+        super(nombreCompleto, rut, "PACIENTE", null);
+        this.nombreCompleto = nombreCompleto;
+        this.rutSinConvertir = rut;
+        this.rutValidado = rut.getRut();
+        this.ipdId = ipdId;
     }
     
     public Rut getRutSinConvertir() {

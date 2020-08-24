@@ -22,14 +22,14 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  *
  * @author shido
  */
-public class HerramientaRegistrador implements Herramienta {
+public class HerramientaRegistrador extends Herramienta {
     
     private SqlHandler sqlHandler;
     private Statement statement;
     private ResultSet queryResult;
 
     public HerramientaRegistrador() {
-        sqlHandler = Herramienta.handler;
+        sqlHandler = handler;
         statement = sqlHandler.getStatement();
         
     }
@@ -64,7 +64,7 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             queryResult = statement.executeQuery("SELECT * FROM paciente");
             while (queryResult.next()) {
-                Paciente pacienteObt = new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)));
+                Paciente pacienteObt = new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)),queryResult.getInt(3));
                 pacientes.add(pacienteObt);
             }
         } catch (SQLException sqe) {
@@ -101,6 +101,21 @@ public class HerramientaRegistrador implements Herramienta {
 
     @Override
     public boolean personaExiste(Persona p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Paciente buscarPacientePorRut(Rut rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Paciente buscarPacientePorFichaMed(int nroFicha) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Paciente buscarPacientePorNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

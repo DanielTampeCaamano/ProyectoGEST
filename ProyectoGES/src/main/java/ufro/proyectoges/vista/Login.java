@@ -163,9 +163,10 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+         HerramientaRegistrador h = new HerramientaRegistrador();
+         h.registrarRegistrador(new Registrador("registrador1", new Rut("201061911")));
+         h.registrarPacientes(new Paciente("paciente1", new Rut("188772129")));
          
-        HerramientaRegistrador r = new HerramientaRegistrador();
-        r.registrarRegistrador(new Registrador(1, "nombre"));
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

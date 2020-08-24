@@ -11,7 +11,7 @@ import java.sql.Date;
  *
  * @author Roald
  */
-public class IPD {
+public class IPDPaciente {
    private String rutPaciente;
    private String nombrePaciente;
    private Date fechaInicio;
@@ -20,12 +20,14 @@ public class IPD {
    private boolean notificacionPacienteGES;
    private boolean confirmado;
    private boolean exceptuado;
+   private boolean descartado;
    private String observacion;
+   private int codigoPatologia;
 
-    public IPD() {
+    public IPDPaciente() {
     }
 
-    public IPD(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean exceptuado, String observacion) {
+    public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, int codigoPat) {
         this.rutPaciente = rutPaciente;
         this.nombrePaciente = nombrePaciente;
         this.fechaInicio = fechaInicio;
@@ -35,7 +37,15 @@ public class IPD {
         this.confirmado = confirmado;
         this.exceptuado = exceptuado;
         this.observacion = observacion;
+        this.descartado = descartado;
+        this.codigoPatologia = codigoPat;
     }
+
+    public int getCodigoPatologia() {
+        return codigoPatologia;
+    }
+    
+    
 
     public String getRutPaciente() {
         return rutPaciente;
@@ -56,6 +66,12 @@ public class IPD {
     public Date getFechaInicio() {
         return fechaInicio;
     }
+
+    public boolean isDescartado() {
+        return descartado;
+    }
+    
+    
 
     public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;

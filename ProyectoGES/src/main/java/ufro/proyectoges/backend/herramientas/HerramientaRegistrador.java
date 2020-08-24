@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
+import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
@@ -57,8 +58,6 @@ public class HerramientaRegistrador extends Herramienta {
         }
     }
     
-
-    @Override
     public List<Paciente> obtenerPacientes() {
         List<Paciente> pacientes = new ArrayList<>();
         try {
@@ -73,12 +72,12 @@ public class HerramientaRegistrador extends Herramienta {
         return pacientes;
     }
 
-    @Override
     public boolean registrarPacientes(Paciente paciente) {
         try{
             if (paciente.getRutSinConvertir().isRutValido()){
                 statement.executeLargeUpdate("INSERT INTO personas (id,nombre,tipo_persona) VALUES ('"+paciente.getRut().getRut()+"','"+paciente.getNombre()+"','"+paciente.getTipo_persona()+"')");
                 statement.executeUpdate("INSERT INTO paciente (rut,nombreCompleto) VALUES ('"+paciente.getRutValidado()+"','"+paciente.getNombreCompleto()+"')");
+                registrarIPD(paciente.getIpdPaciente());
                 //statement.executeUpdate("UPDATE paciente SET rut='"+paciente.getRutValidado()+"', nombreCompleto='"+paciente.getNombreCompleto()+"'");
                 return true;
             }
@@ -88,6 +87,26 @@ public class HerramientaRegistrador extends Herramienta {
         }
         return false;
     }
+    
+    public boolean registrarIPD(IPDPaciente ipd){
+        int ges = ipd.isEsGes()? 1 : 0;
+        int notificacionGes = ipd.isNotificacionPacienteGES()? 1 : 0;
+        int confirmado = ipd.isConfirmado()? 1 : 0;
+        int descartado = ipd.isDescartado()? 1 : 0;
+        int exceptuado = ipd.isExceptuado()? 1 : 0;
+        try {
+            
+            System.out.println("INSERT INTO ipd (nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia) "
+                    + "VALUES ('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio().getTime() + "','" + ipd.getFechaTermino().getTime() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+            statement.executeUpdate("INSERT INTO ipd (nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia) "
+                    + "VALUES ('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {

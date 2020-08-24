@@ -5,6 +5,8 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author Roald
@@ -16,6 +18,14 @@ public class BusquedaPaciente extends javax.swing.JFrame {
      */
     public BusquedaPaciente() {
         initComponents();
+        jButton1.addActionListener(x -> habilitarCampoRut(x));
+        
+    }
+    
+    private void habilitarCampoRut(ActionEvent e){
+        jTextField1.setEnabled(true);
+        jTextField2.setEnabled(true);
+        jButton4.setEnabled(true);
     }
 
     /**

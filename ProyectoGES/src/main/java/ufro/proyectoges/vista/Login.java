@@ -7,6 +7,7 @@ package ufro.proyectoges.vista;
 
 import java.sql.Date;
 import javax.swing.JOptionPane;
+import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
@@ -138,9 +139,10 @@ public class Login extends javax.swing.JFrame {
 
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
+        herramienta = new HerramientaLogIn();
         if (Rut.rutBienEscrito(UsuarioJTextField.getText())) {
             Persona p = herramienta.buscarPersona(new Rut(UsuarioJTextField.getText()));
-            if (p != null && p.getClave().equals(ContraseñaJTextField.getText())) {
+            if (p != null && p.getClave().equals(ContraseñaJTextField.getText()) && p != null) {
                 new Menu().setVisible(true);
                 this.dispose();
             }else{
@@ -180,8 +182,8 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        HerramientaRegistrador h = new HerramientaRegistrador();
-        h.registrarPacientes(new Paciente("paciente1", new Rut("188772129"), new ufro.proyectoges.backend.entidades.IPD("188772129", "paciente1", new Date(120, 5, 20), null, true, true, true, true, "")));
+        //HerramientaRegistrador h = new HerramientaRegistrador();
+        //h.registrarPacientes(new Paciente("paciente1", new Rut("188772129"), new IPDPaciente("188772129", "paciente1", new Date((long)1598299030.0), new Date((long)15982990343.0), true, true, true, true, true, null, 0)));
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

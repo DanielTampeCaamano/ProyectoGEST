@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
+import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
@@ -43,26 +44,7 @@ public class Herramienta {
         return pacientes;
     }
     
-    public boolean registrarIPD(IPD ipd){
-        try {
-            statement.executeUpdate("INSERT INTO ipd (nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia) "
-                    + "VALUES ('" + paciente.getRutValidado() + "','" + paciente.getNombreCompleto() + "')");
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean registrarPacientes(Paciente paciente) {
-        try {
-            statement.executeUpdate("INSERT INTO paciente (rut, nombreCompleto) VALUES ('" + paciente.getRutValidado() + "','" + paciente.getNombreCompleto() + "')");
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+    
 
     public Persona buscarPersona(Rut rut) {
         List<Persona> personasObtenidas = new ArrayList<>();

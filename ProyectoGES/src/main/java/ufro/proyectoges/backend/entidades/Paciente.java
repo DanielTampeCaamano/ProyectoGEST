@@ -16,10 +16,10 @@ public class Paciente extends Persona {
     private String nombreCompleto;
     private String rutValidado;
     private Rut rutSinConvertir;
-    private IPD ipdPaciente;
+    private IPDPaciente ipdPaciente;
     private int ipdId;
     
-    public Paciente(String nombreCompleto, Rut rut, IPD ipd) {
+    public Paciente(String nombreCompleto, Rut rut, IPDPaciente ipd) {
         super(nombreCompleto, rut, "PACIENTE", null);
         super.setTipo_persona("PACIENTE");
         this.nombreCompleto = nombreCompleto;
@@ -48,11 +48,11 @@ public class Paciente extends Persona {
         return rutValidado;
     }
 
-    public IPD getIpdPaciente() {
+    public IPDPaciente getIpdPaciente() {
         return ipdPaciente;
     }
 
-    public void setIpdPaciente(IPD ipdPaciente) {
+    public void setIpdPaciente(IPDPaciente ipdPaciente) {
         this.ipdPaciente = ipdPaciente;
     }
     

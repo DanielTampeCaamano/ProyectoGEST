@@ -5,6 +5,10 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
+
 /**
  *
  * @author Roald
@@ -213,6 +217,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
         // TODO add your handling code here:
+        new HerramientaRegistrador().registrarPacientes(new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText()+RUTJTextField2.getText()), 1));
         new Menu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IngresarJButtonActionPerformed

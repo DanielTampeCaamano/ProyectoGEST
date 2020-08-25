@@ -286,6 +286,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="GES"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GESJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="NoGesJCheckBox">
       <Properties>
@@ -294,6 +297,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="NO GES"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NoGesJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="NotificacionPacienteGesJLabel">
       <Properties>
@@ -310,6 +316,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="SI"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SiJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="NoJCheckBox">
       <Properties>
@@ -318,6 +327,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="NO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NoJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
@@ -330,6 +342,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Confirmado"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmadoJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="DescartadoJCheckBox">
       <Properties>
@@ -338,6 +353,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Descartado"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescartadoJCheckBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ExceptuadoJCheckBox">
       <Properties>

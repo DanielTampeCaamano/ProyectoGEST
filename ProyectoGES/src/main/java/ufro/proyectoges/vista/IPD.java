@@ -77,24 +77,54 @@ public class IPD extends javax.swing.JFrame {
 
         GESJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         GESJCheckBox.setText("GES");
+        GESJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GESJCheckBoxActionPerformed(evt);
+            }
+        });
 
         NoGesJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         NoGesJCheckBox.setText("NO GES");
+        NoGesJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoGesJCheckBoxActionPerformed(evt);
+            }
+        });
 
         NotificacionPacienteGesJLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         NotificacionPacienteGesJLabel.setText("Notificacion Paciente Ges");
 
         SiJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         SiJCheckBox.setText("SI");
+        SiJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiJCheckBoxActionPerformed(evt);
+            }
+        });
 
         NoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         NoJCheckBox.setText("NO");
+        NoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoJCheckBoxActionPerformed(evt);
+            }
+        });
 
         ConfirmadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         ConfirmadoJCheckBox.setText("Confirmado");
+        ConfirmadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmadoJCheckBoxActionPerformed(evt);
+            }
+        });
 
         DescartadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         DescartadoJCheckBox.setText("Descartado");
+        DescartadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DescartadoJCheckBoxActionPerformed(evt);
+            }
+        });
 
         ExceptuadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         ExceptuadoJCheckBox.setText("Exceptuado");
@@ -277,8 +307,45 @@ public class IPD extends javax.swing.JFrame {
 
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_AceptarJButtonActionPerformed
+
+    private void GESJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GESJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        GESJCheckBox.setSelected(true);
+        NoGesJCheckBox.setSelected(false);
+    }//GEN-LAST:event_GESJCheckBoxActionPerformed
+
+    private void NoGesJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoGesJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        GESJCheckBox.setSelected(false);
+        NoGesJCheckBox.setSelected(true);
+    }//GEN-LAST:event_NoGesJCheckBoxActionPerformed
+
+    private void SiJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        SiJCheckBox.setSelected(true);
+        NoJCheckBox.setSelected(false);
+    }//GEN-LAST:event_SiJCheckBoxActionPerformed
+
+    private void NoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        SiJCheckBox.setSelected(false);
+        NoJCheckBox.setSelected(true);
+    }//GEN-LAST:event_NoJCheckBoxActionPerformed
+
+    private void ConfirmadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmadoJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        ConfirmadoJCheckBox.setSelected(true);
+        DescartadoJCheckBox.setSelected(false);
+    }//GEN-LAST:event_ConfirmadoJCheckBoxActionPerformed
+
+    private void DescartadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescartadoJCheckBoxActionPerformed
+        // TODO add your handling code here:
+        ConfirmadoJCheckBox.setSelected(false);
+        DescartadoJCheckBox.setSelected(true);
+    }//GEN-LAST:event_DescartadoJCheckBoxActionPerformed
 
     /**
      * @param args the command line arguments

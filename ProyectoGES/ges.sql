@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-08-2020 a las 05:35:12
+-- Tiempo de generación: 25-08-2020 a las 15:54:11
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `ipd` (
   `rut_paciente` int(13) NOT NULL,
   `nombre_paciente` varchar(90) NOT NULL,
+  `patologia` varchar(255) DEFAULT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_termino` date DEFAULT NULL,
   `es_ges` tinyint(1) NOT NULL,
@@ -58,7 +59,11 @@ CREATE TABLE `monitor` (
 
 CREATE TABLE `paciente` (
   `rut` varchar(12) NOT NULL,
-  `nombreCompleto` varchar(255) DEFAULT NULL
+  `nombreCompleto` varchar(255) DEFAULT NULL,
+  `patologia_paciente` varchar(255) DEFAULT NULL,
+  `ipd_id` int(255) NOT NULL,
+  `fecha_inicio_paciente` date NOT NULL,
+  `fecha_termino_paciente` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -130,7 +135,8 @@ ALTER TABLE `monitor`
 -- Indices de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  ADD PRIMARY KEY (`rut`);
+  ADD PRIMARY KEY (`rut`),
+  ADD KEY `ipd_id` (`ipd_id`);
 
 --
 -- Indices de la tabla `patologia`
@@ -171,6 +177,16 @@ ALTER TABLE `patologia`
 --
 ALTER TABLE `registrador`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201061912;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `paciente`
+--
+ALTER TABLE `paciente`
+  ADD CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`ipd_id`) REFERENCES `ipd` (`rut_paciente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

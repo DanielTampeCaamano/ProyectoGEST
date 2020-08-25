@@ -27,14 +27,14 @@ public class GuardadoArchivo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFileChooser1 = new javax.swing.JFileChooser();
+        SelectorArchivoJFileChooser = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jFileChooser1.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
-        jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
+        SelectorArchivoJFileChooser.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
+        SelectorArchivoJFileChooser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFileChooser1ActionPerformed(evt);
+                SelectorArchivoJFileChooserActionPerformed(evt);
             }
         });
 
@@ -42,20 +42,20 @@ public class GuardadoArchivo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jFileChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addComponent(SelectorArchivoJFileChooser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jFileChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
+            .addComponent(SelectorArchivoJFileChooser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
+    private void SelectorArchivoJFileChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectorArchivoJFileChooserActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jFileChooser1ActionPerformed
+    }//GEN-LAST:event_SelectorArchivoJFileChooserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -63,6 +63,6 @@ public class GuardadoArchivo extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFileChooser jFileChooser1;
+    private javax.swing.JFileChooser SelectorArchivoJFileChooser;
     // End of variables declaration//GEN-END:variables
 }

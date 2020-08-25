@@ -27,40 +27,40 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        TituloJLabel = new javax.swing.JLabel();
+        BusquedaJLabel = new javax.swing.JLabel();
+        BusquedaRutJButton = new javax.swing.JButton();
+        BusquedaNombreJButton = new javax.swing.JButton();
+        BusquedaNumeroFichaJButton = new javax.swing.JButton();
+        ResultadosJScrollpane = new javax.swing.JScrollPane();
+        ResultadosJTable = new javax.swing.JTable();
+        RutJTextField1 = new javax.swing.JTextField();
+        RutJTextField2 = new javax.swing.JTextField();
+        BuscarRUTJButton = new javax.swing.JButton();
+        NombreJTextField = new javax.swing.JTextField();
+        ApellidoJTextField = new javax.swing.JTextField();
+        BuscarNombreJButton = new javax.swing.JButton();
+        NumeroFichaJTextField = new javax.swing.JTextField();
+        BuscarNumeroFichaJButton = new javax.swing.JButton();
+        VolverJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setText("SIGGES");
+        TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        TituloJLabel.setText("SIGGES");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel2.setText("Busqueda");
+        BusquedaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        BusquedaJLabel.setText("Busqueda");
 
-        jButton1.setText("Buscar por RUT");
+        BusquedaRutJButton.setText("Buscar por RUT");
 
-        jButton2.setText("Buscar por Nombre");
+        BusquedaNombreJButton.setText("Buscar por Nombre");
 
-        jButton3.setText("Buscar Por Numero de Ficha Medica");
+        BusquedaNumeroFichaJButton.setText("Buscar Por Numero de Ficha Medica");
 
-        jScrollPane1.setEnabled(false);
+        ResultadosJScrollpane.setEnabled(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ResultadosJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -79,32 +79,32 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jScrollPane1.setViewportView(jTable1);
+        ResultadosJTable.setEnabled(false);
+        ResultadosJScrollpane.setViewportView(ResultadosJTable);
 
-        jTextField1.setEnabled(false);
+        RutJTextField1.setEnabled(false);
 
-        jTextField2.setEnabled(false);
+        RutJTextField2.setEnabled(false);
 
-        jButton4.setText("Buscar");
-        jButton4.setEnabled(false);
+        BuscarRUTJButton.setText("Buscar");
+        BuscarRUTJButton.setEnabled(false);
 
-        jTextField3.setEnabled(false);
+        NombreJTextField.setEnabled(false);
 
-        jTextField4.setEnabled(false);
+        ApellidoJTextField.setEnabled(false);
 
-        jButton5.setText("Buscar");
-        jButton5.setEnabled(false);
+        BuscarNombreJButton.setText("Buscar");
+        BuscarNombreJButton.setEnabled(false);
 
-        jTextField5.setEnabled(false);
+        NumeroFichaJTextField.setEnabled(false);
 
-        jButton6.setText("Buscar");
-        jButton6.setEnabled(false);
+        BuscarNumeroFichaJButton.setText("Buscar");
+        BuscarNumeroFichaJButton.setEnabled(false);
 
-        jButton7.setText("Volver");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        VolverJButton.setText("Volver");
+        VolverJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                VolverJButtonActionPerformed(evt);
             }
         });
 
@@ -116,92 +116,92 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
+                        .addComponent(BusquedaJLabel))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BusquedaRutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BusquedaNombreJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jButton3))
+                        .addComponent(BusquedaNumeroFichaJButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jButton4)
+                .addComponent(BuscarRUTJButton)
                 .addGap(147, 147, 147)
-                .addComponent(jButton5)
+                .addComponent(BuscarNombreJButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(BuscarNumeroFichaJButton)
                 .addGap(97, 97, 97))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(301, 301, 301)
-                        .addComponent(jLabel1))
+                        .addComponent(TituloJLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ResultadosJScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(287, 287, 287)
-                        .addComponent(jButton7)))
+                        .addComponent(VolverJButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(TituloJLabel)
                 .addGap(34, 34, 34)
-                .addComponent(jLabel2)
+                .addComponent(BusquedaJLabel)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(BusquedaRutJButton)
+                    .addComponent(BusquedaNombreJButton)
+                    .addComponent(BusquedaNumeroFichaJButton))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(BuscarRUTJButton)
+                    .addComponent(BuscarNombreJButton)
+                    .addComponent(BuscarNumeroFichaJButton))
                 .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ResultadosJScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(VolverJButton)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_VolverJButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,21 +209,21 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField ApellidoJTextField;
+    private javax.swing.JButton BuscarNombreJButton;
+    private javax.swing.JButton BuscarNumeroFichaJButton;
+    private javax.swing.JButton BuscarRUTJButton;
+    private javax.swing.JLabel BusquedaJLabel;
+    private javax.swing.JButton BusquedaNombreJButton;
+    private javax.swing.JButton BusquedaNumeroFichaJButton;
+    private javax.swing.JButton BusquedaRutJButton;
+    private javax.swing.JTextField NombreJTextField;
+    private javax.swing.JTextField NumeroFichaJTextField;
+    private javax.swing.JScrollPane ResultadosJScrollpane;
+    private javax.swing.JTable ResultadosJTable;
+    private javax.swing.JTextField RutJTextField1;
+    private javax.swing.JTextField RutJTextField2;
+    private javax.swing.JLabel TituloJLabel;
+    private javax.swing.JButton VolverJButton;
     // End of variables declaration//GEN-END:variables
 }

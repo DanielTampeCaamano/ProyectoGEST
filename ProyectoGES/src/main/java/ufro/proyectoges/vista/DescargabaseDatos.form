@@ -27,20 +27,20 @@
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="CasosVigentesJButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="RangoFechaInicialCasosCerradosJLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CasosCerradosJButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaInicialJLabel" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -49,21 +49,21 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="CasosExceptuadosJButton" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField12" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="DiaFechaInicialCasosExceptuadosJTextField" min="-2" pref="45" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField7" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <Component id="MesFechaInicialCasosExceptuadosJTextField" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField8" min="-2" pref="52" max="-2" attributes="0"/>
+                                              <Component id="AnioFechaInicialCasosExceptuadosJTextField" min="-2" pref="52" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField11" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="DiaFechaFinalCasosExceptuadosJTextField" min="-2" pref="45" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField9" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <Component id="MesFechaFinalCasosExceptuadosJTextField" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField10" min="-2" pref="51" max="-2" attributes="0"/>
+                                              <Component id="AnioFechaFinalCasosExceptuadosJTextField" min="-2" pref="51" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
@@ -75,7 +75,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RangoFechaFinalCasosExceptuadosJLabel" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
@@ -89,34 +89,33 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextField18" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="jTextField17" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                          <Component id="DiaFechaInicialCasosCerradosJTextField" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                          <Component id="DiaFechaFinalCasosCerradosJTextField" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField13" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <Component id="MesFechaInicialCasosCerradosJTextField" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField14" min="-2" pref="62" max="-2" attributes="0"/>
+                                              <Component id="AnioFechaInicialCasosCerradosJTextField" min="-2" pref="62" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField15" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <Component id="MesFechaFinalCasosCerradosJTextField" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField16" min="-2" pref="62" max="-2" attributes="0"/>
+                                              <Component id="AnioFechaFinalCasosCerradosJTextField" min="-2" pref="62" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="RangoFechaFinalCasosCerradosJLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="RangoFechaInicialCasosExceptuados" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -127,24 +126,24 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaFinalJLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="DiaFechaInicialCasosVigentesJTextField" min="-2" pref="46" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="MesFechaInicialCasosVigentesJTextField" min="-2" pref="47" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="AnioFechaInicialCasosVigentesJTextField" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jTextField6" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="DiaFechaFinalCasosVigentesJTextField" min="-2" pref="46" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="MesFechaFinalCasosVigentesJTextField" min="-2" pref="43" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField5" min="-2" pref="58" max="-2" attributes="0"/>
+                              <Component id="AnioFechaFinalCasosVigentesJTextField" min="-2" pref="58" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -155,11 +154,11 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="DescargaBaseDatosJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="TituloJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="296" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -170,74 +169,74 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="TituloJLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="DescargaBaseDatosJLabel" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CasosVigentesJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CasosCerradosJButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="CasosExceptuadosJButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaInicialCasosCerradosJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaInicialCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaInicialCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaInicialCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaFinalCasosCerradosJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaFinalCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaFinalCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaFinalCasosCerradosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaInicialCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaInicialCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaInicialCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaFinalCasosExceptuadosJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaFinalCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaFinalCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaFinalCasosExceptuadosJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RangoFechaInicialJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RangoFechaInicialCasosExceptuados" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaInicialCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaInicialCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaInicialCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="RangoFechaFinalJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DiaFechaFinalCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MesFechaFinalCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnioFechaFinalCasosVigentesJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -252,7 +251,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="TituloJLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="0"/>
@@ -260,7 +259,7 @@
         <Property name="text" type="java.lang.String" value="Sigges"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="DescargaBaseDatosJLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
@@ -268,144 +267,147 @@
         <Property name="text" type="java.lang.String" value="Descarga de Base de Datos de Casos de Pacientes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="CasosVigentesJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Vigentes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="CasosExceptuadosJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Exceptuados"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="CasosCerradosJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Cerrados"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="DiaFechaInicialCasosVigentesJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="MesFechaInicialCasosVigentesJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="AnioFechaInicialCasosVigentesJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="RangoFechaInicialJLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="DiaFechaFinalCasosVigentesJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="MesFechaFinalCasosVigentesJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JTextField" name="AnioFechaFinalCasosVigentesJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RangoFechaFinalJLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rango Fecha Final"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="DiaFechaInicialCasosExceptuadosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="MesFechaInicialCasosExceptuadosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AnioFechaInicialCasosExceptuadosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RangoFechaInicialCasosExceptuados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="DiaFechaFinalCasosExceptuadosJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
+    <Component class="javax.swing.JTextField" name="MesFechaFinalCasosExceptuadosJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
+    <Component class="javax.swing.JTextField" name="AnioFechaFinalCasosExceptuadosJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="RangoFechaFinalCasosExceptuadosJLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rango Fecha Final"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="DiaFechaInicialCasosCerradosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="MesFechaInicialCasosCerradosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AnioFechaInicialCasosCerradosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RangoFechaInicialCasosCerradosJLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField9">
+    <Component class="javax.swing.JTextField" name="DiaFechaFinalCasosCerradosJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField10">
+    <Component class="javax.swing.JTextField" name="MesFechaFinalCasosCerradosJTextField">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MesFechaFinalCasosCerradosJTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AnioFechaFinalCasosCerradosJTextField">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="RangoFechaFinalCasosCerradosJLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField11">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField12">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField13">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField14">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField15">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField16">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Rango Fecha Incial"/>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField17">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField18">
-      <Properties>
+        <Property name="text" type="java.lang.String" value="Rango Fecha Final"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

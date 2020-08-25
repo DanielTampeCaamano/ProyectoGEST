@@ -43,8 +43,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         RUTFuncionarioJLabel = new javax.swing.JLabel();
         FechaIngresoJLabel = new javax.swing.JLabel();
         FechaJLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        IngresarJButton = new javax.swing.JButton();
+        VolverJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,17 +93,17 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         FechaJLabel.setText("dd/mm/aaaa");
 
-        jButton1.setText("Ingresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        IngresarJButton.setText("Ingresar");
+        IngresarJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                IngresarJButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        VolverJButton.setText("Volver");
+        VolverJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                VolverJButtonActionPerformed(evt);
             }
         });
 
@@ -141,9 +141,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(FuncionarioRegistroJLabel)
                                 .addGap(69, 69, 69)
-                                .addComponent(jButton1)
+                                .addComponent(IngresarJButton)
                                 .addGap(34, 34, 34)
-                                .addComponent(jButton2))
+                                .addComponent(VolverJButton))
                             .addComponent(IPDJButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -188,8 +188,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FuncionarioRegistroJLabel)
                     .addComponent(FechaIngresoJLabel)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(IngresarJButton)
+                    .addComponent(VolverJButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NombreFuncionarioJLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -211,17 +211,17 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         new IPD().setVisible(true);
     }//GEN-LAST:event_IPDJButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
         // TODO add your handling code here:
         new Menu().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_IngresarJButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_VolverJButtonActionPerformed
 
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
@@ -240,6 +240,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel FechaJLabel;
     private javax.swing.JLabel FuncionarioRegistroJLabel;
     private javax.swing.JButton IPDJButton;
+    private javax.swing.JButton IngresarJButton;
     private javax.swing.JLabel IngresoPacienteJLabel;
     private javax.swing.JLabel NombreFuncionarioJLabel;
     private javax.swing.JLabel NombreJLabel;
@@ -252,7 +253,6 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField RUTJTextField1;
     private javax.swing.JTextField RUTJTextField2;
     private javax.swing.JLabel TituloJLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton VolverJButton;
     // End of variables declaration//GEN-END:variables
 }

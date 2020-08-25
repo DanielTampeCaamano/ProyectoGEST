@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-08-2020 a las 03:33:20
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.8
+-- Tiempo de generación: 24-08-2020 a las 05:35:12
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ges`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ipd`
+--
+
+CREATE TABLE `ipd` (
+  `rut_paciente` int(13) NOT NULL,
+  `nombre_paciente` varchar(90) NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_termino` date DEFAULT NULL,
+  `es_ges` tinyint(1) NOT NULL,
+  `notificacion_paciente` tinyint(1) NOT NULL,
+  `confirmado_diagnostico_paciente` tinyint(1) NOT NULL,
+  `exceptuado_estado` tinyint(1) NOT NULL,
+  `observacion_diagnostico` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,6 +113,12 @@ INSERT INTO `registrador` (`id`, `nombre`) VALUES
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `ipd`
+--
+ALTER TABLE `ipd`
+  ADD PRIMARY KEY (`rut_paciente`);
 
 --
 -- Indices de la tabla `monitor`

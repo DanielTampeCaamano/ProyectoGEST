@@ -271,16 +271,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Vigentes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CasosVigentesJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CasosExceptuadosJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Exceptuados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CasosExceptuadosJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CasosCerradosJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casos Cerrados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CasosCerradosJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="DiaFechaInicialCasosVigentesJTextField">
       <Properties>

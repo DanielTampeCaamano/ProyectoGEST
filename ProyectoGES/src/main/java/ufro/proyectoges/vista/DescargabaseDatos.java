@@ -68,10 +68,25 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         DescargaBaseDatosJLabel.setText("Descarga de Base de Datos de Casos de Pacientes");
 
         CasosVigentesJButton.setText("Casos Vigentes");
+        CasosVigentesJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CasosVigentesJButtonActionPerformed(evt);
+            }
+        });
 
         CasosExceptuadosJButton.setText("Casos Exceptuados");
+        CasosExceptuadosJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CasosExceptuadosJButtonActionPerformed(evt);
+            }
+        });
 
         CasosCerradosJButton.setText("Casos Cerrados");
+        CasosCerradosJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CasosCerradosJButtonActionPerformed(evt);
+            }
+        });
 
         DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
 
@@ -337,6 +352,18 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     private void MesFechaFinalCasosCerradosJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesFechaFinalCasosCerradosJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MesFechaFinalCasosCerradosJTextFieldActionPerformed
+
+    private void CasosVigentesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosVigentesJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CasosVigentesJButtonActionPerformed
+
+    private void CasosExceptuadosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosExceptuadosJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CasosExceptuadosJButtonActionPerformed
+
+    private void CasosCerradosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosCerradosJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CasosCerradosJButtonActionPerformed
 
     /**
      * @param args the command line arguments

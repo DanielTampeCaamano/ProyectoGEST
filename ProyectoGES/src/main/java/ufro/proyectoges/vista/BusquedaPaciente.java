@@ -107,6 +107,11 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
         BuscarRUTJButton.setText("Buscar");
         BuscarRUTJButton.setEnabled(false);
+        BuscarRUTJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarRUTJButtonActionPerformed(evt);
+            }
+        });
 
         NombreJTextField.setEnabled(false);
 
@@ -114,11 +119,21 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
         BuscarNombreJButton.setText("Buscar");
         BuscarNombreJButton.setEnabled(false);
+        BuscarNombreJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarNombreJButtonActionPerformed(evt);
+            }
+        });
 
         NumeroFichaJTextField.setEnabled(false);
 
         BuscarNumeroFichaJButton.setText("Buscar");
         BuscarNumeroFichaJButton.setEnabled(false);
+        BuscarNumeroFichaJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarNumeroFichaJButtonActionPerformed(evt);
+            }
+        });
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -196,13 +211,14 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                     .addComponent(BusquedaNombreJButton)
                     .addComponent(BusquedaNumeroFichaJButton))
                 .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BuscarRUTJButton)
@@ -259,6 +275,18 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         NumeroFichaJTextField.setEnabled(true);
         BuscarNumeroFichaJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaNumeroFichaJButtonActionPerformed
+
+    private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
+
+    private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
+
+    private void BuscarNumeroFichaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNumeroFichaJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarNumeroFichaJButtonActionPerformed
 
     /**
      * @param args the command line arguments

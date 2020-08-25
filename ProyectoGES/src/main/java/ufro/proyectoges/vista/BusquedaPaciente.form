@@ -24,41 +24,51 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="BusquedaJLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="BusquedaRutJButton" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="RutJTextField1" min="-2" pref="62" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="RutJTextField2" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Component id="BusquedaNombreJButton" min="-2" pref="161" max="-2" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="BusquedaNombreJButton" min="-2" pref="161" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="NombreJTextField" min="-2" pref="94" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="ApellidoJTextField" min="-2" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="BusquedaNumeroFichaJButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="BusquedaNumeroFichaJButton" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="NumeroFichaJTextField" min="-2" pref="192" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Component id="BuscarRUTJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
               <Component id="BuscarNombreJButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="BuscarNumeroFichaJButton" min="-2" max="-2" attributes="0"/>
@@ -69,12 +79,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="301" max="-2" attributes="0"/>
                       <Component id="TituloJLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                      <Component id="NombreJTextField" min="-2" pref="94" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ApellidoJTextField" min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
@@ -106,14 +110,13 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="RutJTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="RutJTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NumeroFichaJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Component id="NombreJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ApellidoJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NumeroFichaJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NombreJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ApellidoJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BuscarRUTJButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BuscarNombreJButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -149,16 +152,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar por RUT"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaRutJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BusquedaNombreJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar por Nombre"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaNombreJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BusquedaNumeroFichaJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Por Numero de Ficha Medica"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaNumeroFichaJButtonActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="ResultadosJScrollpane">
       <Properties>

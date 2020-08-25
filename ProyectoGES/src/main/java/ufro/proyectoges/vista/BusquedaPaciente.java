@@ -18,15 +18,9 @@ public class BusquedaPaciente extends javax.swing.JFrame {
      */
     public BusquedaPaciente() {
         initComponents();
-        jButton1.addActionListener(x -> habilitarCampoRut(x));
         
     }
     
-    private void habilitarCampoRut(ActionEvent e){
-        jTextField1.setEnabled(true);
-        jTextField2.setEnabled(true);
-        jButton4.setEnabled(true);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,10 +57,25 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         BusquedaJLabel.setText("Busqueda");
 
         BusquedaRutJButton.setText("Buscar por RUT");
+        BusquedaRutJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaRutJButtonActionPerformed(evt);
+            }
+        });
 
         BusquedaNombreJButton.setText("Buscar por Nombre");
+        BusquedaNombreJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaNombreJButtonActionPerformed(evt);
+            }
+        });
 
         BusquedaNumeroFichaJButton.setText("Buscar Por Numero de Ficha Medica");
+        BusquedaNumeroFichaJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaNumeroFichaJButtonActionPerformed(evt);
+            }
+        });
 
         ResultadosJScrollpane.setEnabled(false);
 
@@ -123,32 +132,40 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BusquedaJLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(BusquedaJLabel)
+                        .addGap(42, 42, 42))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BusquedaRutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addComponent(BusquedaNombreJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(BusquedaNombreJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BusquedaNumeroFichaJButton)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(BusquedaNumeroFichaJButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(9, 9, 9)
                         .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(60, 60, 60)
                 .addComponent(BuscarRUTJButton)
-                .addGap(147, 147, 147)
+                .addGap(138, 138, 138)
                 .addComponent(BuscarNombreJButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BuscarNumeroFichaJButton)
@@ -158,11 +175,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(301, 301, 301)
                         .addComponent(TituloJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addComponent(ResultadosJScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,12 +199,11 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BuscarRUTJButton)
                     .addComponent(BuscarNombreJButton)
@@ -212,6 +223,42 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         new Menu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
+
+    private void BusquedaRutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaRutJButtonActionPerformed
+        // TODO add your handling code here:
+        NombreJTextField.setEnabled(false);
+        ApellidoJTextField.setEnabled(false);
+        BuscarNombreJButton.setEnabled(false);
+        NumeroFichaJTextField.setEnabled(false);
+        BuscarNumeroFichaJButton.setEnabled(false);
+        RutJTextField1.setEnabled(true);
+        RutJTextField2.setEnabled(true);
+        BuscarRUTJButton.setEnabled(true);
+    }//GEN-LAST:event_BusquedaRutJButtonActionPerformed
+
+    private void BusquedaNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaNombreJButtonActionPerformed
+        // TODO add your handling code here:
+        RutJTextField1.setEnabled(false);
+        RutJTextField2.setEnabled(false);
+        BuscarRUTJButton.setEnabled(false);
+        NumeroFichaJTextField.setEnabled(false);
+        BuscarNumeroFichaJButton.setEnabled(false);
+        NombreJTextField.setEnabled(true);
+        ApellidoJTextField.setEnabled(true);
+        BuscarNombreJButton.setEnabled(true);
+    }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
+
+    private void BusquedaNumeroFichaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaNumeroFichaJButtonActionPerformed
+        // TODO add your handling code here:
+        RutJTextField1.setEnabled(false);
+        RutJTextField2.setEnabled(false);
+        BuscarRUTJButton.setEnabled(false);
+        NombreJTextField.setEnabled(false);
+        ApellidoJTextField.setEnabled(false);
+        BuscarNombreJButton.setEnabled(false);
+        NumeroFichaJTextField.setEnabled(true);
+        BuscarNumeroFichaJButton.setEnabled(true);
+    }//GEN-LAST:event_BusquedaNumeroFichaJButtonActionPerformed
 
     /**
      * @param args the command line arguments

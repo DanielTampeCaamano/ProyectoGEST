@@ -48,7 +48,8 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         BuscarNumeroFichaJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - Busqueda de Paciente");
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setText("SIGGES");

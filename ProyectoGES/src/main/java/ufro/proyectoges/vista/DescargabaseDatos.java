@@ -59,7 +59,8 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         DescargaJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - Descarga de Base de Datos de Casos de Pacientes");
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setText("Sigges");
@@ -136,11 +137,6 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         DiaFechaFinalCasosCerradosJTextField.setEnabled(false);
 
         MesFechaFinalCasosCerradosJTextField.setEnabled(false);
-        MesFechaFinalCasosCerradosJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MesFechaFinalCasosCerradosJTextFieldActionPerformed(evt);
-            }
-        });
 
         AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
 
@@ -349,20 +345,95 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 
-    private void MesFechaFinalCasosCerradosJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesFechaFinalCasosCerradosJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MesFechaFinalCasosCerradosJTextFieldActionPerformed
-
     private void CasosVigentesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosVigentesJButtonActionPerformed
         // TODO add your handling code here:
+        DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
+        MesFechaInicialCasosCerradosJTextField.setEnabled(false);
+        AnioFechaInicialCasosCerradosJTextField.setEnabled(false);
+        RangoFechaInicialCasosCerradosJLabel.setEnabled(false);
+        DiaFechaFinalCasosCerradosJTextField.setEnabled(false);
+        MesFechaFinalCasosCerradosJTextField.setEnabled(false);
+        AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
+        RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
+        
+        DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        MesFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        AnioFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        RangoFechaInicialCasosExceptuados.setEnabled(false);
+        DiaFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
+        
+        DiaFechaInicialCasosVigentesJTextField.setEnabled(true);
+        MesFechaInicialCasosVigentesJTextField.setEnabled(true);
+        AnioFechaInicialCasosVigentesJTextField.setEnabled(true);
+        RangoFechaInicialJLabel.setEnabled(true);
+        DiaFechaFinalCasosVigentesJTextField.setEnabled(true);
+        MesFechaFinalCasosVigentesJTextField.setEnabled(true);
+        AnioFechaFinalCasosVigentesJTextField.setEnabled(true);
+        RangoFechaFinalJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosVigentesJButtonActionPerformed
 
     private void CasosExceptuadosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosExceptuadosJButtonActionPerformed
         // TODO add your handling code here:
+        DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
+        MesFechaInicialCasosCerradosJTextField.setEnabled(false);
+        AnioFechaInicialCasosCerradosJTextField.setEnabled(false);
+        RangoFechaInicialCasosCerradosJLabel.setEnabled(false);
+        DiaFechaFinalCasosCerradosJTextField.setEnabled(false);
+        MesFechaFinalCasosCerradosJTextField.setEnabled(false);
+        AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
+        RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
+        
+        DiaFechaInicialCasosExceptuadosJTextField.setEnabled(true);
+        MesFechaInicialCasosExceptuadosJTextField.setEnabled(true);
+        AnioFechaInicialCasosExceptuadosJTextField.setEnabled(true);
+        RangoFechaInicialCasosExceptuados.setEnabled(true);
+        DiaFechaFinalCasosExceptuadosJTextField.setEnabled(true);
+        MesFechaFinalCasosExceptuadosJTextField.setEnabled(true);
+        AnioFechaFinalCasosExceptuadosJTextField.setEnabled(true);
+        RangoFechaFinalCasosExceptuadosJLabel.setEnabled(true);
+        
+        DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
+        MesFechaInicialCasosVigentesJTextField.setEnabled(false);
+        AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
+        RangoFechaInicialJLabel.setEnabled(false);
+        DiaFechaFinalCasosVigentesJTextField.setEnabled(false);
+        MesFechaFinalCasosVigentesJTextField.setEnabled(false);
+        AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
+        RangoFechaFinalJLabel.setEnabled(false);
+        
     }//GEN-LAST:event_CasosExceptuadosJButtonActionPerformed
 
     private void CasosCerradosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosCerradosJButtonActionPerformed
         // TODO add your handling code here:
+        DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        MesFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        AnioFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        RangoFechaInicialCasosExceptuados.setEnabled(false);
+        DiaFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
+        
+        DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
+        MesFechaInicialCasosVigentesJTextField.setEnabled(false);
+        AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
+        RangoFechaInicialJLabel.setEnabled(false);
+        DiaFechaFinalCasosVigentesJTextField.setEnabled(false);
+        MesFechaFinalCasosVigentesJTextField.setEnabled(false);
+        AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
+        RangoFechaFinalJLabel.setEnabled(false);
+        
+        DiaFechaInicialCasosCerradosJTextField.setEnabled(true);
+        MesFechaInicialCasosCerradosJTextField.setEnabled(true);
+        AnioFechaInicialCasosCerradosJTextField.setEnabled(true);
+        RangoFechaInicialCasosCerradosJLabel.setEnabled(true);
+        DiaFechaFinalCasosCerradosJTextField.setEnabled(true);
+        MesFechaFinalCasosCerradosJTextField.setEnabled(true);
+        AnioFechaFinalCasosCerradosJTextField.setEnabled(true);
+        RangoFechaFinalCasosCerradosJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosCerradosJButtonActionPerformed
 
     /**

@@ -30,6 +30,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
     }
 
     /**
@@ -49,6 +50,7 @@ public class Login extends javax.swing.JFrame {
         AceptarJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - Login");
         setResizable(false);
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 3, 28)); // NOI18N
@@ -187,6 +189,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
+                
             }
         });
     }

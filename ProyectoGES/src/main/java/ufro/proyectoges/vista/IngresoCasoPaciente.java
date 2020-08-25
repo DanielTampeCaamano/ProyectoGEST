@@ -50,10 +50,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         IngresarJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - Ingreso Caso Paciente");
 
+        TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setText("Sigges");
 
+        IngresoPacienteJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         IngresoPacienteJLabel.setText("Ingreso Caso Paciente");
 
         NombreJLabel.setText("Nombre Completo:");
@@ -155,22 +158,22 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                             .addComponent(FechaJLabel))
                         .addGap(81, 81, 81))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IngresoPacienteJLabel)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(TituloJLabel)
-                        .addGap(36, 36, 36)))
-                .addGap(241, 241, 241))
+                .addContainerGap(246, Short.MAX_VALUE)
+                .addComponent(TituloJLabel)
+                .addGap(277, 277, 277))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(IngresoPacienteJLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(TituloJLabel)
-                .addGap(37, 37, 37)
+                .addGap(31, 31, 31)
                 .addComponent(IngresoPacienteJLabel)
-                .addGap(60, 60, 60)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NombreJLabel)
                     .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -188,7 +191,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                     .addComponent(PatologiasJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addComponent(IPDJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FuncionarioRegistroJLabel)
                     .addComponent(FechaIngresoJLabel)

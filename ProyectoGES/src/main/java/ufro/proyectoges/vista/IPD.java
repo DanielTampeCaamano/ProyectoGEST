@@ -5,6 +5,10 @@
  */
 package ufro.proyectoges.vista;
 
+import java.sql.Date;
+import ufro.proyectoges.backend.entidades.IPDPaciente;
+import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
+
 /**
  *
  * @author Roald
@@ -59,8 +63,10 @@ public class IPD extends javax.swing.JFrame {
         ObservacionJScrollPane = new javax.swing.JScrollPane();
         ObservacionJTextArea = new javax.swing.JTextArea();
         AceptarJButton = new javax.swing.JButton();
+        VolverJButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - IPD");
 
         IPDJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         IPDJLabel.setText("IPD");
@@ -142,6 +148,13 @@ public class IPD extends javax.swing.JFrame {
             }
         });
 
+        VolverJButton.setText("Volver");
+        VolverJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -186,14 +199,9 @@ public class IPD extends javax.swing.JFrame {
                             .addComponent(ObservacionJScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(IPDJLabel)
-                                .addGap(295, 295, 295))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(AceptarJButton)
-                                .addGap(277, 277, 277))))
+                        .addGap(0, 285, Short.MAX_VALUE)
+                        .addComponent(IPDJLabel)
+                        .addGap(295, 295, 295))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -236,6 +244,12 @@ public class IPD extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(FechaTerminoJLabel)
                 .addGap(60, 60, 60))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addComponent(AceptarJButton)
+                .addGap(53, 53, 53)
+                .addComponent(VolverJButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +312,9 @@ public class IPD extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ObservacionJScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AceptarJButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AceptarJButton)
+                    .addComponent(VolverJButton))
                 .addContainerGap())
         );
 
@@ -307,7 +323,22 @@ public class IPD extends javax.swing.JFrame {
 
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
-        
+
+        new HerramientaRegistrador().registrarIPD(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
+                NombreCompletoJTextField.getText(),
+                new Date(Integer.parseInt(AnioFechaInicioJTextField.getText()),
+                        Integer.parseInt(MesFechaInicioJTextField.getText()),
+                        Integer.parseInt(DiaFechaInicioJTextField.getText())),
+                new Date(Integer.parseInt(AnioFechaTerminoJTextField.getText()),
+                        Integer.parseInt(MesFechaTerminoJTextField.getText()),
+                        Integer.parseInt(AnioFechaTerminoJTextField.getText())),
+                GESJCheckBox.isSelected(),
+                SiJCheckBox.isSelected(),
+                ConfirmadoJCheckBox.isSelected(),
+                ExceptuadoJCheckBox.isSelected(),
+                DescartadoJCheckBox.isSelected(),
+                ObservacionJTextArea.getText(),
+                0));
         this.dispose();
     }//GEN-LAST:event_AceptarJButtonActionPerformed
 
@@ -347,10 +378,14 @@ public class IPD extends javax.swing.JFrame {
         DescartadoJCheckBox.setSelected(true);
     }//GEN-LAST:event_DescartadoJCheckBoxActionPerformed
 
+    private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_VolverJButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarJButton;
@@ -381,6 +416,7 @@ public class IPD extends javax.swing.JFrame {
     private javax.swing.JTextField RUTJTextField1;
     private javax.swing.JTextField RUTJTextField2;
     private javax.swing.JCheckBox SiJCheckBox;
+    private javax.swing.JButton VolverJButton;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

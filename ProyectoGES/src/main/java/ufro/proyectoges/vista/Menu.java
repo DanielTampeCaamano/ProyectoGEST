@@ -33,7 +33,8 @@ public class Menu extends javax.swing.JFrame {
         BusquedaPacientesJButton = new javax.swing.JButton();
         DescargaBaseDatosJButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ProyectoGES - Menu");
         setResizable(false);
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 28)); // NOI18N

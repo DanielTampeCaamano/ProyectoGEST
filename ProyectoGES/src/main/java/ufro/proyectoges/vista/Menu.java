@@ -5,7 +5,9 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
@@ -22,16 +24,15 @@ public class Menu extends javax.swing.JFrame {
      *
      * @param persona
      */
-    public Menu(Persona persona) {
-        this.persona = persona;
-
+    public Menu(Persona p) {
+        this.persona = p;
         if (persona.getHerramientaPersona() == null) {
             switch (persona.getTipo_persona()) {
                 case "REGISTRADOR":
-                    persona.setHerramientaPersona(new HerramientaRegistrador());
+                    this.persona = new Registrador(p.getNombre(), p.getRut(), p.getClave());
                     break;
                 case "MONITOR":
-                    persona.setHerramientaPersona(new HerramientaMonitor());
+                    this.persona = new Monitor(p.getNombre(), p.getRut(), p.getClave());
                     break;
                 default:
                     System.out.println("caso default");
@@ -113,8 +114,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void IngresoPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoPacientesJButtonActionPerformed
         // TODO add your handling code here:
-        new IngresoCasoPaciente(persona).setVisible(true);
-        this.dispose();
+        if (persona instanceof Registrador) {
+            new IngresoCasoPaciente((Registrador)persona).setVisible(true);
+            this.dispose();
+        } else {
+            System.out.println("No es un registrador");
+        }
     }//GEN-LAST:event_IngresoPacientesJButtonActionPerformed
 
     private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed

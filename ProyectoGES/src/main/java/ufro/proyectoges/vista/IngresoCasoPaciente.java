@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
@@ -26,14 +27,17 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author Roald
  */
-public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener,ActionListener {
+public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener, ActionListener {
 
     private Persona p;
     private IPDPaciente ipd;
     private List<String> patologias;
+    private boolean soloVista;
+    private Paciente pacienteAObservar;
 
     /**
      * Creates new form IngresoCasoPaciente
+     *
      * @param p
      */
     public IngresoCasoPaciente(Persona p) {
@@ -41,12 +45,30 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.ipd = null;
         patologias = new ArrayList<>();
         initComponents();
-        
+        this.soloVista = false;
         this.PatologiasJTextField.setEditable(false);
         this.confirmacionIPD.setText("IPD no cargado");
         this.PatologiasJComboBox.setModel(new DefaultComboBoxModel<>(p.getHerramientaPersona().obtenerPatologias()));
-        
-        
+
+    }
+
+    public IngresoCasoPaciente(Paciente p) {
+
+        initComponents();
+
+        this.PatologiasJTextField.setEditable(false);
+        this.NombreJTextField.setEditable(false);
+        this.RUTJTextField1.setEditable(false);
+        this.RUTJTextField2.setEditable(false);
+        this.PatologiasJComboBox.setEnabled(false);
+
+        this.NombreFuncionarioJLabel.setText(p.getNombreCompleto());
+        this.RUTJTextField1.setText(p.getRutValidado().substring(0, p.getRutValidado().length() - 2));
+        this.RUTJTextField2.setText("" + p.getRutValidado().charAt(p.getRutValidado().length() - 1));
+        this.PatologiasJTextField.setText(p.getIpdPaciente().getCodigoPatologia());
+
+        this.soloVista = true;
+        this.pacienteAObservar = p;
     }
 
     public JTextField getNombreJTextField() {
@@ -64,9 +86,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     public JTextField getRUTJTextField2() {
         return RUTJTextField2;
     }
-    
-    
-    
+
     public IPDPaciente getIpd() {
         return ipd;
     }
@@ -74,8 +94,6 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     public void setIpd(IPDPaciente ipd) {
         this.ipd = ipd;
     }
-
-    
 
     public Persona getP() {
         return p;
@@ -88,10 +106,6 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     public JLabel getConfirmacionIPD() {
         return confirmacionIPD;
     }
-    
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,16 +142,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 35, -1, -1));
 
         IngresoPacienteJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        IngresoPacienteJLabel.setForeground(new java.awt.Color(0, 0, 0));
         IngresoPacienteJLabel.setText("Ingreso Caso Paciente");
         getContentPane().add(IngresoPacienteJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 98, -1, -1));
 
-        NombreJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreJLabel.setText("Nombre Completo:");
         getContentPane().add(NombreJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 190, -1, -1));
 
@@ -148,13 +159,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         });
         getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 188, 394, -1));
 
-        RUTJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RUTJLabel.setText("RUT:");
         getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 225, -1, -1));
         getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 225, 78, -1));
         getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 225, 23, -1));
 
-        PatologiasJLabel.setForeground(new java.awt.Color(0, 0, 0));
         PatologiasJLabel.setText("Patologias:");
         getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 266, -1, -1));
 
@@ -185,23 +194,18 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         });
         getContentPane().add(IPDJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 334, -1, -1));
 
-        FuncionarioRegistroJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FuncionarioRegistroJLabel.setText("Funcionario Registro:");
         getContentPane().add(FuncionarioRegistroJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 390, -1, -1));
 
-        NombreFuncionarioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreFuncionarioJLabel.setText("Nombres Apellidos");
         getContentPane().add(NombreFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 415, -1, -1));
 
-        RUTFuncionarioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RUTFuncionarioJLabel.setText("12.345.678-9");
         getContentPane().add(RUTFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 436, -1, -1));
 
-        FechaIngresoJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaIngresoJLabel.setText("Fecha Ingreso:");
         getContentPane().add(FechaIngresoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 390, -1, -1));
 
-        FechaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaJLabel.setText("dd/mm/aaaa");
         getContentPane().add(FechaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 436, -1, -1));
 
@@ -221,11 +225,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         });
         getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 385, -1, -1));
 
-        confirmacionIPD.setForeground(new java.awt.Color(0, 0, 0));
         confirmacionIPD.setText("TEXT");
         getContentPane().add(confirmacionIPD, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 339, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
@@ -239,14 +241,18 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
-        Rut rut = new Rut(RUTJTextField1.getText()+RUTJTextField2.getText());
-        if (!NombreJTextField.getText().isEmpty() && !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty() && !this.PatologiasJTextField.getText().isEmpty() && Rut.rutBienEscrito(RUTJTextField1.getText()+RUTJTextField2.getText()) && rut.isRutValido()){
-            new IPD(p, this).setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null, "Complete los datos de manera correcta");
+        if (!soloVista) {
+            Rut rut = new Rut(RUTJTextField1.getText() + RUTJTextField2.getText());
+            if (!NombreJTextField.getText().isEmpty() && !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty() && !this.PatologiasJTextField.getText().isEmpty() && Rut.rutBienEscrito(RUTJTextField1.getText() + RUTJTextField2.getText()) && rut.isRutValido()) {
+                new IPD(p, this).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Complete los datos de manera correcta");
+            }
+        } else {
+            new IPD(pacienteAObservar).setVisible(true);
         }
-        
-        
+
+
     }//GEN-LAST:event_IPDJButtonActionPerformed
 
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
@@ -257,10 +263,10 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             Rut rutValidado = new Rut(rut);
             Paciente pacienteAIngresar = new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd);
             if (rutValidado.isRutValido() && !p.getHerramientaPersona().personaExiste(pacienteAIngresar)) {
-                p.getHerramientaPersona().registrarPacientes(pacienteAIngresar);
+                p.getHerramientaPersona().registrarPacientes(pacienteAIngresar, (Registrador) p);
                 new Menu(p).setVisible(true);
                 this.dispose();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Rut invalido o Rut ya registrado", "Error de validacion", JOptionPane.ERROR_MESSAGE);
             }
         } else {
@@ -276,13 +282,12 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
-        
-        
-        if (!patologias.contains(PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex()))){
+
+        if (!patologias.contains(PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex()))) {
             patologias.add(PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex()));
             PatologiasJTextField.setText(patologias.toString());
         }
-        
+
     }//GEN-LAST:event_agregadorpatologia
 
     private void PatologiasJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatologiasJComboBoxActionPerformed
@@ -318,29 +323,29 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (ipd != null){
+        if (ipd != null) {
             advertirCambios();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-       
+
     }
-    
-    private void advertirCambios(){
+
+    private void advertirCambios() {
         ipd = null;
         confirmacionIPD.setText("Datos modificados, se debe re-hacer ipd");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.PatologiasJComboBox && ipd != null){
+        if (e.getSource() == this.PatologiasJComboBox && ipd != null) {
             advertirCambios();
         }
     }

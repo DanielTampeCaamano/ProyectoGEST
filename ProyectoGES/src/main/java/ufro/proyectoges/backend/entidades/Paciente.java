@@ -22,6 +22,7 @@ public class Paciente extends Persona {
     public Paciente(String nombreCompleto, Rut rut, IPDPaciente ipd) {
         super(nombreCompleto, rut, "PACIENTE", null);
         super.setTipo_persona("PACIENTE");
+        super.setHerramientaPersona(null);
         this.nombreCompleto = nombreCompleto;
         this.rutSinConvertir = rut;
         this.rutValidado = rut.getRut();

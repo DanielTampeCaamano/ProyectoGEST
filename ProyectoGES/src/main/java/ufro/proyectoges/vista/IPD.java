@@ -9,6 +9,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
+import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
@@ -18,8 +19,9 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  */
 public class IPD extends javax.swing.JFrame {
 
-    private final Persona p;
-    private final IngresoCasoPaciente formPaciente;
+    private Persona p;
+    private IngresoCasoPaciente formPaciente;
+    private Paciente paciente;
 
     /**
      * Creates new form IPD
@@ -31,8 +33,6 @@ public class IPD extends javax.swing.JFrame {
         this.formPaciente = formPaciente;
         this.p = p;
         initComponents();
-        
-        
 
         NombreCompletoJTextField.setEditable(false);
         RUTJTextField1.setEditable(false);
@@ -45,6 +45,44 @@ public class IPD extends javax.swing.JFrame {
         PatologiasJTextField.setText(formPaciente.getPatologiasJTextField().getText());
 
     }
+
+    
+    /**
+     * Creates new form IPD
+     *
+     * @param paciente
+     * @param formPaciente
+     */
+    public IPD( Paciente paciente) {
+        initComponents();
+        this.paciente = paciente;
+        
+        NombreCompletoJTextField.setEditable(false);
+        RUTJTextField1.setEditable(false);
+        RUTJTextField2.setEditable(false);
+        PatologiasJTextField.setEditable(false);
+        AnioFechaInicioJTextField.setEditable(false);
+        MesFechaInicioJTextField.setEditable(false);
+        DiaFechaInicioJTextField.setEditable(false);
+        AnioFechaTerminoJTextField.setEditable(false);
+        MesFechaTerminoJTextField.setEditable(false);
+        DiaFechaTerminoJTextField.setEditable(false);
+        
+        IPDPaciente ipd = paciente.getIpdPaciente();
+        
+        GESJCheckBox.setSelected(ipd.isEsGes());
+        ExceptuadoJCheckBox.setSelected(ipd.isExceptuado());
+        ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
+        DescartadoJCheckBox.setSelected(ipd.isDescartado());
+        
+        ObservacionJTextArea.setText(ipd.getObservacion());
+        
+        AceptarJButton.setEnabled(false);
+        
+        
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,11 +133,9 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IPDJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        IPDJLabel.setForeground(new java.awt.Color(0, 0, 0));
         IPDJLabel.setText("IPD");
         getContentPane().add(IPDJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 12, -1, -1));
 
-        NombreCompletoJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreCompletoJLabel.setText("Nombre Completo:");
         getContentPane().add(NombreCompletoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 84, -1, -1));
 
@@ -110,25 +146,21 @@ public class IPD extends javax.swing.JFrame {
         });
         getContentPane().add(NombreCompletoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 233, -1));
 
-        RUTJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RUTJLabel.setText("RUT");
         getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 115, -1, -1));
         getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 96, -1));
         getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 28, -1));
 
-        PatologiasJLabel.setForeground(new java.awt.Color(0, 0, 0));
         PatologiasJLabel.setText("Patologias:");
         getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 152, -1, -1));
         getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 150, 268, -1));
 
-        FechaInicioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaInicioJLabel.setText("Fecha de Inicio");
         getContentPane().add(FechaInicioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 84, -1, -1));
         getContentPane().add(DiaFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 101, 30, -1));
         getContentPane().add(MesFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 101, 29, -1));
         getContentPane().add(AnioFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 101, 59, -1));
 
-        FechaTerminoJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaTerminoJLabel.setText("Fecha de Termino");
         getContentPane().add(FechaTerminoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 132, -1, -1));
         getContentPane().add(DiaFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 150, 30, -1));
@@ -137,7 +169,6 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 187, 607, 10));
 
         GESJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        GESJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         GESJCheckBox.setText("GEST");
         GESJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +178,6 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(GESJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 203, -1, -1));
 
         NoGesJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        NoGesJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         NoGesJCheckBox.setText("NO GEST");
         NoGesJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,12 +187,10 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(NoGesJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 248, -1, -1));
 
         NotificacionPacienteGesJLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        NotificacionPacienteGesJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NotificacionPacienteGesJLabel.setText("Notificacion Paciente Gest");
         getContentPane().add(NotificacionPacienteGesJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 203, -1, -1));
 
         SiJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        SiJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         SiJCheckBox.setText("SI");
         SiJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +200,6 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(SiJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 248, -1, -1));
 
         NoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        NoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         NoJCheckBox.setText("NO");
         NoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +211,6 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 50, 607, 12));
 
         ConfirmadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        ConfirmadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         ConfirmadoJCheckBox.setText("Confirmado");
         ConfirmadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +220,6 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(ConfirmadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 300, -1, -1));
 
         DescartadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        DescartadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         DescartadoJCheckBox.setText("Descartado");
         DescartadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,12 +229,10 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(DescartadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 330, -1, -1));
 
         ExceptuadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        ExceptuadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         ExceptuadoJCheckBox.setText("Exceptuado");
         getContentPane().add(ExceptuadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 300, -1, -1));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 364, 607, 10));
 
-        ObservacionJLabel.setForeground(new java.awt.Color(0, 0, 0));
         ObservacionJLabel.setText("Observacion:");
         getContentPane().add(ObservacionJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 380, -1, -1));
 
@@ -248,9 +271,9 @@ public class IPD extends javax.swing.JFrame {
         boolean nomNoVacio = !NombreCompletoJTextField.getText().isEmpty();
         boolean rutNoVacio = !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty();
         boolean fechaInNoVac = !AnioFechaInicioJTextField.getText().isEmpty() && !MesFechaInicioJTextField.getText().isEmpty() && !DiaFechaInicioJTextField.getText().isEmpty();
-        boolean fechaTeNoVac = !AnioFechaTerminoJTextField.getText().isEmpty() && !MesFechaTerminoJTextField.getText().isEmpty() && !DiaFechaTerminoJTextField.getText().isEmpty();
+        
         boolean gesONoGES = GESJCheckBox.isSelected();
-        boolean notif = SiJCheckBox.isSelected() || NoJCheckBox.isSelected();
+        boolean notif = SiJCheckBox.isSelected();
         boolean ConExDes = ConfirmadoJCheckBox.isSelected() || ExceptuadoJCheckBox.isSelected() || DescartadoJCheckBox.isSelected();
         boolean obser = !ObservacionJTextArea.getText().isEmpty();
 

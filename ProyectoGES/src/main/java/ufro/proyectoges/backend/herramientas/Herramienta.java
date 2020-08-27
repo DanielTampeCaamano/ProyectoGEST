@@ -38,9 +38,9 @@ public interface Herramienta {
 
     public abstract void  registrarRegistrador(Registrador r);
 
-    public abstract void registrarPacientes(Paciente paciente);
+    public abstract void registrarPacientes(Paciente paciente, Registrador registrador);
 
-    public abstract void registrarIPD(IPDPaciente ipd);
+    public abstract void registrarIPD(IPDPaciente ipd,Registrador registrador);
     
     public abstract String[] obtenerPatologias();
     

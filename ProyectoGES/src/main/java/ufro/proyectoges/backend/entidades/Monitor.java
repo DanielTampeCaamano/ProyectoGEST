@@ -6,6 +6,7 @@
 package ufro.proyectoges.backend.entidades;
 
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Monitor extends Persona{
     public Monitor(String nombre, Rut rut, String clave) {
         super(nombre, rut, "MONITOR", clave);
         super.setTipo_persona("MONITOR");
+        super.setHerramientaPersona(new HerramientaMonitor());
     }
     
 }

@@ -5,7 +5,12 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.FlowLayout;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
@@ -88,11 +93,11 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Rut", "Nombre", "Fecha Ingreso"
+                "Rut", "Nombre", "Fecha Ingreso", "Accion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -101,6 +106,9 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         });
         ResultadosJTable.setEnabled(false);
         ResultadosJScrollpane.setViewportView(ResultadosJTable);
+        if (ResultadosJTable.getColumnModel().getColumnCount() > 0) {
+            ResultadosJTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         getContentPane().add(ResultadosJScrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 317, -1, 99));
 
@@ -176,17 +184,20 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
 
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
-        String rutAnotado = RutJTextField1.getText()+RutJTextField2.getText();
+        String rutAnotado = RutJTextField1.getText() + RutJTextField2.getText();
         if (!RutJTextField1.getText().isEmpty() && !RutJTextField2.getText().isEmpty()) {
             Rut rut = new Rut(rutAnotado);
             if (rut.isRutValido()) {
                 Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorRut(rut);
                 if (p.getHerramientaPersona().personaExiste(pacienteObt)) {
-                    Object[] row = {pacienteObt.getRut().getRut(), pacienteObt.getNombreCompleto(), pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+                   
+                    Object[] row = {pacienteObt.getRut().getRut(), pacienteObt.getNombreCompleto(), pacienteObt.getIpdPaciente().getFechaInicio().toString(),new javax.swing.JButton()};
                     DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
                     model.addRow(row);
+                    asignarListenerALista(pacienteObt, model);
                     RutJTextField1.setText("");
-                }else{
+                    RutJTextField2.setText("");
+                } else {
                     JOptionPane.showMessageDialog(null, "No existe paciente asociado al rut especificado");
                 }
             } else {
@@ -198,17 +209,33 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
-
+    
+    private void asignarListenerALista(Paciente paciente, DefaultTableModel model){
+        int posicionListener = model.getRowCount() - 1;
+        
+        
+        javax.swing.JButton boton = (javax.swing.JButton) model.getValueAt(posicionListener, 3);
+        
+        boton.addActionListener((e) -> {
+            new IngresoCasoPaciente(paciente).setVisible(true);
+        });
+    }
+    
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
         // TODO add your handling code here:
         if (!NombreJTextField.getText().isEmpty()) {
-            System.out.println("nombre:'" + NombreJTextField.getText()+"'");
+
             Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorNombre(NombreJTextField.getText());
-            Object[] row = {pacienteObt.getRut().getRut(),
-                pacienteObt.getNombreCompleto(),
-                pacienteObt.getIpdPaciente().getFechaInicio().toString()};
-            DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
-            model.addRow(row);
+            if (pacienteObt != null) {
+                Object[] row = {pacienteObt.getRut().getRut(),
+                    pacienteObt.getNombreCompleto(),
+                    pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+                DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
+                model.addRow(row);
+                NombreJTextField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontro una persona con ese nombre");
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos");
         }

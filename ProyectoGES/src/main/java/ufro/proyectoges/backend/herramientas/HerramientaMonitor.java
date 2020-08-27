@@ -115,15 +115,7 @@ public class HerramientaMonitor implements Herramienta {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void registrarPacientes(Paciente paciente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void registrarIPD(IPDPaciente ipd) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     @Override
     public IPDPaciente buscarIPDporId(int id) {
@@ -137,6 +129,16 @@ public class HerramientaMonitor implements Herramienta {
 
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void registrarPacientes(Paciente paciente, Registrador registrador) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

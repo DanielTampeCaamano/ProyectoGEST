@@ -6,6 +6,7 @@
 package ufro.proyectoges.backend.entidades;
 
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Registrador extends Persona{
     public Registrador(String nombre, Rut rut, String clave) {
         super(nombre, rut,"REGISTRADOR", clave);
         super.setTipo_persona("REGISTRADOR");
+        super.setHerramientaPersona(new HerramientaRegistrador());
     }
     
    

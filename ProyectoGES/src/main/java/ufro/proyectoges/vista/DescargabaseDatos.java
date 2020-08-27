@@ -72,7 +72,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
-        TituloJLabel.setText("Sigges");
+        TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 23, -1, -1));
 
         DescargaBaseDatosJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N

@@ -60,13 +60,13 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
-        TituloJLabel.setText("SIGGES");
-        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 12, -1, -1));
+        TituloJLabel.setText("GEST-ION");
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
         BusquedaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         BusquedaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         BusquedaJLabel.setText("Busqueda");
-        getContentPane().add(BusquedaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 78, -1, -1));
+        getContentPane().add(BusquedaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
 
         BusquedaRutJButton.setText("Buscar por RUT");
         BusquedaRutJButton.addActionListener(new java.awt.event.ActionListener() {

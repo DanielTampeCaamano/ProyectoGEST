@@ -66,7 +66,7 @@ public class Menu extends javax.swing.JFrame {
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 28)); // NOI18N
         TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
-        TituloJLabel.setText("SIGGES");
+        TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 26, -1, -1));
 
         MenuJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N

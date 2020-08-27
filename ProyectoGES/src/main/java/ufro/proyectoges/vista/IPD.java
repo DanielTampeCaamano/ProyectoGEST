@@ -135,7 +135,7 @@ public class IPD extends javax.swing.JFrame {
 
         GESJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         GESJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
-        GESJCheckBox.setText("GES");
+        GESJCheckBox.setText("GEST");
         GESJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GESJCheckBoxActionPerformed(evt);
@@ -145,7 +145,7 @@ public class IPD extends javax.swing.JFrame {
 
         NoGesJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         NoGesJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
-        NoGesJCheckBox.setText("NO GES");
+        NoGesJCheckBox.setText("NO GEST");
         NoGesJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NoGesJCheckBoxActionPerformed(evt);
@@ -155,7 +155,7 @@ public class IPD extends javax.swing.JFrame {
 
         NotificacionPacienteGesJLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         NotificacionPacienteGesJLabel.setForeground(new java.awt.Color(0, 0, 0));
-        NotificacionPacienteGesJLabel.setText("Notificacion Paciente Ges");
+        NotificacionPacienteGesJLabel.setText("Notificacion Paciente Gest");
         getContentPane().add(NotificacionPacienteGesJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 203, -1, -1));
 
         SiJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N

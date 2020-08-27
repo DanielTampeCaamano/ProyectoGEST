@@ -123,7 +123,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
-        TituloJLabel.setText("Sigges");
+        TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 35, -1, -1));
 
         IngresoPacienteJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -150,10 +150,10 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         PatologiasJLabel.setForeground(new java.awt.Color(0, 0, 0));
         PatologiasJLabel.setText("Patologias:");
-        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 263, -1, -1));
+        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 266, -1, -1));
 
         PatologiasJTextField.setToolTipText("Puede utilizar el desplegable para ingresar patologias");
-        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 261, 296, -1));
+        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 264, 296, -1));
 
         PatologiasJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patologia 1", "Patologia 2", "Patologia 3", "Patologia 4", "Patologia 5", "Patologia 6", "Patologia 7", "Patologia 8", "Patologia 9", "Patologia 10", "Patologia 11", "Patologia 12", "Patologia 13", "Patologia 14", "Patologia 15", "Patologia 16", "Patologia 17", "Patologia 18", "Patologia 19", "Patologia 20", "Patologia 21", "Patologia 22", "Patologia 23", "Patologia 24", "Patologia 25" }));
         PatologiasJComboBox.setToolTipText("Seleccione las patologia que desee ingresar");
@@ -168,6 +168,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                 PatologiasJComboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 261, 176, -1));
 
         IPDJButton.setText("I.P.D.");
         IPDJButton.setToolTipText("Informe Proceso Diagnostico");
@@ -214,103 +215,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 385, -1, -1));
 
+        confirmacionIPD.setForeground(new java.awt.Color(0, 0, 0));
         confirmacionIPD.setText("TEXT");
         getContentPane().add(confirmacionIPD, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 339, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RUTFuncionarioJLabel)
-                            .addComponent(NombreFuncionarioJLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(FuncionarioRegistroJLabel)
-                                .addGap(69, 69, 69)
-                                .addComponent(IngresarJButton)
-                                .addGap(34, 34, 34)
-                                .addComponent(VolverJButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(IPDJButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(confirmacionIPD)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FechaIngresoJLabel)
-                            .addComponent(FechaJLabel))
-                        .addGap(81, 81, 81))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(RUTJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(NombreJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(PatologiasJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PatologiasJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
-                .addComponent(TituloJLabel)
-                .addGap(277, 277, 277))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(IngresoPacienteJLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(TituloJLabel)
-                .addGap(31, 31, 31)
-                .addComponent(IngresoPacienteJLabel)
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreJLabel)
-                    .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RUTJLabel)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PatologiasJLabel)
-                    .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PatologiasJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IPDJButton)
-                    .addComponent(confirmacionIPD))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FuncionarioRegistroJLabel)
-                    .addComponent(FechaIngresoJLabel)
-                    .addComponent(IngresarJButton)
-                    .addComponent(VolverJButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NombreFuncionarioJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RUTFuncionarioJLabel)
-                    .addComponent(FechaJLabel))
-                .addGap(46, 46, 46))
-        );
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));

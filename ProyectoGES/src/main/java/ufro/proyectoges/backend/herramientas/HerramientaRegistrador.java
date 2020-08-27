@@ -90,19 +90,12 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             queryResult = handler.selectFromWhere("*", "personas", "id", rut.getRut());
             while (queryResult.next()) {
-                personasObtenidas.add(new Persona(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4)));
+                return new Persona(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4));
             }
-
-            if (!personasObtenidas.isEmpty()) {
-                return personasObtenidas.get(0);
-            } else {
-                return null;
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     @Override

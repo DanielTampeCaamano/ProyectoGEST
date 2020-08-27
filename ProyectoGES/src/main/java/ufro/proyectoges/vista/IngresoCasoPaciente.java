@@ -300,12 +300,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         if (!rut.isEmpty() && ipd != null) {
             Rut rutValidado = new Rut(rut);
-            if (rutValidado.isRutValido()) {
-                p.getHerramientaPersona().registrarPacientes(new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd));
+            Paciente pacienteAIngresar = new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd);
+            if (rutValidado.isRutValido() && !p.getHerramientaPersona().personaExiste(pacienteAIngresar)) {
+                p.getHerramientaPersona().registrarPacientes(pacienteAIngresar);
                 new Menu(p).setVisible(true);
                 this.dispose();
             }else{
-                JOptionPane.showMessageDialog(null, "Rut invalido", "Error de validacion", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Rut invalido o Rut ya registrado", "Error de validacion", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Campo de rut vacio", "Error de validacion", JOptionPane.ERROR_MESSAGE);

@@ -5,7 +5,6 @@
  */
 package ufro.proyectoges.vista;
 
-import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ufro.proyectoges.backend.entidades.Paciente;
@@ -121,6 +120,11 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         getContentPane().add(BuscarRUTJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         NombreJTextField.setEnabled(false);
+        NombreJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreJTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 190, -1));
 
         BuscarNombreJButton.setText("Buscar");
@@ -196,8 +200,23 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
 
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
-        
+        // TODO add your handling code here:
+        if (!NombreJTextField.getText().isEmpty()) {
+            System.out.println("nombre:'" + NombreJTextField.getText()+"'");
+            Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorNombre(NombreJTextField.getText());
+            Object[] row = {pacienteObt.getRut().getRut(),
+                pacienteObt.getNombreCompleto(),
+                pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+            DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
+            model.addRow(row);
+        } else {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos");
+        }
     }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
+
+    private void NombreJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

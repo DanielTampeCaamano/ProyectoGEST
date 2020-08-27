@@ -44,7 +44,7 @@ public class HerramientaRegistrador implements Herramienta {
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         try {
-            queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", nombre);
+            queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", "'"+nombre+"'");
             while (queryResult.next()) {
                 return new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporId(Integer.valueOf(queryResult.getString(1))));
             }

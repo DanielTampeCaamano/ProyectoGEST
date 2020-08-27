@@ -175,4 +175,56 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    public int[] getIdPatologias() {
+        int[] idPat = new int[obtenerPatologias().length];
+        try {
+            ResultSet queryResult = sqlHandler.selectFrom("*", "patologia");
+
+            for (int i = 0; queryResult.next(); i++) {
+                idPat[i] = queryResult.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idPat;
+
+    }
+
+    @Override
+    public String[] obtenerPatologias() {
+        List<String> patologiasGuardadas = new ArrayList<>();
+        try {
+            ResultSet queryResult = sqlHandler.selectFrom("*", "patologia");
+
+            while (queryResult.next()) {
+                patologiasGuardadas.add(queryResult.getString(2));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String[] patToString = new String[patologiasGuardadas.size()];
+
+        for (int i = 0; i < patologiasGuardadas.size(); i++) {
+            patToString[i] = patologiasGuardadas.get(i);
+        }
+        return patToString;
+    }
+
+    @Override
+    public int consultarIDPatologiaPorNombre(String nombre) {
+
+        try {
+            queryResult = sqlHandler.selectFromWhere("identificacion", "patologia", "nombrePatologia", nombre);
+            while (queryResult.next()) {
+                return queryResult.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }

@@ -42,5 +42,9 @@ public interface Herramienta {
     public abstract void registrarPacientes(Paciente paciente);
 
     public abstract void registrarIPD(IPDPaciente ipd);
+    
+    public abstract String[] obtenerPatologias();
+    
+    public abstract int consultarIDPatologiaPorNombre(String nombre);
 
 }

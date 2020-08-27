@@ -17,7 +17,7 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  * @author Roald
  */
 public class BusquedaPaciente extends javax.swing.JFrame {
-    
+
     private final Persona p;
 
     /**
@@ -28,7 +28,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     public BusquedaPaciente(Persona p) {
         this.p = p;
         initComponents();
-        
+
     }
 
     /**
@@ -172,26 +172,31 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
 
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
+        String rutAnotado = RutJTextField1.getText()+RutJTextField2.getText();
         if (!RutJTextField1.getText().isEmpty() && !RutJTextField2.getText().isEmpty()) {
-            Rut rut = new Rut(RutJTextField1.getText()+RutJTextField2.getText());
-            if (rut.isRutValido()){
+            Rut rut = new Rut(rutAnotado);
+            if (rut.isRutValido()) {
                 Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorRut(rut);
-                Object[] row = {pacienteObt.getRut().getRut(),pacienteObt.getNombreCompleto(),pacienteObt.getIpdPaciente().getFechaInicio().toString()};
-                
-                DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
-                model.addRow(row);
-            }else{
+                if (p.getHerramientaPersona().personaExiste(pacienteObt)) {
+                    Object[] row = {pacienteObt.getRut().getRut(), pacienteObt.getNombreCompleto(), pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+                    DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
+                    model.addRow(row);
+                    RutJTextField1.setText("");
+                }else{
+                    JOptionPane.showMessageDialog(null, "No existe paciente asociado al rut especificado");
+                }
+            } else {
                 JOptionPane.showMessageDialog(null, "Rut invalido");
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos");
         }
-        
+
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
 
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
 
     /**

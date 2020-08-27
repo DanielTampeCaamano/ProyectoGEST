@@ -37,12 +37,7 @@ public class HerramientaLogIn implements Herramienta {
         return null;
     }
 
-    @Override
-    public Paciente buscarPacientePorFichaMed(int nroFicha) {
-        JOptionPane.showMessageDialog(null, "Permisos insuficientes");
-        return null;
-
-    }
+    
 
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {

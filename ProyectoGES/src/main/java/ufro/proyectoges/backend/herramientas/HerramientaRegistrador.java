@@ -53,18 +53,7 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
-    @Override
-    public Paciente buscarPacientePorFichaMed(int nroFicha) {
-        try {
-            queryResult = handler.selectFromWhere("*", "paciente", "idIPD", String.valueOf(nroFicha));
-            while (queryResult.next()) {
-                return new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporId(Integer.valueOf(queryResult.getString(1))));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    
 
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {

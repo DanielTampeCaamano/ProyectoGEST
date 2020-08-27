@@ -25,7 +25,6 @@ public interface Herramienta {
     
     public abstract Paciente buscarPacientePorNombre(String nombre);
     
-    public abstract Paciente buscarPacientePorFichaMed(int nroFicha);
     
     public abstract Paciente buscarPacientePorRut(Rut rut);
     

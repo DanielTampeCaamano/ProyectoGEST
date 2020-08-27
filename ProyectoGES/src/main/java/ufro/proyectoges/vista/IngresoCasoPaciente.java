@@ -5,6 +5,8 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ComboBoxModel;
@@ -22,7 +24,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author Roald
  */
-public class IngresoCasoPaciente extends javax.swing.JFrame {
+public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener {
 
     private Persona p;
     private IPDPaciente ipd;
@@ -302,4 +304,19 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel confirmacionIPD;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

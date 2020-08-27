@@ -51,7 +51,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         RutJTextField2 = new javax.swing.JTextField();
         BuscarRUTJButton = new javax.swing.JButton();
         NombreJTextField = new javax.swing.JTextField();
-        ApellidoJTextField = new javax.swing.JTextField();
         BuscarNombreJButton = new javax.swing.JButton();
         NumeroFichaJTextField = new javax.swing.JTextField();
         BuscarNumeroFichaJButton = new javax.swing.JButton();
@@ -118,10 +117,10 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         getContentPane().add(ResultadosJScrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 317, -1, 99));
 
         RutJTextField1.setEnabled(false);
-        getContentPane().add(RutJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 193, 62, -1));
+        getContentPane().add(RutJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 90, -1));
 
         RutJTextField2.setEnabled(false);
-        getContentPane().add(RutJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 193, 37, -1));
+        getContentPane().add(RutJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 37, -1));
 
         BuscarRUTJButton.setText("Buscar");
         BuscarRUTJButton.setEnabled(false);
@@ -133,10 +132,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         getContentPane().add(BuscarRUTJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 263, -1, -1));
 
         NombreJTextField.setEnabled(false);
-        getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 193, 94, -1));
-
-        ApellidoJTextField.setEnabled(false);
-        getContentPane().add(ApellidoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 193, 102, -1));
+        getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 193, 190, -1));
 
         BuscarNombreJButton.setText("Buscar");
         BuscarNombreJButton.setEnabled(false);
@@ -183,7 +179,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     private void BusquedaRutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaRutJButtonActionPerformed
         // TODO add your handling code here:
         NombreJTextField.setEnabled(false);
-        ApellidoJTextField.setEnabled(false);
         BuscarNombreJButton.setEnabled(false);
         NumeroFichaJTextField.setEnabled(false);
         BuscarNumeroFichaJButton.setEnabled(false);
@@ -200,7 +195,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         NumeroFichaJTextField.setEnabled(false);
         BuscarNumeroFichaJButton.setEnabled(false);
         NombreJTextField.setEnabled(true);
-        ApellidoJTextField.setEnabled(true);
         BuscarNombreJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
 
@@ -210,7 +204,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         RutJTextField2.setEnabled(false);
         BuscarRUTJButton.setEnabled(false);
         NombreJTextField.setEnabled(false);
-        ApellidoJTextField.setEnabled(false);
         BuscarNombreJButton.setEnabled(false);
         NumeroFichaJTextField.setEnabled(true);
         BuscarNumeroFichaJButton.setEnabled(true);
@@ -248,7 +241,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ApellidoJTextField;
     private javax.swing.JButton BuscarNombreJButton;
     private javax.swing.JButton BuscarNumeroFichaJButton;
     private javax.swing.JButton BuscarRUTJButton;

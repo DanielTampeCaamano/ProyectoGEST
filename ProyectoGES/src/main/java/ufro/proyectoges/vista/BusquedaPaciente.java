@@ -6,18 +6,23 @@
 package ufro.proyectoges.vista;
 
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  *
  * @author Roald
  */
 public class BusquedaPaciente extends javax.swing.JFrame {
-
+    
     private final Persona p;
 
     /**
      * Creates new form BusquedaPaciente
+     *
      * @param p
      */
     public BusquedaPaciente(Persona p) {
@@ -25,7 +30,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         initComponents();
         
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,12 +63,10 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
         BusquedaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        BusquedaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         BusquedaJLabel.setText("Busqueda");
         getContentPane().add(BusquedaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
 
@@ -96,17 +98,14 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
         ResultadosJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Ficha Medica", "Rut", "Nombre", "Fecha Ingreso"
+                "Rut", "Nombre", "Fecha Ingreso"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -168,7 +167,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 434, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 480));
@@ -219,7 +217,22 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_BusquedaNumeroFichaJButtonActionPerformed
 
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
-        // TODO add your handling code here:
+        if (!RutJTextField1.getText().isEmpty() && !RutJTextField2.getText().isEmpty()) {
+            Rut rut = new Rut(RutJTextField1.getText()+RutJTextField2.getText());
+            if (rut.isRutValido()){
+                Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorRut(rut);
+                Object[] row = {pacienteObt.getRut().getRut(),pacienteObt.getNombreCompleto(),pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+                
+                DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
+                model.addRow(row);
+            }else{
+                JOptionPane.showMessageDialog(null, "Rut invalido");
+            }
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos");
+        }
+        
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
 
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
@@ -233,7 +246,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoJTextField;

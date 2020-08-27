@@ -86,7 +86,6 @@ public class HerramientaRegistrador implements Herramienta {
 
     @Override
     public Persona buscarPersona(Rut rut) {
-        List<Persona> personasObtenidas = new ArrayList<>();
         try {
             queryResult = handler.selectFromWhere("*", "personas", "id", rut.getRut());
             while (queryResult.next()) {
@@ -165,7 +164,7 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             ResultSet queryResult = sqlHandler.selectFromWhere("*", "ipd", "identificacion", String.valueOf(id));
             while (queryResult.next()) {
-                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(12));
+                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(11));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -5,7 +5,12 @@
  */
 package ufro.proyectoges.vista;
 
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Paciente;
+import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
@@ -15,12 +20,65 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  */
 public class IngresoCasoPaciente extends javax.swing.JFrame {
 
+    private Persona p;
+    private IPDPaciente ipd;
+
     /**
      * Creates new form IngresoCasoPaciente
+     * @param p
      */
-    public IngresoCasoPaciente() {
+    public IngresoCasoPaciente(Persona p) {
+        this.p = p;
+        this.ipd = null;
         initComponents();
+        this.confirmacionIPD.setText("IPD no cargado");
+        
+        
     }
+
+    public JTextField getNombreJTextField() {
+        return NombreJTextField;
+    }
+
+    public JTextField getPatologiasJTextField() {
+        return PatologiasJTextField;
+    }
+
+    public JTextField getRUTJTextField1() {
+        return RUTJTextField1;
+    }
+
+    public JTextField getRUTJTextField2() {
+        return RUTJTextField2;
+    }
+    
+    
+    
+    public IPDPaciente getIpd() {
+        return ipd;
+    }
+
+    public void setIpd(IPDPaciente ipd) {
+        this.ipd = ipd;
+    }
+
+    
+
+    public Persona getP() {
+        return p;
+    }
+
+    public void setP(Persona p) {
+        this.p = p;
+    }
+
+    public JLabel getConfirmacionIPD() {
+        return confirmacionIPD;
+    }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,6 +107,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         FechaJLabel = new javax.swing.JLabel();
         IngresarJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
+        confirmacionIPD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - Ingreso Caso Paciente");
@@ -114,6 +173,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
             }
         });
 
+        confirmacionIPD.setText("TEXT");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,7 +212,10 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                                 .addComponent(IngresarJButton)
                                 .addGap(34, 34, 34)
                                 .addComponent(VolverJButton))
-                            .addComponent(IPDJButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(IPDJButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(confirmacionIPD)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FechaIngresoJLabel)
@@ -190,7 +254,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                         .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PatologiasJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
-                .addComponent(IPDJButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IPDJButton)
+                    .addComponent(confirmacionIPD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FuncionarioRegistroJLabel)
@@ -215,33 +281,43 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
-        new IPD().setVisible(true);
+        new IPD(p, this).setVisible(true);
     }//GEN-LAST:event_IPDJButtonActionPerformed
 
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
         // TODO add your handling code here:
-        new HerramientaRegistrador().registrarPacientes(new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText()+RUTJTextField2.getText()), 1));
-        new Menu().setVisible(true);
-        this.dispose();
+        String rut = RUTJTextField1.getText() + RUTJTextField2.getText();
+
+        if (!rut.isEmpty() && ipd != null) {
+            Rut rutValidado = new Rut(rut);
+            if (rutValidado.isRutValido()) {
+                p.getHerramientaPersona().registrarPacientes(new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd));
+                new Menu(p).setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Rut invalido", "Error de validacion", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Campo de rut vacio", "Error de validacion", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_IngresarJButtonActionPerformed
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
-        new Menu().setVisible(true);
+        new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
-        String texto=PatologiasJTextField.getText();
-        String texto2=PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex());
-        PatologiasJTextField.setText(texto+texto2+",");
+        String texto = PatologiasJTextField.getText();
+        String texto2 = PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex());
+        PatologiasJTextField.setText(texto+ ",");
     }//GEN-LAST:event_agregadorpatologia
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FechaIngresoJLabel;
@@ -262,5 +338,6 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField RUTJTextField2;
     private javax.swing.JLabel TituloJLabel;
     private javax.swing.JButton VolverJButton;
+    private javax.swing.JLabel confirmacionIPD;
     // End of variables declaration//GEN-END:variables
 }

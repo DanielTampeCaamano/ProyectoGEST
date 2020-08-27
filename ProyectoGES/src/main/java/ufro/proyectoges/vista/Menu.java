@@ -5,17 +5,42 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
+import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
+
 /**
  *
  * @author Roald
  */
 public class Menu extends javax.swing.JFrame {
 
+    private Persona persona;
+
     /**
      * Creates new form Menu
+     *
+     * @param persona
      */
-    public Menu() {
+    public Menu(Persona persona) {
+        this.persona = persona;
+
+        if (persona.getHerramientaPersona() == null) {
+            switch (persona.getTipo_persona()) {
+                case "REGISTRADOR":
+                    persona.setHerramientaPersona(new HerramientaRegistrador());
+                    break;
+                case "MONITOR":
+                    persona.setHerramientaPersona(new HerramientaMonitor());
+                    break;
+                default:
+                    System.out.println("caso default");
+                    break;
+            }
+        }
+
         initComponents();
+        this.setTitle("TIPO DE CUENTA: " + persona.getTipo_persona());
     }
 
     /**
@@ -105,19 +130,19 @@ public class Menu extends javax.swing.JFrame {
 
     private void IngresoPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoPacientesJButtonActionPerformed
         // TODO add your handling code here:
-        new IngresoCasoPaciente().setVisible(true);
+        new IngresoCasoPaciente(persona).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IngresoPacientesJButtonActionPerformed
 
     private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed
-        new BusquedaPaciente().setVisible(true);
+        new BusquedaPaciente(persona).setVisible(true);
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_BusquedaPacientesJButtonActionPerformed
 
     private void DescargaBaseDatosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaBaseDatosJButtonActionPerformed
         // TODO add your handling code here:
-        new DescargabaseDatos().setVisible(true);
+        new DescargabaseDatos(persona).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_DescargaBaseDatosJButtonActionPerformed
 

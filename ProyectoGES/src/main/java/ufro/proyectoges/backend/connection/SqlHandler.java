@@ -26,6 +26,37 @@ public class SqlHandler {
         }
 
     }
+    
+    public void insertInto(String table_name,String column_names,String values){
+        
+        try{
+            System.out.println("Ejecutando query: " + "INSERT INTO " +table_name+ " " +column_names+" VALUES " +values+";");
+            statement.executeUpdate("INSERT INTO " +table_name+ " " +column_names+" VALUES " +values+";");
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+    }
+    
+    public ResultSet selectFrom(String selected_columns, String table_name){
+        ResultSet queryResult = null;
+        try{
+            queryResult = statement.executeQuery("SELECT " +selected_columns+ " FROM " +table_name);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
+    
+    public ResultSet selectFromWhere(String selected_columns, String table_name, String column_to_find, String value_expected){
+        ResultSet queryResult = null;
+        try{
+            queryResult = statement.executeQuery("SELECT " +selected_columns+ " FROM " +table_name + " WHERE " +column_to_find+ "=" + value_expected + ";");
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
 
     public Statement getStatement() {
         return statement;

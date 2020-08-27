@@ -74,7 +74,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        AceptarJButton.setText("Aceptar");
+        AceptarJButton.setText("Ingresar");
         AceptarJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarJButtonActionPerformed(evt);
@@ -108,7 +108,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(245, 245, 245))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(AceptarJButton)
-                        .addGap(254, 254, 254))))
+                        .addGap(256, 256, 256))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,9 +123,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(ContraseñaJLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ContraseñaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(45, 45, 45)
                 .addComponent(AceptarJButton)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
         if (Rut.rutBienEscrito(UsuarioJTextField.getText())) {
             Persona p = herramienta.buscarPersona(new Rut(UsuarioJTextField.getText()));
             if (p != null && p.getClave().equals(ContraseñaJTextField.getText()) && p != null) {
-                new Menu().setVisible(true);
+                new Menu(p).setVisible(true);
                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);

@@ -28,13 +28,6 @@ public class Paciente extends Persona {
         this.ipdPaciente = ipd;
     }
     
-    public Paciente(String nombreCompleto, Rut rut, int ipdId){
-        super(nombreCompleto, rut, "PACIENTE", null);
-        this.nombreCompleto = nombreCompleto;
-        this.rutSinConvertir = rut;
-        this.rutValidado = rut.getRut();
-        this.ipdId = ipdId;
-    }
     
     public Rut getRutSinConvertir() {
         return rutSinConvertir;

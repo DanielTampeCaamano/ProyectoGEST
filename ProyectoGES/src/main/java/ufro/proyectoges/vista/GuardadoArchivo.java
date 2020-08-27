@@ -5,16 +5,22 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Persona;
+
 /**
  *
  * @author Roald
  */
 public class GuardadoArchivo extends javax.swing.JFrame {
 
+    private final Persona p;
+
     /**
      * Creates new form GuardadoArchivo
+     * @param p
      */
-    public GuardadoArchivo() {
+    public GuardadoArchivo(Persona p) {
+        this.p = p;
         initComponents();
     }
 

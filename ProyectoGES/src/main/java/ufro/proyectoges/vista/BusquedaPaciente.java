@@ -5,7 +5,6 @@
  */
 package ufro.proyectoges.vista;
 
-import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ufro.proyectoges.backend.entidades.Paciente;
@@ -17,7 +16,7 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
  * @author Roald
  */
 public class BusquedaPaciente extends javax.swing.JFrame {
-    
+
     private final Persona p;
 
     /**
@@ -28,7 +27,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     public BusquedaPaciente(Persona p) {
         this.p = p;
         initComponents();
-        
+
     }
 
     /**
@@ -173,25 +172,35 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
         if (!RutJTextField1.getText().isEmpty() && !RutJTextField2.getText().isEmpty()) {
-            Rut rut = new Rut(RutJTextField1.getText()+RutJTextField2.getText());
-            if (rut.isRutValido()){
+            Rut rut = new Rut(RutJTextField1.getText() + RutJTextField2.getText());
+            if (rut.isRutValido()) {
                 Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorRut(rut);
-                Object[] row = {pacienteObt.getRut().getRut(),pacienteObt.getNombreCompleto(),pacienteObt.getIpdPaciente().getFechaInicio().toString()};
-                
+                Object[] row = {pacienteObt.getRut().getRut(), pacienteObt.getNombreCompleto(), pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+
                 DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
                 model.addRow(row);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Rut invalido");
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos");
         }
-        
+
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
 
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
         // TODO add your handling code here:
+        if (!NombreJTextField.getText().isEmpty()) {
+            Paciente pacienteObt = p.getHerramientaPersona().buscarPacientePorNombre(NombreJTextField.getText());
+            Object[] row = {pacienteObt.getRut().getRut(),
+                pacienteObt.getNombreCompleto(),
+                pacienteObt.getIpdPaciente().getFechaInicio().toString()};
+            DefaultTableModel model = (DefaultTableModel) ResultadosJTable.getModel();
+            model.addRow(row);
+        } else {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos");
+        }
     }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
 
     /**

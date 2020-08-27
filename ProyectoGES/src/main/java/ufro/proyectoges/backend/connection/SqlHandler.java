@@ -30,7 +30,6 @@ public class SqlHandler {
     public void insertInto(String table_name,String column_names,String values){
         
         try{
-            System.out.println("Ejecutando query: " + "INSERT INTO " +table_name+ " " +column_names+" VALUES " +values+";");
             statement.executeUpdate("INSERT INTO " +table_name+ " " +column_names+" VALUES " +values+";");
         }catch(SQLException e){
             e.printStackTrace();

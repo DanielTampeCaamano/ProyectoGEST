@@ -90,19 +90,12 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             queryResult = handler.selectFromWhere("*", "personas", "id", rut.getRut());
             while (queryResult.next()) {
-                personasObtenidas.add(new Persona(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4)));
+                return new Persona(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4));
             }
-
-            if (!personasObtenidas.isEmpty()) {
-                return personasObtenidas.get(0);
-            } else {
-                return null;
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     @Override
@@ -173,6 +166,58 @@ public class HerramientaRegistrador implements Herramienta {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int[] getIdPatologias() {
+        int[] idPat = new int[obtenerPatologias().length];
+        try {
+            ResultSet queryResult = sqlHandler.selectFrom("*", "patologia");
+
+            for (int i = 0; queryResult.next(); i++) {
+                idPat[i] = queryResult.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idPat;
+
+    }
+
+    @Override
+    public String[] obtenerPatologias() {
+        List<String> patologiasGuardadas = new ArrayList<>();
+        try {
+            ResultSet queryResult = sqlHandler.selectFrom("*", "patologia");
+
+            while (queryResult.next()) {
+                patologiasGuardadas.add(queryResult.getString(2));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String[] patToString = new String[patologiasGuardadas.size()];
+
+        for (int i = 0; i < patologiasGuardadas.size(); i++) {
+            patToString[i] = patologiasGuardadas.get(i);
+        }
+        return patToString;
+    }
+
+    @Override
+    public int consultarIDPatologiaPorNombre(String nombre) {
+
+        try {
+            queryResult = sqlHandler.selectFromWhere("identificacion", "patologia", "nombrePatologia", nombre);
+            while (queryResult.next()) {
+                return queryResult.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
 }

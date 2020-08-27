@@ -5,6 +5,10 @@
  */
 package ufro.proyectoges.vista;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -22,6 +26,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
     private Persona p;
     private IPDPaciente ipd;
+    private List<String> patologias;
 
     /**
      * Creates new form IngresoCasoPaciente
@@ -30,8 +35,10 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
     public IngresoCasoPaciente(Persona p) {
         this.p = p;
         this.ipd = null;
+        patologias = new ArrayList<>();
         initComponents();
         this.confirmacionIPD.setText("IPD no cargado");
+        this.PatologiasJComboBox.setModel(new DefaultComboBoxModel<>(p.getHerramientaPersona().obtenerPatologias()));
         
         
     }
@@ -156,7 +163,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
                 agregadorpatologia(evt);
             }
         });
-        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 261, 125, -1));
+        PatologiasJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PatologiasJComboBoxActionPerformed(evt);
+            }
+        });
 
         IPDJButton.setText("I.P.D.");
         IPDJButton.setToolTipText("Informe Proceso Diagnostico");
@@ -206,6 +217,100 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
         confirmacionIPD.setText("TEXT");
         getContentPane().add(confirmacionIPD, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 339, -1, -1));
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RUTFuncionarioJLabel)
+                            .addComponent(NombreFuncionarioJLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(FuncionarioRegistroJLabel)
+                                .addGap(69, 69, 69)
+                                .addComponent(IngresarJButton)
+                                .addGap(34, 34, 34)
+                                .addComponent(VolverJButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(IPDJButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(confirmacionIPD)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FechaIngresoJLabel)
+                            .addComponent(FechaJLabel))
+                        .addGap(81, 81, 81))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(RUTJLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NombreJLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PatologiasJLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PatologiasJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(246, Short.MAX_VALUE)
+                .addComponent(TituloJLabel)
+                .addGap(277, 277, 277))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(IngresoPacienteJLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(TituloJLabel)
+                .addGap(31, 31, 31)
+                .addComponent(IngresoPacienteJLabel)
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NombreJLabel)
+                    .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RUTJLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PatologiasJLabel)
+                    .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PatologiasJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IPDJButton)
+                    .addComponent(confirmacionIPD))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FuncionarioRegistroJLabel)
+                    .addComponent(FechaIngresoJLabel)
+                    .addComponent(IngresarJButton)
+                    .addComponent(VolverJButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NombreFuncionarioJLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RUTFuncionarioJLabel)
+                    .addComponent(FechaJLabel))
+                .addGap(46, 46, 46))
+        );
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
@@ -228,12 +333,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
         if (!rut.isEmpty() && ipd != null) {
             Rut rutValidado = new Rut(rut);
-            if (rutValidado.isRutValido()) {
-                p.getHerramientaPersona().registrarPacientes(new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd));
+            Paciente pacienteAIngresar = new Paciente(NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd);
+            if (rutValidado.isRutValido() && !p.getHerramientaPersona().personaExiste(pacienteAIngresar)) {
+                p.getHerramientaPersona().registrarPacientes(pacienteAIngresar);
                 new Menu(p).setVisible(true);
                 this.dispose();
             }else{
-                JOptionPane.showMessageDialog(null, "Rut invalido", "Error de validacion", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Rut invalido o Rut ya registrado", "Error de validacion", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Campo de rut vacio", "Error de validacion", JOptionPane.ERROR_MESSAGE);
@@ -248,10 +354,18 @@ public class IngresoCasoPaciente extends javax.swing.JFrame {
 
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
-        String texto = PatologiasJTextField.getText();
-        String texto2 = PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex());
-        PatologiasJTextField.setText(texto+ ",");
+        
+        
+        if (!patologias.contains(PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex()))){
+            patologias.add(PatologiasJComboBox.getItemAt(PatologiasJComboBox.getSelectedIndex()));
+            PatologiasJTextField.setText(patologias.toString());
+        }
+        
     }//GEN-LAST:event_agregadorpatologia
+
+    private void PatologiasJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatologiasJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PatologiasJComboBoxActionPerformed
 
     /**
      * @param args the command line arguments

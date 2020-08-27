@@ -6,7 +6,9 @@
 package ufro.proyectoges.vista;
 
 import java.sql.Date;
+import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
+import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
@@ -15,11 +17,30 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  */
 public class IPD extends javax.swing.JFrame {
 
+    private final Persona p;
+    private final IngresoCasoPaciente formPaciente;
+
     /**
      * Creates new form IPD
+     *
+     * @param p
+     * @param formPaciente
      */
-    public IPD() {
+    public IPD(Persona p, IngresoCasoPaciente formPaciente) {
+        this.formPaciente = formPaciente;
+        this.p = p;
         initComponents();
+        
+        NombreCompletoJTextField.setEnabled(false);
+        RUTJTextField1.setEnabled(false);
+        RUTJTextField2.setEnabled(false);
+        PatologiasJTextField.setEnabled(false);
+        
+        NombreCompletoJTextField.setText(formPaciente.getNombreJTextField().getText());
+        RUTJTextField1.setText(formPaciente.getRUTJTextField1().getText());
+        RUTJTextField2.setText(formPaciente.getRUTJTextField2().getText());
+        PatologiasJTextField.setText(formPaciente.getPatologiasJTextField().getText());
+        
     }
 
     /**
@@ -72,6 +93,12 @@ public class IPD extends javax.swing.JFrame {
         IPDJLabel.setText("IPD");
 
         NombreCompletoJLabel.setText("Nombre Completo:");
+
+        NombreCompletoJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreCompletoJTextFieldActionPerformed(evt);
+            }
+        });
 
         RUTJLabel.setText("RUT");
 
@@ -324,22 +351,37 @@ public class IPD extends javax.swing.JFrame {
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
 
-        new HerramientaRegistrador().registrarIPD(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
-                NombreCompletoJTextField.getText(),
-                new Date(Integer.parseInt(AnioFechaInicioJTextField.getText()),
-                        Integer.parseInt(MesFechaInicioJTextField.getText()),
-                        Integer.parseInt(DiaFechaInicioJTextField.getText())),
-                new Date(Integer.parseInt(AnioFechaTerminoJTextField.getText()),
-                        Integer.parseInt(MesFechaTerminoJTextField.getText()),
-                        Integer.parseInt(AnioFechaTerminoJTextField.getText())),
-                GESJCheckBox.isSelected(),
-                SiJCheckBox.isSelected(),
-                ConfirmadoJCheckBox.isSelected(),
-                ExceptuadoJCheckBox.isSelected(),
-                DescartadoJCheckBox.isSelected(),
-                ObservacionJTextArea.getText(),
-                0));
-        this.dispose();
+        boolean nomNoVacio = !NombreCompletoJTextField.getText().isEmpty();
+        boolean rutNoVacio = !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty();
+        boolean fechaInNoVac = !AnioFechaInicioJTextField.getText().isEmpty() && !MesFechaInicioJTextField.getText().isEmpty() && !DiaFechaInicioJTextField.getText().isEmpty();
+        boolean fechaTeNoVac = !AnioFechaTerminoJTextField.getText().isEmpty() && !MesFechaTerminoJTextField.getText().isEmpty() && !DiaFechaTerminoJTextField.getText().isEmpty();
+        boolean gesONoGES = GESJCheckBox.isSelected();
+        boolean notif = SiJCheckBox.isSelected() || NoJCheckBox.isSelected();
+        boolean ConExDes = ConfirmadoJCheckBox.isSelected() || ExceptuadoJCheckBox.isSelected() || DescartadoJCheckBox.isSelected();
+        boolean obser = !ObservacionJTextArea.getText().isEmpty();
+
+        if (nomNoVacio && rutNoVacio && fechaInNoVac && fechaTeNoVac && gesONoGES && notif && ConExDes && obser) {
+            formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
+                    NombreCompletoJTextField.getText(),
+                    new Date(Integer.parseInt(AnioFechaInicioJTextField.getText()),
+                            Integer.parseInt(MesFechaInicioJTextField.getText()),
+                            Integer.parseInt(DiaFechaInicioJTextField.getText())),
+                    new Date(Integer.parseInt(AnioFechaTerminoJTextField.getText()),
+                            Integer.parseInt(MesFechaTerminoJTextField.getText()),
+                            Integer.parseInt(DiaFechaTerminoJTextField.getText())),
+                    GESJCheckBox.isSelected(),
+                    SiJCheckBox.isSelected(),
+                    ConfirmadoJCheckBox.isSelected(),
+                    ExceptuadoJCheckBox.isSelected(),
+                    DescartadoJCheckBox.isSelected(),
+                    ObservacionJTextArea.getText(),
+                    0));
+            formPaciente.getConfirmacionIPD().setText("IPD cargado");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+        }
+
     }//GEN-LAST:event_AceptarJButtonActionPerformed
 
     private void GESJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GESJCheckBoxActionPerformed
@@ -382,6 +424,10 @@ public class IPD extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
+
+    private void NombreCompletoJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreCompletoJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreCompletoJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

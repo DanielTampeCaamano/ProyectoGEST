@@ -6,6 +6,7 @@
 package ufro.proyectoges.backend.entidades;
 
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.herramientas.Herramienta;
 
 /**
  *
@@ -17,12 +18,24 @@ public class Persona {
     protected Rut rut;
     protected String tipo_persona;
     private String clave;
+    protected Herramienta herramientaPersona;
+    
     public Persona(String nombre, Rut rut, String tipo_persona,String clave) {
         this.nombre = nombre;
         this.rut = rut;
-        this.tipo_persona = null;
+        this.tipo_persona = tipo_persona;
         this.clave = clave;
     }
+
+    public Herramienta getHerramientaPersona() {
+        return herramientaPersona;
+    }
+
+    public void setHerramientaPersona(Herramienta herramientaPersona) {
+        this.herramientaPersona = herramientaPersona;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -36,6 +49,13 @@ public class Persona {
         return clave;
     }
 
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", rut=" + rut + ", tipo_persona=" + tipo_persona + ", clave=" + clave + ", herramientaPersona=" + herramientaPersona + '}';
+    }
+
+    
+    
     
     
 

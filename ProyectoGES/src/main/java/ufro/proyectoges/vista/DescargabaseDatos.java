@@ -5,16 +5,22 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Persona;
+
 /**
  *
  * @author Roald
  */
 public class DescargabaseDatos extends javax.swing.JFrame {
 
+    private final Persona p;
+
     /**
      * Creates new form DescargabaseDatos
+     * @param p
      */
-    public DescargabaseDatos() {
+    public DescargabaseDatos(Persona p) {
+        this.p = p;
         initComponents();
     }
 
@@ -328,12 +334,12 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
     private void DescargaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaJButtonActionPerformed
         // TODO add your handling code here:
-        new GuardadoArchivo().setVisible(true);
+        new GuardadoArchivo(p).setVisible(true);
     }//GEN-LAST:event_DescargaJButtonActionPerformed
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
-        new Menu().setVisible(true);
+        new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 

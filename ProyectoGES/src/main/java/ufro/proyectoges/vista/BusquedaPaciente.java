@@ -6,6 +6,7 @@
 package ufro.proyectoges.vista;
 
 import java.awt.event.ActionEvent;
+import ufro.proyectoges.backend.entidades.Persona;
 
 /**
  *
@@ -13,10 +14,14 @@ import java.awt.event.ActionEvent;
  */
 public class BusquedaPaciente extends javax.swing.JFrame {
 
+    private final Persona p;
+
     /**
      * Creates new form BusquedaPaciente
+     * @param p
      */
-    public BusquedaPaciente() {
+    public BusquedaPaciente(Persona p) {
+        this.p = p;
         initComponents();
         
     }
@@ -237,7 +242,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
-        new Menu().setVisible(true);
+        new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 

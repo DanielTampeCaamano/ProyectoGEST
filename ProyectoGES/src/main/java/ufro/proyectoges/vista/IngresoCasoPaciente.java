@@ -237,8 +237,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
-        
-        if (!NombreJTextField.getText().isEmpty() && !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty() && !this.PatologiasJTextField.getText().isEmpty() && Rut.rutBienEscrito(RUTJTextField1.getText()+RUTJTextField2.getText())){
+        Rut rut = new Rut(RUTJTextField1.getText()+RUTJTextField2.getText());
+        if (!NombreJTextField.getText().isEmpty() && !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty() && !this.PatologiasJTextField.getText().isEmpty() && Rut.rutBienEscrito(RUTJTextField1.getText()+RUTJTextField2.getText()) && rut.isRutValido()){
             new IPD(p, this).setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Complete los datos de manera correcta");

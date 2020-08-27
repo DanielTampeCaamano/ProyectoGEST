@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-08-2020 a las 15:54:11
+-- Tiempo de generación: 26-08-2020 a las 23:52:24
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -58,6 +58,7 @@ CREATE TABLE `monitor` (
 --
 
 CREATE TABLE `paciente` (
+  `id_paciente` int(255) NOT NULL,
   `rut` varchar(12) NOT NULL,
   `nombreCompleto` varchar(255) DEFAULT NULL,
   `patologia_paciente` varchar(255) DEFAULT NULL,
@@ -136,6 +137,7 @@ ALTER TABLE `monitor`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`rut`),
+  ADD UNIQUE KEY `id_paciente` (`id_paciente`),
   ADD KEY `ipd_id` (`ipd_id`);
 
 --
@@ -165,6 +167,12 @@ ALTER TABLE `registrador`
 --
 ALTER TABLE `monitor`
   MODIFY `identificacion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67807082;
+
+--
+-- AUTO_INCREMENT de la tabla `paciente`
+--
+ALTER TABLE `paciente`
+  MODIFY `id_paciente` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `patologia`

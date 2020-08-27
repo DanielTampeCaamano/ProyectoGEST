@@ -85,88 +85,136 @@ public class IPD extends javax.swing.JFrame {
         ObservacionJTextArea = new javax.swing.JTextArea();
         AceptarJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - IPD");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IPDJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        IPDJLabel.setForeground(new java.awt.Color(0, 0, 0));
         IPDJLabel.setText("IPD");
+        getContentPane().add(IPDJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 12, -1, -1));
 
+        NombreCompletoJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NombreCompletoJLabel.setText("Nombre Completo:");
+        getContentPane().add(NombreCompletoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 84, -1, -1));
 
         NombreCompletoJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreCompletoJTextFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(NombreCompletoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 233, -1));
 
+        RUTJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RUTJLabel.setText("RUT");
+        getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 115, -1, -1));
+        getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 96, -1));
+        getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 28, -1));
 
+        PatologiasJLabel.setForeground(new java.awt.Color(0, 0, 0));
         PatologiasJLabel.setText("Patologias:");
+        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 152, -1, -1));
+        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 150, 268, -1));
 
+        FechaInicioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaInicioJLabel.setText("Fecha de Inicio");
+        getContentPane().add(FechaInicioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 84, -1, -1));
+        getContentPane().add(DiaFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 101, 30, -1));
+        getContentPane().add(MesFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 101, 29, -1));
+        getContentPane().add(AnioFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 101, 59, -1));
 
+        FechaTerminoJLabel.setForeground(new java.awt.Color(0, 0, 0));
         FechaTerminoJLabel.setText("Fecha de Termino");
+        getContentPane().add(FechaTerminoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 132, -1, -1));
+        getContentPane().add(DiaFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 150, 30, -1));
+        getContentPane().add(MesFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 29, -1));
+        getContentPane().add(AnioFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 150, 59, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 187, 607, 10));
 
         GESJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        GESJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         GESJCheckBox.setText("GES");
         GESJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GESJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(GESJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 203, -1, -1));
 
         NoGesJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        NoGesJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         NoGesJCheckBox.setText("NO GES");
         NoGesJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NoGesJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(NoGesJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 248, -1, -1));
 
         NotificacionPacienteGesJLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        NotificacionPacienteGesJLabel.setForeground(new java.awt.Color(0, 0, 0));
         NotificacionPacienteGesJLabel.setText("Notificacion Paciente Ges");
+        getContentPane().add(NotificacionPacienteGesJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 203, -1, -1));
 
         SiJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        SiJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         SiJCheckBox.setText("SI");
         SiJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SiJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(SiJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 248, -1, -1));
 
         NoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        NoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         NoJCheckBox.setText("NO");
         NoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NoJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(NoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(529, 248, -1, -1));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 282, 607, 10));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 50, 607, 12));
 
         ConfirmadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        ConfirmadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         ConfirmadoJCheckBox.setText("Confirmado");
         ConfirmadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmadoJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(ConfirmadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 300, -1, -1));
 
         DescartadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        DescartadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         DescartadoJCheckBox.setText("Descartado");
         DescartadoJCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescartadoJCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(DescartadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 330, -1, -1));
 
         ExceptuadoJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        ExceptuadoJCheckBox.setForeground(new java.awt.Color(0, 0, 0));
         ExceptuadoJCheckBox.setText("Exceptuado");
+        getContentPane().add(ExceptuadoJCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 300, -1, -1));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 364, 607, 10));
 
+        ObservacionJLabel.setForeground(new java.awt.Color(0, 0, 0));
         ObservacionJLabel.setText("Observacion:");
+        getContentPane().add(ObservacionJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 380, -1, -1));
 
         ObservacionJTextArea.setColumns(20);
         ObservacionJTextArea.setRows(5);
         ObservacionJScrollPane.setViewportView(ObservacionJTextArea);
+
+        getContentPane().add(ObservacionJScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 401, 585, 98));
 
         AceptarJButton.setText("Aceptar");
         AceptarJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +222,7 @@ public class IPD extends javax.swing.JFrame {
                 AceptarJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(AceptarJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 505, -1, -1));
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,169 +230,11 @@ public class IPD extends javax.swing.JFrame {
                 VolverJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 505, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(GESJCheckBox)
-                                    .addComponent(NoGesJCheckBox))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NotificacionPacienteGesJLabel)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(SiJCheckBox)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(NoJCheckBox)
-                                        .addGap(27, 27, 27)))
-                                .addGap(30, 30, 30))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(DescartadoJCheckBox)
-                                    .addComponent(ConfirmadoJCheckBox))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ExceptuadoJCheckBox)
-                                .addGap(67, 67, 67))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator3)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator4)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ObservacionJLabel)
-                            .addComponent(ObservacionJScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 285, Short.MAX_VALUE)
-                        .addComponent(IPDJLabel)
-                        .addGap(295, 295, 295))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(PatologiasJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(RUTJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(NombreCompletoJLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NombreCompletoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(DiaFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(MesFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(AnioFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(DiaFechaInicioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(MesFechaInicioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(AnioFechaInicioJTextField)))
-                                .addContainerGap(25, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaInicioJLabel)
-                                .addGap(68, 68, 68))))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(FechaTerminoJLabel)
-                .addGap(60, 60, 60))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(AceptarJButton)
-                .addGap(53, 53, 53)
-                .addComponent(VolverJButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(IPDJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NombreCompletoJLabel)
-                            .addComponent(NombreCompletoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FechaInicioJLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RUTJLabel)
-                            .addComponent(RUTJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RUTJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PatologiasJLabel)
-                            .addComponent(PatologiasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaInicioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaInicioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaInicioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FechaTerminoJLabel)
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaTerminoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(GESJCheckBox)
-                    .addComponent(NotificacionPacienteGesJLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NoGesJCheckBox)
-                    .addComponent(SiJCheckBox)
-                    .addComponent(NoJCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConfirmadoJCheckBox)
-                    .addComponent(ExceptuadoJCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DescartadoJCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ObservacionJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ObservacionJScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AceptarJButton)
-                    .addComponent(VolverJButton))
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -463,6 +354,7 @@ public class IPD extends javax.swing.JFrame {
     private javax.swing.JTextField RUTJTextField2;
     private javax.swing.JCheckBox SiJCheckBox;
     private javax.swing.JButton VolverJButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

@@ -48,85 +48,56 @@ public class Login extends javax.swing.JFrame {
         ContraseñaJLabel = new javax.swing.JLabel();
         ContraseñaJTextField = new javax.swing.JTextField();
         AceptarJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - Login");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 3, 28)); // NOI18N
+        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("SIGGES");
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 21, -1, -1));
 
         UsuarioJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        UsuarioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         UsuarioJLabel.setText("Usuario");
+        getContentPane().add(UsuarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 108, -1, -1));
 
         UsuarioJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioJTextFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(UsuarioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 144, 207, -1));
 
         ContraseñaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        ContraseñaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         ContraseñaJLabel.setText("Contraseña");
+        getContentPane().add(ContraseñaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 181, -1, -1));
 
         ContraseñaJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContraseñaJTextFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(ContraseñaJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 211, 207, -1));
 
+        AceptarJButton.setBackground(new java.awt.Color(102, 204, 255));
+        AceptarJButton.setForeground(new java.awt.Color(0, 0, 0));
         AceptarJButton.setText("Ingresar");
+        AceptarJButton.setOpaque(false);
         AceptarJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(AceptarJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 275, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(UsuarioJTextField)
-                    .addComponent(ContraseñaJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
-                .addGap(188, 188, 188))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(UsuarioJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(TituloJLabel)))
-                .addContainerGap(242, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ContraseñaJLabel)
-                        .addGap(245, 245, 245))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(AceptarJButton)
-                        .addGap(256, 256, 256))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(TituloJLabel)
-                .addGap(50, 50, 50)
-                .addComponent(UsuarioJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(UsuarioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ContraseñaJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContraseñaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(AceptarJButton)
-                .addContainerGap(98, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med1a.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,5 +172,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel TituloJLabel;
     private javax.swing.JLabel UsuarioJLabel;
     private javax.swing.JTextField UsuarioJTextField;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

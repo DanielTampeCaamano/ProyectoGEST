@@ -52,15 +52,21 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         NumeroFichaJTextField = new javax.swing.JTextField();
         BuscarNumeroFichaJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - Busqueda de Paciente");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("SIGGES");
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 12, -1, -1));
 
         BusquedaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        BusquedaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         BusquedaJLabel.setText("Busqueda");
+        getContentPane().add(BusquedaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 78, -1, -1));
 
         BusquedaRutJButton.setText("Buscar por RUT");
         BusquedaRutJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +74,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BusquedaRutJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BusquedaRutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 120, 148, -1));
 
         BusquedaNombreJButton.setText("Buscar por Nombre");
         BusquedaNombreJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +82,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BusquedaNombreJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BusquedaNombreJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 120, 161, -1));
 
         BusquedaNumeroFichaJButton.setText("Buscar Por Numero de Ficha Medica");
         BusquedaNumeroFichaJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +90,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BusquedaNumeroFichaJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BusquedaNumeroFichaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
 
         ResultadosJScrollpane.setEnabled(false);
 
@@ -107,9 +116,13 @@ public class BusquedaPaciente extends javax.swing.JFrame {
         ResultadosJTable.setEnabled(false);
         ResultadosJScrollpane.setViewportView(ResultadosJTable);
 
+        getContentPane().add(ResultadosJScrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 317, -1, 99));
+
         RutJTextField1.setEnabled(false);
+        getContentPane().add(RutJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 193, 62, -1));
 
         RutJTextField2.setEnabled(false);
+        getContentPane().add(RutJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 193, 37, -1));
 
         BuscarRUTJButton.setText("Buscar");
         BuscarRUTJButton.setEnabled(false);
@@ -118,10 +131,13 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BuscarRUTJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BuscarRUTJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 263, -1, -1));
 
         NombreJTextField.setEnabled(false);
+        getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 193, 94, -1));
 
         ApellidoJTextField.setEnabled(false);
+        getContentPane().add(ApellidoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 193, 102, -1));
 
         BuscarNombreJButton.setText("Buscar");
         BuscarNombreJButton.setEnabled(false);
@@ -130,8 +146,10 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BuscarNombreJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BuscarNombreJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 263, -1, -1));
 
         NumeroFichaJTextField.setEnabled(false);
+        getContentPane().add(NumeroFichaJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 193, 192, -1));
 
         BuscarNumeroFichaJButton.setText("Buscar");
         BuscarNumeroFichaJButton.setEnabled(false);
@@ -140,6 +158,7 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 BuscarNumeroFichaJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BuscarNumeroFichaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 263, -1, -1));
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -147,95 +166,12 @@ public class BusquedaPaciente extends javax.swing.JFrame {
                 VolverJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 434, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BusquedaJLabel)
-                        .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BusquedaRutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(BusquedaNombreJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BusquedaNumeroFichaJButton)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(BuscarRUTJButton)
-                .addGap(138, 138, 138)
-                .addComponent(BuscarNombreJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BuscarNumeroFichaJButton)
-                .addGap(97, 97, 97))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(TituloJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(ResultadosJScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(VolverJButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TituloJLabel)
-                .addGap(34, 34, 34)
-                .addComponent(BusquedaJLabel)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BusquedaRutJButton)
-                    .addComponent(BusquedaNombreJButton)
-                    .addComponent(BusquedaNumeroFichaJButton))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NombreJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ApellidoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NumeroFichaJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(RutJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(RutJTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BuscarRUTJButton)
-                    .addComponent(BuscarNombreJButton)
-                    .addComponent(BuscarNumeroFichaJButton))
-                .addGap(29, 29, 29)
-                .addComponent(ResultadosJScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(VolverJButton)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -316,5 +252,6 @@ public class BusquedaPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField RutJTextField2;
     private javax.swing.JLabel TituloJLabel;
     private javax.swing.JButton VolverJButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

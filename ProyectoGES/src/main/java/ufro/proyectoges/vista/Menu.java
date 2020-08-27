@@ -57,73 +57,56 @@ public class Menu extends javax.swing.JFrame {
         IngresoPacientesJButton = new javax.swing.JButton();
         BusquedaPacientesJButton = new javax.swing.JButton();
         DescargaBaseDatosJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - Menu");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 28)); // NOI18N
+        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("SIGGES");
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 26, -1, -1));
 
         MenuJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        MenuJLabel.setForeground(new java.awt.Color(0, 0, 0));
         MenuJLabel.setText("MENU");
+        getContentPane().add(MenuJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 104, -1, -1));
 
+        IngresoPacientesJButton.setBackground(new java.awt.Color(102, 204, 255));
         IngresoPacientesJButton.setText("Ingreso de Casos de Pacientes");
         IngresoPacientesJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IngresoPacientesJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(IngresoPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 220, 51));
 
+        BusquedaPacientesJButton.setBackground(new java.awt.Color(102, 204, 255));
         BusquedaPacientesJButton.setText("Busqueda de Casos de Pacientes");
         BusquedaPacientesJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BusquedaPacientesJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BusquedaPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 220, 46));
 
+        DescargaBaseDatosJButton.setBackground(new java.awt.Color(102, 204, 255));
         DescargaBaseDatosJButton.setText("Descarga de Base de Datos");
         DescargaBaseDatosJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescargaBaseDatosJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(DescargaBaseDatosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 220, 43));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BusquedaPacientesJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(IngresoPacientesJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DescargaBaseDatosJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(117, 117, 117))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(TituloJLabel)
-                        .addGap(158, 158, 158))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(MenuJLabel)
-                        .addGap(184, 184, 184))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(TituloJLabel)
-                .addGap(41, 41, 41)
-                .addComponent(MenuJLabel)
-                .addGap(47, 47, 47)
-                .addComponent(IngresoPacientesJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(BusquedaPacientesJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(DescargaBaseDatosJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
+        jLabel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.light"));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med1a.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,5 +139,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton IngresoPacientesJButton;
     private javax.swing.JLabel MenuJLabel;
     private javax.swing.JLabel TituloJLabel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

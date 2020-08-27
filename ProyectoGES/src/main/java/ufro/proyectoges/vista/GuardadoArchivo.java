@@ -34,8 +34,10 @@ public class GuardadoArchivo extends javax.swing.JFrame {
     private void initComponents() {
 
         SelectorArchivoJFileChooser = new javax.swing.JFileChooser();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SelectorArchivoJFileChooser.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
         SelectorArchivoJFileChooser.addActionListener(new java.awt.event.ActionListener() {
@@ -43,17 +45,11 @@ public class GuardadoArchivo extends javax.swing.JFrame {
                 SelectorArchivoJFileChooserActionPerformed(evt);
             }
         });
+        getContentPane().add(SelectorArchivoJFileChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 583, 363));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SelectorArchivoJFileChooser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SelectorArchivoJFileChooser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med3.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -70,5 +66,6 @@ public class GuardadoArchivo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser SelectorArchivoJFileChooser;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

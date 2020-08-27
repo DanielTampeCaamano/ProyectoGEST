@@ -64,15 +64,21 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         RangoFechaFinalCasosCerradosJLabel = new javax.swing.JLabel();
         DescargaJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ProyectoGES - Descarga de Base de Datos de Casos de Pacientes");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("Sigges");
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 23, -1, -1));
 
         DescargaBaseDatosJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        DescargaBaseDatosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         DescargaBaseDatosJLabel.setText("Descarga de Base de Datos de Casos de Pacientes");
+        getContentPane().add(DescargaBaseDatosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 73, -1, -1));
 
         CasosVigentesJButton.setText("Casos Vigentes");
         CasosVigentesJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +86,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 CasosVigentesJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(CasosVigentesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 133, -1, -1));
 
         CasosExceptuadosJButton.setText("Casos Exceptuados");
         CasosExceptuadosJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +94,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 CasosExceptuadosJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(CasosExceptuadosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 133, -1, -1));
 
         CasosCerradosJButton.setText("Casos Cerrados");
         CasosCerradosJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -94,60 +102,91 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 CasosCerradosJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(CasosCerradosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 133, -1, -1));
 
         DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 46, -1));
 
         MesFechaInicialCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(MesFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 230, 47, -1));
 
         AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 230, 56, -1));
 
+        RangoFechaInicialJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialJLabel.setText("Rango Fecha Incial");
         RangoFechaInicialJLabel.setEnabled(false);
+        getContentPane().add(RangoFechaInicialJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 198, -1, -1));
 
         DiaFechaFinalCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 294, 46, -1));
 
         MesFechaFinalCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(MesFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 294, 43, -1));
 
         AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 294, 58, -1));
 
+        RangoFechaFinalJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalJLabel.setText("Rango Fecha Final");
         RangoFechaFinalJLabel.setEnabled(false);
+        getContentPane().add(RangoFechaFinalJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 261, -1, -1));
 
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 231, 45, -1));
 
         MesFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(MesFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 231, 50, -1));
 
         AnioFechaInicialCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 231, 52, -1));
 
+        RangoFechaInicialCasosExceptuados.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialCasosExceptuados.setText("Rango Fecha Incial");
         RangoFechaInicialCasosExceptuados.setEnabled(false);
+        getContentPane().add(RangoFechaInicialCasosExceptuados, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 198, -1, -1));
 
         DiaFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 294, 45, -1));
 
         MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(MesFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 294, 50, -1));
 
         AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 294, 51, -1));
 
+        RangoFechaFinalCasosExceptuadosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalCasosExceptuadosJLabel.setText("Rango Fecha Final");
         RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
+        getContentPane().add(RangoFechaFinalCasosExceptuadosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 261, -1, -1));
 
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 231, 48, -1));
 
         MesFechaInicialCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(MesFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 231, 50, -1));
 
         AnioFechaInicialCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 231, 62, -1));
 
+        RangoFechaInicialCasosCerradosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialCasosCerradosJLabel.setText("Rango Fecha Incial");
         RangoFechaInicialCasosCerradosJLabel.setEnabled(false);
+        getContentPane().add(RangoFechaInicialCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 198, -1, -1));
 
         DiaFechaFinalCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(DiaFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 294, 48, -1));
 
         MesFechaFinalCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(MesFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 294, 50, -1));
 
         AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
+        getContentPane().add(AnioFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 294, 62, -1));
 
+        RangoFechaFinalCasosCerradosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalCasosCerradosJLabel.setText("Rango Fecha Final");
         RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
+        getContentPane().add(RangoFechaFinalCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 262, -1, -1));
 
         DescargaJButton.setText("Descargar");
         DescargaJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +194,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 DescargaJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(DescargaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 393, -1, -1));
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -162,172 +202,12 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 VolverJButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 393, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CasosVigentesJButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CasosCerradosJButton)
-                        .addGap(55, 55, 55))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(DescargaJButton)
-                        .addGap(27, 27, 27)
-                        .addComponent(VolverJButton)
-                        .addGap(65, 269, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addComponent(TituloJLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(DescargaBaseDatosJLabel)
-                .addGap(141, 141, 141))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(RangoFechaInicialJLabel))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addComponent(RangoFechaFinalJLabel))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(DiaFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(MesFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(AnioFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(DiaFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(MesFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(AnioFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(CasosExceptuadosJButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(RangoFechaInicialCasosExceptuados))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(DiaFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(MesFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(AnioFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(DiaFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(MesFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(AnioFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(RangoFechaFinalCasosExceptuadosJLabel)
-                            .addGap(38, 38, 38))))
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(RangoFechaInicialCasosCerradosJLabel)
-                        .addGap(35, 35, 35))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(RangoFechaFinalCasosCerradosJLabel)
-                            .addGap(45, 45, 45))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(DiaFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(DiaFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(MesFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(AnioFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(MesFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(AnioFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(27, 27, 27))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(TituloJLabel)
-                .addGap(18, 18, 18)
-                .addComponent(DescargaBaseDatosJLabel)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CasosVigentesJButton)
-                            .addComponent(CasosCerradosJButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CasosExceptuadosJButton)))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(RangoFechaInicialCasosCerradosJLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MesFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DiaFechaInicialCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RangoFechaFinalCasosCerradosJLabel)
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MesFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DiaFechaFinalCasosCerradosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaInicialCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addComponent(RangoFechaFinalCasosExceptuadosJLabel)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaFinalCasosExceptuadosJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RangoFechaInicialJLabel)
-                            .addComponent(RangoFechaInicialCasosExceptuados))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaInicialCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RangoFechaFinalJLabel)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiaFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MesFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnioFechaFinalCasosVigentesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DescargaJButton)
-                    .addComponent(VolverJButton))
-                .addGap(54, 54, 54))
-        );
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med1.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -471,5 +351,6 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     private javax.swing.JLabel RangoFechaInicialJLabel;
     private javax.swing.JLabel TituloJLabel;
     private javax.swing.JButton VolverJButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

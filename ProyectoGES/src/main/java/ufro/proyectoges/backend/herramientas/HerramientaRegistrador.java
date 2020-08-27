@@ -148,10 +148,15 @@ public class HerramientaRegistrador implements Herramienta {
         int confirmado = ipd.isConfirmado() ? 1 : 0;
         int descartado = ipd.isDescartado() ? 1 : 0;
         int exceptuado = ipd.isExceptuado() ? 1 : 0;
-
-        sqlHandler.insertInto("ipd",
-                "(nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia)",
-                "('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+        if (ipd.getFechaTermino() != null) {
+            sqlHandler.insertInto("ipd",
+                    "(nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia)",
+                    "('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+        } else {
+            sqlHandler.insertInto("ipd",
+                "(nombreCompletoPaciente, fechaInicio, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia)",
+                "('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+        }
 
     }
 

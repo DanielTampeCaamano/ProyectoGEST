@@ -41,6 +41,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.ipd = null;
         patologias = new ArrayList<>();
         initComponents();
+        
+        this.PatologiasJTextField.setEditable(false);
         this.confirmacionIPD.setText("IPD no cargado");
         this.PatologiasJComboBox.setModel(new DefaultComboBoxModel<>(p.getHerramientaPersona().obtenerPatologias()));
         

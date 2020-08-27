@@ -6,6 +6,7 @@
 package ufro.proyectoges.vista;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Persona;
@@ -31,18 +32,18 @@ public class IPD extends javax.swing.JFrame {
         this.p = p;
         initComponents();
         
-        NombreCompletoJTextField.setEnabled(false);
-        RUTJTextField1.setEnabled(false);
-        RUTJTextField2.setEnabled(false);
-        PatologiasJTextField.setEnabled(false);
         
+
+        NombreCompletoJTextField.setEditable(false);
+        RUTJTextField1.setEditable(false);
+        RUTJTextField2.setEditable(false);
+        PatologiasJTextField.setEditable(false);
+
         NombreCompletoJTextField.setText(formPaciente.getNombreJTextField().getText());
         RUTJTextField1.setText(formPaciente.getRUTJTextField1().getText());
         RUTJTextField2.setText(formPaciente.getRUTJTextField2().getText());
         PatologiasJTextField.setText(formPaciente.getPatologiasJTextField().getText());
-        
-        
-        
+
     }
 
     /**
@@ -253,26 +254,38 @@ public class IPD extends javax.swing.JFrame {
         boolean ConExDes = ConfirmadoJCheckBox.isSelected() || ExceptuadoJCheckBox.isSelected() || DescartadoJCheckBox.isSelected();
         boolean obser = !ObservacionJTextArea.getText().isEmpty();
 
-        if (nomNoVacio && rutNoVacio && fechaInNoVac && fechaTeNoVac && gesONoGES && notif && ConExDes && obser) {
-            formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
-                    NombreCompletoJTextField.getText(),
-                    new Date(Integer.parseInt(AnioFechaInicioJTextField.getText()),
-                            Integer.parseInt(MesFechaInicioJTextField.getText()),
-                            Integer.parseInt(DiaFechaInicioJTextField.getText())),
-                    new Date(Integer.parseInt(AnioFechaTerminoJTextField.getText()),
-                            Integer.parseInt(MesFechaTerminoJTextField.getText()),
-                            Integer.parseInt(DiaFechaTerminoJTextField.getText())),
-                    GESJCheckBox.isSelected(),
-                    SiJCheckBox.isSelected(),
-                    ConfirmadoJCheckBox.isSelected(),
-                    ExceptuadoJCheckBox.isSelected(),
-                    DescartadoJCheckBox.isSelected(),
-                    ObservacionJTextArea.getText(),
-                    0));
-            formPaciente.getConfirmacionIPD().setText("IPD cargado");
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+        Date fecha_termin;
+        
+        if (AnioFechaTerminoJTextField.getText().isEmpty() || MesFechaTerminoJTextField.getText().isEmpty() || DiaFechaTerminoJTextField.getText().isEmpty()){
+            fecha_termin = null;
+        }else{
+            fecha_termin = Date.valueOf(AnioFechaTerminoJTextField.getText() + "-" + MesFechaTerminoJTextField.getText() + "-" + DiaFechaTerminoJTextField.getText());
+        }
+        
+        try {
+            Date fecha_inicio = Date.valueOf(AnioFechaInicioJTextField.getText() + "-" + MesFechaInicioJTextField.getText() + "-" + DiaFechaInicioJTextField.getText());
+            
+            if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser) {
+                formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
+                        NombreCompletoJTextField.getText(),
+                        fecha_inicio,
+                        fecha_termin,
+                        GESJCheckBox.isSelected(),
+                        SiJCheckBox.isSelected(),
+                        ConfirmadoJCheckBox.isSelected(),
+                        ExceptuadoJCheckBox.isSelected(),
+                        DescartadoJCheckBox.isSelected(),
+                        ObservacionJTextArea.getText(),
+                        0));
+                formPaciente.getConfirmacionIPD().setText("IPD cargado");
+                this.dispose();
+            } else {
+                System.out.println("nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser");
+                System.out.println(nomNoVacio +","+ rutNoVacio +","+ fechaInNoVac +","+ gesONoGES +","+ notif +","+ ConExDes +","+ obser);
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            }
+        } catch (java.lang.IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, "Fecha Invalida");
         }
 
     }//GEN-LAST:event_AceptarJButtonActionPerformed

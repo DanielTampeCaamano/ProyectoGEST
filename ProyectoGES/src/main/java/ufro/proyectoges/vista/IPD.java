@@ -41,6 +41,8 @@ public class IPD extends javax.swing.JFrame {
         RUTJTextField2.setText(formPaciente.getRUTJTextField2().getText());
         PatologiasJTextField.setText(formPaciente.getPatologiasJTextField().getText());
         
+        
+        
     }
 
     /**

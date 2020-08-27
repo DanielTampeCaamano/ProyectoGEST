@@ -5,6 +5,8 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author Roald
  */
-public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener {
+public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener,ActionListener {
 
     private Persona p;
     private IPDPaciente ipd;
@@ -235,7 +237,14 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
-        new IPD(p, this).setVisible(true);
+        
+        if (!NombreJTextField.getText().isEmpty() && !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty() && !this.PatologiasJTextField.getText().isEmpty() && Rut.rutBienEscrito(RUTJTextField1.getText()+RUTJTextField2.getText())){
+            new IPD(p, this).setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Complete los datos de manera correcta");
+        }
+        
+        
     }//GEN-LAST:event_IPDJButtonActionPerformed
 
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
@@ -307,16 +316,30 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (ipd != null){
+            advertirCambios();
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+    }
+    
+    private void advertirCambios(){
+        ipd = null;
+        confirmacionIPD.setText("Datos modificados, se debe re-hacer ipd");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this.PatologiasJComboBox && ipd != null){
+            advertirCambios();
+        }
     }
 }

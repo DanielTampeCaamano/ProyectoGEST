@@ -276,7 +276,7 @@ public class IPD extends javax.swing.JFrame {
                         ExceptuadoJCheckBox.isSelected(),
                         DescartadoJCheckBox.isSelected(),
                         ObservacionJTextArea.getText(),
-                        0));
+                        PatologiasJTextField.getText()));
                 formPaciente.getConfirmacionIPD().setText("IPD cargado");
                 this.dispose();
             } else {

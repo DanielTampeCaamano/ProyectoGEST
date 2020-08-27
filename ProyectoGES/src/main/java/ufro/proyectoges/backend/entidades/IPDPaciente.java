@@ -6,6 +6,7 @@
 package ufro.proyectoges.backend.entidades;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  *
@@ -22,12 +23,12 @@ public class IPDPaciente {
    private boolean exceptuado;
    private boolean descartado;
    private String observacion;
-   private int codigoPatologia;
+   private String codigoPatologia;
 
     public IPDPaciente() {
     }
 
-    public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, int codigoPat) {
+    public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, String codPatologias) {
         this.rutPaciente = rutPaciente;
         this.nombrePaciente = nombrePaciente;
         this.fechaInicio = fechaInicio;
@@ -38,10 +39,10 @@ public class IPDPaciente {
         this.exceptuado = exceptuado;
         this.observacion = observacion;
         this.descartado = descartado;
-        this.codigoPatologia = codigoPat;
+        this.codigoPatologia = codPatologias;
     }
 
-    public int getCodigoPatologia() {
+    public String getCodigoPatologia() {
         return codigoPatologia;
     }
     

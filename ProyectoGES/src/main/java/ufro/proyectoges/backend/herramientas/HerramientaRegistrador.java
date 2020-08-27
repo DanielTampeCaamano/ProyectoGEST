@@ -150,12 +150,12 @@ public class HerramientaRegistrador implements Herramienta {
         int exceptuado = ipd.isExceptuado() ? 1 : 0;
         if (ipd.getFechaTermino() != null) {
             sqlHandler.insertInto("ipd",
-                    "(nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia)",
-                    "('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+                    "(identificacion, nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,patologia)",
+                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia() + "')");
         } else {
             sqlHandler.insertInto("ipd",
-                "(nombreCompletoPaciente, fechaInicio, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,rutPaciente,patologia)",
-                "('" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getRutPaciente() + "','" + ipd.getCodigoPatologia() + "')");
+                    "(identificacion,nombreCompletoPaciente, fechaInicio, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,patologia)",
+                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia() + "')");
         }
 
     }
@@ -165,7 +165,7 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             ResultSet queryResult = sqlHandler.selectFromWhere("*", "ipd", "identificacion", String.valueOf(id));
             while (queryResult.next()) {
-                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getInt(12));
+                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(12));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -173,21 +173,7 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
-    public int[] getIdPatologias() {
-        int[] idPat = new int[obtenerPatologias().length];
-        try {
-            ResultSet queryResult = sqlHandler.selectFrom("*", "patologia");
-
-            for (int i = 0; queryResult.next(); i++) {
-                idPat[i] = queryResult.getInt(1);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return idPat;
-
-    }
+    
 
     @Override
     public String[] obtenerPatologias() {

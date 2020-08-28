@@ -53,7 +53,7 @@ public class Paciente extends Persona {
     
     @Override
     public String toString() {
-        return "Paciente{" + "nombreCompleto=" + nombreCompleto + ", rutValidado=" + rutValidado + '}';
+        return "Paciente{" + "nombreCompleto=" + nombreCompleto + ", rutValidado=" + rutValidado + ", Null ipd?=" + (ipdPaciente == null) + '}';
     }
     
 }

@@ -34,6 +34,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     private List<String> patologias;
     private boolean soloVista;
     private Paciente pacienteAObservar;
+    private BusquedaPaciente previous;
 
     /**
      * Creates new form IngresoCasoPaciente
@@ -49,11 +50,16 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.PatologiasJTextField.setEditable(false);
         this.confirmacionIPD.setText("IPD no cargado");
         this.PatologiasJComboBox.setModel(new DefaultComboBoxModel<>(p.getHerramientaPersona().obtenerPatologias()));
+        this.NombreJTextField.addKeyListener(this);
+        this.RUTJTextField1.addKeyListener(this);
+        this.RUTJTextField2.addKeyListener(this);
+        this.PatologiasJComboBox.addActionListener(this);
 
     }
 
-    public IngresoCasoPaciente(Paciente p) {
-
+    public IngresoCasoPaciente(Paciente p, BusquedaPaciente previous) {
+        this.previous = previous;
+        this.p = (Paciente) p;
         initComponents();
 
         this.PatologiasJTextField.setEditable(false);
@@ -62,13 +68,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.RUTJTextField2.setEditable(false);
         this.PatologiasJComboBox.setEnabled(false);
 
-        this.NombreFuncionarioJLabel.setText(p.getNombreCompleto());
-        this.RUTJTextField1.setText(p.getRutValidado().substring(0, p.getRutValidado().length() - 2));
+        this.NombreJTextField.setText(p.getNombreCompleto());
+        this.RUTJTextField1.setText(p.getRutValidado().substring(0, p.getRutValidado().length() - 1));
         this.RUTJTextField2.setText("" + p.getRutValidado().charAt(p.getRutValidado().length() - 1));
         this.PatologiasJTextField.setText(p.getIpdPaciente().getCodigoPatologia());
 
         this.soloVista = true;
-        this.pacienteAObservar = p;
+
     }
 
     public JTextField getNombreJTextField() {
@@ -249,7 +255,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
                 JOptionPane.showMessageDialog(null, "Complete los datos de manera correcta");
             }
         } else {
-            new IPD(pacienteAObservar).setVisible(true);
+            this.setEnabled(false);
+            new IPD((Paciente) p,this).setVisible(true);
         }
 
 
@@ -276,7 +283,12 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
-        new Menu(p).setVisible(true);
+        if (!soloVista) {
+            new Menu(p).setVisible(true);
+        }else{
+            this.previous.setEnabled(true);
+        }
+
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 

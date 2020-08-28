@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.fecha.Fecha;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
@@ -19,9 +20,8 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  */
 public class IPD extends javax.swing.JFrame {
 
-    private Persona p;
     private IngresoCasoPaciente formPaciente;
-    private Paciente paciente;
+    private IngresoCasoPaciente previous;
 
     /**
      * Creates new form IPD
@@ -31,7 +31,6 @@ public class IPD extends javax.swing.JFrame {
      */
     public IPD(Persona p, IngresoCasoPaciente formPaciente) {
         this.formPaciente = formPaciente;
-        this.p = p;
         initComponents();
 
         NombreCompletoJTextField.setEditable(false);
@@ -46,17 +45,16 @@ public class IPD extends javax.swing.JFrame {
 
     }
 
-    
     /**
      * Creates new form IPD
      *
      * @param paciente
      * @param formPaciente
      */
-    public IPD( Paciente paciente) {
+    public IPD(Paciente paciente, IngresoCasoPaciente previous) {
+        this.previous = previous;
         initComponents();
-        this.paciente = paciente;
-        
+
         NombreCompletoJTextField.setEditable(false);
         RUTJTextField1.setEditable(false);
         RUTJTextField2.setEditable(false);
@@ -67,21 +65,38 @@ public class IPD extends javax.swing.JFrame {
         AnioFechaTerminoJTextField.setEditable(false);
         MesFechaTerminoJTextField.setEditable(false);
         DiaFechaTerminoJTextField.setEditable(false);
-        
+        GESJCheckBox.setEnabled(false);
+        ExceptuadoJCheckBox.setEnabled(false);
+        ConfirmadoJCheckBox.setEnabled(false);
+        DescartadoJCheckBox.setEnabled(false);
+
         IPDPaciente ipd = paciente.getIpdPaciente();
-        
+
+        NombreCompletoJTextField.setText(ipd.getNombrePaciente());
+        RUTJTextField1.setText(ipd.getRutPaciente().substring(0, ipd.getRutPaciente().length() - 1));
+        RUTJTextField2.setText("" + ipd.getRutPaciente().charAt(ipd.getRutPaciente().length() - 1));
+        PatologiasJTextField.setText(ipd.getCodigoPatologia());
+
+        AnioFechaInicioJTextField.setText(Fecha.getYear(ipd.getFechaInicio()));
+        MesFechaInicioJTextField.setText(Fecha.getMonth(ipd.getFechaInicio()));
+        DiaFechaInicioJTextField.setText(Fecha.getDay(ipd.getFechaInicio()));
+
+        AnioFechaTerminoJTextField.setText(Fecha.getYear(ipd.getFechaTermino()));
+        MesFechaTerminoJTextField.setText(Fecha.getMonth(ipd.getFechaTermino()));
+        DiaFechaTerminoJTextField.setText(Fecha.getDay(ipd.getFechaTermino()));
+
         GESJCheckBox.setSelected(ipd.isEsGes());
         ExceptuadoJCheckBox.setSelected(ipd.isExceptuado());
         ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
         DescartadoJCheckBox.setSelected(ipd.isDescartado());
-        
+
         ObservacionJTextArea.setText(ipd.getObservacion());
-        
+
         AceptarJButton.setEnabled(false);
-        
-        
+        VolverJButton.setEnabled(true);
+
     }
-    
+
     
 
     /**
@@ -271,23 +286,23 @@ public class IPD extends javax.swing.JFrame {
         boolean nomNoVacio = !NombreCompletoJTextField.getText().isEmpty();
         boolean rutNoVacio = !RUTJTextField1.getText().isEmpty() && !RUTJTextField2.getText().isEmpty();
         boolean fechaInNoVac = !AnioFechaInicioJTextField.getText().isEmpty() && !MesFechaInicioJTextField.getText().isEmpty() && !DiaFechaInicioJTextField.getText().isEmpty();
-        
+
         boolean gesONoGES = GESJCheckBox.isSelected();
-        boolean notif = SiJCheckBox.isSelected();
+        boolean notif = SiJCheckBox.isSelected() || NoJCheckBox.isSelected();
         boolean ConExDes = ConfirmadoJCheckBox.isSelected() || ExceptuadoJCheckBox.isSelected() || DescartadoJCheckBox.isSelected();
         boolean obser = !ObservacionJTextArea.getText().isEmpty();
 
         Date fecha_termin;
-        
-        if (AnioFechaTerminoJTextField.getText().isEmpty() || MesFechaTerminoJTextField.getText().isEmpty() || DiaFechaTerminoJTextField.getText().isEmpty()){
+
+        if (AnioFechaTerminoJTextField.getText().isEmpty() || MesFechaTerminoJTextField.getText().isEmpty() || DiaFechaTerminoJTextField.getText().isEmpty()) {
             fecha_termin = null;
-        }else{
+        } else {
             fecha_termin = Date.valueOf(AnioFechaTerminoJTextField.getText() + "-" + MesFechaTerminoJTextField.getText() + "-" + DiaFechaTerminoJTextField.getText());
         }
-        
+
         try {
             Date fecha_inicio = Date.valueOf(AnioFechaInicioJTextField.getText() + "-" + MesFechaInicioJTextField.getText() + "-" + DiaFechaInicioJTextField.getText());
-            
+
             if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser) {
                 formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
                         NombreCompletoJTextField.getText(),
@@ -301,10 +316,9 @@ public class IPD extends javax.swing.JFrame {
                         ObservacionJTextArea.getText(),
                         PatologiasJTextField.getText()));
                 formPaciente.getConfirmacionIPD().setText("IPD cargado");
+                this.formPaciente.setEnabled(true);
                 this.dispose();
             } else {
-                System.out.println("nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser");
-                System.out.println(nomNoVacio +","+ rutNoVacio +","+ fechaInNoVac +","+ gesONoGES +","+ notif +","+ ConExDes +","+ obser);
                 JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
             }
         } catch (java.lang.IllegalArgumentException ex) {
@@ -351,6 +365,11 @@ public class IPD extends javax.swing.JFrame {
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
+        if (this.previous == null){
+            this.formPaciente.setEnabled(true);
+        }else{
+            this.previous.setEnabled(true);
+        }
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 

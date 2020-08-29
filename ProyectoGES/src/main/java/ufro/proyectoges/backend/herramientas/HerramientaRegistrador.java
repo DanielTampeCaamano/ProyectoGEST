@@ -44,7 +44,7 @@ public class HerramientaRegistrador implements Herramienta {
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         try {
-            queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", "'"+nombre+"'");
+            queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", "'" + nombre + "'");
             while (queryResult.next()) {
                 return new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporId(Integer.valueOf(queryResult.getString(1))));
             }
@@ -52,8 +52,6 @@ public class HerramientaRegistrador implements Herramienta {
         }
         return null;
     }
-
-    
 
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
@@ -113,17 +111,17 @@ public class HerramientaRegistrador implements Herramienta {
     public void registrarRegistrador(Registrador r) {
 
         sqlHandler.insertInto("personas", "(id,nombre,tipo_persona,clave)", "('" + r.getRut().getRut() + "','" + r.getNombre() + "','" + r.getTipo_persona() + "','" + r.getClave() + "')");
-        sqlHandler.insertInto("registrador", "(id,nombre)", "('" + r.getRut().getRut() + "','" + r.getNombre() + "')");
+        sqlHandler.insertInto("registrador", "(id,nombre,clave)", "('" + r.getRut().getRut() + "','" + r.getNombre() + "','" + r.getClave() + "')");
 
     }
 
     @Override
-    public void registrarPacientes(Paciente paciente,Registrador registrador) {
+    public void registrarPacientes(Paciente paciente, Registrador registrador) {
 
         if (paciente.getRutSinConvertir().isRutValido()) {
             sqlHandler.insertInto("personas", "(id,nombre,tipo_persona)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "','" + paciente.getTipo_persona() + "')");
             sqlHandler.insertInto("paciente", "(rut,nombreCompleto)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "')");
-            registrarIPD(paciente.getIpdPaciente(),registrador);
+            registrarIPD(paciente.getIpdPaciente(), registrador);
             //statement.executeUpdate("UPDATE paciente SET rut='"+paciente.getRutValidado()+"', nombreCompleto='"+paciente.getNombreCompleto()+"'");
 
         }
@@ -139,11 +137,11 @@ public class HerramientaRegistrador implements Herramienta {
         if (ipd.getFechaTermino() != null) {
             sqlHandler.insertInto("ipd",
                     "(identificacion, nombreCompletoPaciente, fechaInicio, fechaTermino, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,patologia,registrador)",
-                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia() + "','"+registrador.getRut().getRut()+"')");
+                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ipd.getFechaTermino() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia() + "','" + registrador.getRut().getRut() + "')");
         } else {
             sqlHandler.insertInto("ipd",
                     "(identificacion,nombreCompletoPaciente, fechaInicio, GES, notificacionPacienteGes,confirmado,descartado,exceptuado,observacion,patologia,registrador)",
-                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia()+ "','"+registrador.getRut().getRut()+"')");
+                    "('" + ipd.getRutPaciente() + "','" + ipd.getNombrePaciente() + "','" + ipd.getFechaInicio() + "','" + ges + "','" + notificacionGes + "','" + confirmado + "','" + descartado + "','" + exceptuado + "','" + ipd.getObservacion() + "','" + ipd.getCodigoPatologia() + "','" + registrador.getRut().getRut() + "')");
         }
 
     }
@@ -153,15 +151,13 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             ResultSet queryResult = sqlHandler.selectFromWhere("*", "ipd", "identificacion", String.valueOf(id));
             while (queryResult.next()) {
-                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(11));
+                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(11), queryResult.getString(12));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-
-    
 
     @Override
     public String[] obtenerPatologias() {
@@ -197,6 +193,21 @@ public class HerramientaRegistrador implements Herramienta {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {
+
+        queryResult = sqlHandler.selectFromWhere("*", "registrador", "id", ipd.getIdRegistrador());
+
+        try {
+            while (queryResult.next()) {
+                return new Registrador(queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

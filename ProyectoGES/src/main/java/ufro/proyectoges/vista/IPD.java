@@ -22,6 +22,8 @@ public class IPD extends javax.swing.JFrame {
 
     private IngresoCasoPaciente formPaciente;
     private IngresoCasoPaciente previous;
+    private Persona p;
+    private Persona persona;
 
     /**
      * Creates new form IPD
@@ -31,6 +33,7 @@ public class IPD extends javax.swing.JFrame {
      */
     public IPD(Persona p, IngresoCasoPaciente formPaciente) {
         this.formPaciente = formPaciente;
+        persona = p;
         initComponents();
 
         NombreCompletoJTextField.setEditable(false);
@@ -303,7 +306,7 @@ public class IPD extends javax.swing.JFrame {
         try {
             Date fecha_inicio = Date.valueOf(AnioFechaInicioJTextField.getText() + "-" + MesFechaInicioJTextField.getText() + "-" + DiaFechaInicioJTextField.getText());
 
-            if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser) {
+            if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser && Fecha.fecha1MenorQueFecha2(fecha_inicio, fecha_termin)) {
                 formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
                         NombreCompletoJTextField.getText(),
                         fecha_inicio,
@@ -314,12 +317,13 @@ public class IPD extends javax.swing.JFrame {
                         ExceptuadoJCheckBox.isSelected(),
                         DescartadoJCheckBox.isSelected(),
                         ObservacionJTextArea.getText(),
-                        PatologiasJTextField.getText()));
+                        PatologiasJTextField.getText(),
+                        p.getRut().getRut()));
                 formPaciente.getConfirmacionIPD().setText("IPD cargado");
                 this.formPaciente.setEnabled(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar o Fechas invalidas");
             }
         } catch (java.lang.IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, "Fecha Invalida");

@@ -174,7 +174,9 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
+    
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu(p).setVisible(true);
@@ -230,6 +232,12 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
 
+    public Persona getP() {
+        return p;
+    }
+    
+    
+    
 
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
 
@@ -288,7 +296,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
         if (e.getSource() == ResultadosJTable && e.getClickCount() == 2) {
             
-            this.setEnabled(false);
+            
             new IngresoCasoPaciente(pacientesObtenidos.get(ResultadosJTable.getSelectedRow()),this).setVisible(true);
             
         }

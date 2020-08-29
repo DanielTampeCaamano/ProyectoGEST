@@ -45,5 +45,7 @@ public interface Herramienta {
     public abstract String[] obtenerPatologias();
     
     public abstract int consultarIDPatologiaPorNombre(String nombre);
+    
+    public abstract Registrador obtenerRegistradorIPD(IPDPaciente ipd);
 
 }

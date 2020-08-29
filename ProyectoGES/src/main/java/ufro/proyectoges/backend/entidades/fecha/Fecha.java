@@ -13,12 +13,7 @@ import java.sql.Date;
  */
 public class Fecha {
     
-    private Date fecha;
     
-    
-    public Fecha(Date fecha){
-        this.fecha = fecha;
-    }
     
     public static String getYear(Date date) {
         if (date != null) {
@@ -42,5 +37,9 @@ public class Fecha {
             return "" + fecha.charAt(8) + fecha.charAt(9);
         }
         return "";
+    }
+    
+    public static boolean fecha1MenorQueFecha2(Date fecha1, Date fecha2){
+        return fecha1.compareTo(fecha2) < 0;
     }
 }

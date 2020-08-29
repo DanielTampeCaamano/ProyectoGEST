@@ -24,11 +24,12 @@ public class IPDPaciente {
    private boolean descartado;
    private String observacion;
    private String codigoPatologia;
+    private String idRegistrador;
 
     public IPDPaciente() {
     }
 
-    public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, String codPatologias) {
+    public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, String codPatologias, String idRegistrador) {
         this.rutPaciente = rutPaciente;
         this.nombrePaciente = nombrePaciente;
         this.fechaInicio = fechaInicio;
@@ -40,7 +41,17 @@ public class IPDPaciente {
         this.observacion = observacion;
         this.descartado = descartado;
         this.codigoPatologia = codPatologias;
+        this.idRegistrador = idRegistrador;
     }
+
+    public String getIdRegistrador() {
+        return idRegistrador;
+    }
+
+    public void setIdRegistrador(String idRegistrador) {
+        this.idRegistrador = idRegistrador;
+    }
+    
 
     public String getCodigoPatologia() {
         return codigoPatologia;

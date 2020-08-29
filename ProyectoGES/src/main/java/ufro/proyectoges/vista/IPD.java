@@ -76,6 +76,11 @@ public class IPD extends javax.swing.JFrame {
         DescartadoJCheckBox.setEnabled(false);
 
         IPDPaciente ipd = paciente.getIpdPaciente();
+        
+        SiJCheckBox.setEnabled(false);
+        NoJCheckBox.setEnabled(false);
+        ConfirmadoJCheckBox.setEnabled(false);
+        NoGesJCheckBox.setEnabled(false);
 
         NombreCompletoJTextField.setText(ipd.getNombrePaciente());
         RUTJTextField1.setText(ipd.getRutPaciente().substring(0, ipd.getRutPaciente().length() - 1));
@@ -89,8 +94,12 @@ public class IPD extends javax.swing.JFrame {
         AnioFechaTerminoJTextField.setText(Fecha.getYear(ipd.getFechaTermino()));
         MesFechaTerminoJTextField.setText(Fecha.getMonth(ipd.getFechaTermino()));
         DiaFechaTerminoJTextField.setText(Fecha.getDay(ipd.getFechaTermino()));
-
+        NoGesJCheckBox.setSelected(!ipd.isEsGes());
+        SiJCheckBox.setSelected(ipd.isNotificacionPacienteGES());
+        NoJCheckBox.setSelected(!ipd.isNotificacionPacienteGES());
+        ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
         GESJCheckBox.setSelected(ipd.isEsGes());
+        
         ExceptuadoJCheckBox.setSelected(ipd.isExceptuado());
         ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
         DescartadoJCheckBox.setSelected(ipd.isDescartado());

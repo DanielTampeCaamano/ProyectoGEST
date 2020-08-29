@@ -61,6 +61,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.previous = previous;
         this.pacienteAObservar = p;
         initComponents();
+        
+        this.confirmacionIPD.setText("IPD Confirmado");
 
         this.PatologiasJTextField.setEditable(false);
         this.NombreJTextField.setEditable(false);
@@ -262,8 +264,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             }
         } else {
             this.setEnabled(false);
-            System.out.println("p.rutIPD2="+p.getRut());
-            new IPD( p,this).setVisible(true);
+            new IPD( pacienteAObservar,this).setVisible(true);
         }
 
 

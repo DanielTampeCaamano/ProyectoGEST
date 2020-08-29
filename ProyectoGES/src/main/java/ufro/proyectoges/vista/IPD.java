@@ -7,6 +7,8 @@ package ufro.proyectoges.vista;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Paciente;
@@ -23,7 +25,6 @@ public class IPD extends javax.swing.JFrame {
     private IngresoCasoPaciente formPaciente;
     private IngresoCasoPaciente previous;
     private Persona p;
-    private Persona persona;
 
     /**
      * Creates new form IPD
@@ -33,7 +34,7 @@ public class IPD extends javax.swing.JFrame {
      */
     public IPD(Persona p, IngresoCasoPaciente formPaciente) {
         this.formPaciente = formPaciente;
-        persona = p;
+        this.p = p;
         initComponents();
 
         NombreCompletoJTextField.setEditable(false);
@@ -55,6 +56,7 @@ public class IPD extends javax.swing.JFrame {
      * @param formPaciente
      */
     public IPD(Paciente paciente, IngresoCasoPaciente previous) {
+        System.out.println("entra2");
         this.previous = previous;
         initComponents();
 
@@ -99,8 +101,6 @@ public class IPD extends javax.swing.JFrame {
         VolverJButton.setEnabled(true);
 
     }
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -305,7 +305,14 @@ public class IPD extends javax.swing.JFrame {
 
         try {
             Date fecha_inicio = Date.valueOf(AnioFechaInicioJTextField.getText() + "-" + MesFechaInicioJTextField.getText() + "-" + DiaFechaInicioJTextField.getText());
-
+            
+            
+            java.util.Date ahora = Date.from(Instant.now());
+            Date fecha_ahora = new Date(ahora.getTime());
+            
+            System.out.println("p.rut="+p.getRut());
+            System.out.println("p.rut.rut"+p.getRut().getRut());
+            
             if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser && Fecha.fecha1MenorQueFecha2(fecha_inicio, fecha_termin)) {
                 formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
                         NombreCompletoJTextField.getText(),
@@ -318,7 +325,8 @@ public class IPD extends javax.swing.JFrame {
                         DescartadoJCheckBox.isSelected(),
                         ObservacionJTextArea.getText(),
                         PatologiasJTextField.getText(),
-                        p.getRut().getRut()));
+                        p.getRut().getRut(),
+                        fecha_ahora));
                 formPaciente.getConfirmacionIPD().setText("IPD cargado");
                 this.formPaciente.setEnabled(true);
                 this.dispose();
@@ -369,9 +377,9 @@ public class IPD extends javax.swing.JFrame {
 
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
-        if (this.previous == null){
+        if (this.previous == null) {
             this.formPaciente.setEnabled(true);
-        }else{
+        } else {
             this.previous.setEnabled(true);
         }
         this.dispose();

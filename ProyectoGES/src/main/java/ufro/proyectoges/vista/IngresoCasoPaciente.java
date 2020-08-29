@@ -59,7 +59,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     public IngresoCasoPaciente(Paciente p, BusquedaPaciente previous) {
         this.previous = previous;
-        this.pacienteAObservar = (Paciente) p;
+        this.pacienteAObservar = p;
         initComponents();
 
         this.PatologiasJTextField.setEditable(false);
@@ -77,6 +77,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         
         this.NombreFuncionarioJLabel.setText(registrador.getNombre());
         this.RUTFuncionarioJLabel.setText(registrador.getRut().getRut());
+        this.FechaJLabel.setText(p.getIpdPaciente().getFechaDeGuardado().toString());
 
         this.soloVista = true;
 
@@ -261,7 +262,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             }
         } else {
             this.setEnabled(false);
-            new IPD( pacienteAObservar,this).setVisible(true);
+            System.out.println("p.rutIPD2="+p.getRut());
+            new IPD( p,this).setVisible(true);
         }
 
 

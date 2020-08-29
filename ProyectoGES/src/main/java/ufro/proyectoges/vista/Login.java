@@ -115,7 +115,7 @@ public class Login extends javax.swing.JFrame {
         herramienta = new HerramientaLogIn();
         if (Rut.rutBienEscrito(UsuarioJTextField.getText())) {
             Persona p = herramienta.buscarPersona(new Rut(UsuarioJTextField.getText()));
-            if (p != null && p.getClave().equals(ContraseñaJTextField.getText()) && p != null) {
+            if (p != null && p.getClave().equals(ContraseñaJTextField.getText())) {
                 new Menu(p).setVisible(true);
                 this.dispose();
             }else{

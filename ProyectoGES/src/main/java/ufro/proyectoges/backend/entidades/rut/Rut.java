@@ -78,4 +78,13 @@ public class Rut {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Rut{" + "rutSinValidar=" + rutSinValidar + ", rutSinDv=" + rutSinDv + ", rutValido=" + rutValido + ", rutInv=" + rutInv + '}';
+    }
+
+    
+    
+    
+
 }

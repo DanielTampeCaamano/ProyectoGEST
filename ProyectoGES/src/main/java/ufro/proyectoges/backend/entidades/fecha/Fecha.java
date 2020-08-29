@@ -40,6 +40,9 @@ public class Fecha {
     }
     
     public static boolean fecha1MenorQueFecha2(Date fecha1, Date fecha2){
+        if (fecha2 == null){
+            return true;
+        }
         return fecha1.compareTo(fecha2) < 0;
     }
 }

@@ -104,7 +104,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
             },
             new String [] {
-                "Rutl", "Nombre", "Fechac de Ingreso"
+                "Rut", "Nombre", "Fecha de Ingreso"
             }
         ) {
             boolean[] canEdit = new boolean [] {

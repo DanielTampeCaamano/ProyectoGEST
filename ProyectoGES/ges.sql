@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-08-2020 a las 23:52:24
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 29-08-2020 a las 09:59:09
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `id_administrador` int(11) NOT NULL,
+  `nombre_administrador` int(255) NOT NULL,
+  `clave_administrador` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `ipd`
 --
 
 CREATE TABLE `ipd` (
-  `rut_paciente` int(13) NOT NULL,
-  `nombre_paciente` varchar(90) NOT NULL,
-  `patologia` varchar(255) DEFAULT NULL,
-  `fecha_inicio` date NOT NULL,
-  `fecha_termino` date DEFAULT NULL,
-  `es_ges` tinyint(1) NOT NULL,
-  `notificacion_paciente` tinyint(1) NOT NULL,
-  `confirmado_diagnostico_paciente` tinyint(1) NOT NULL,
-  `exceptuado_estado` tinyint(1) NOT NULL,
-  `observacion_diagnostico` varchar(255) NOT NULL
+  `identificacion` int(10) NOT NULL,
+  `nombreCompletoPaciente` varchar(255) DEFAULT NULL,
+  `fechaInicio` date DEFAULT NULL,
+  `fechaTermino` date DEFAULT NULL,
+  `GES` tinyint(1) DEFAULT NULL,
+  `notificacionPacienteGes` tinyint(1) DEFAULT NULL,
+  `confirmado` tinyint(1) DEFAULT NULL,
+  `descartado` tinyint(1) DEFAULT NULL,
+  `exceptuado` tinyint(1) DEFAULT NULL,
+  `observacion` varchar(255) DEFAULT NULL,
+  `patologia` varchar(255) NOT NULL,
+  `registrador` varchar(255) DEFAULT NULL,
+  `fechaIngreso` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ipd`
+--
+
+INSERT INTO `ipd` (`identificacion`, `nombreCompletoPaciente`, `fechaInicio`, `fechaTermino`, `GES`, `notificacionPacienteGes`, `confirmado`, `descartado`, `exceptuado`, `observacion`, `patologia`, `registrador`, `fechaIngreso`) VALUES
+(188772129, 'rossana', '1999-02-02', NULL, 1, 1, 1, 1, 0, 'asd', '[Enfermedad renal cronica etapa 5]', '201061911', '2020-08-29');
 
 -- --------------------------------------------------------
 
@@ -58,14 +80,16 @@ CREATE TABLE `monitor` (
 --
 
 CREATE TABLE `paciente` (
-  `id_paciente` int(255) NOT NULL,
   `rut` varchar(12) NOT NULL,
-  `nombreCompleto` varchar(255) DEFAULT NULL,
-  `patologia_paciente` varchar(255) DEFAULT NULL,
-  `ipd_id` int(255) NOT NULL,
-  `fecha_inicio_paciente` date NOT NULL,
-  `fecha_termino_paciente` date DEFAULT NULL
+  `nombreCompleto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `paciente`
+--
+
+INSERT INTO `paciente` (`rut`, `nombreCompleto`) VALUES
+('188772129', 'rossana');
 
 -- --------------------------------------------------------
 
@@ -77,6 +101,17 @@ CREATE TABLE `patologia` (
   `identificacion` int(10) NOT NULL,
   `nombrePatologia` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `patologia`
+--
+
+INSERT INTO `patologia` (`identificacion`, `nombrePatologia`) VALUES
+(1, 'Enfermedad renal cronica etapa 4'),
+(2, 'Enfermedad renal cronica etapa 5'),
+(3, 'Cancer cervico uterino'),
+(4, 'Diabetes bellitus 1'),
+(5, 'Daibetes bellitus 2');
 
 -- --------------------------------------------------------
 
@@ -96,6 +131,7 @@ CREATE TABLE `personas` (
 --
 
 INSERT INTO `personas` (`id`, `nombre`, `tipo_persona`, `clave`) VALUES
+(188772129, 'rossana', 'PACIENTE', NULL),
 (201061911, 'registreador1', 'REGISTRADOR', 'clave');
 
 -- --------------------------------------------------------
@@ -106,25 +142,32 @@ INSERT INTO `personas` (`id`, `nombre`, `tipo_persona`, `clave`) VALUES
 
 CREATE TABLE `registrador` (
   `id` int(10) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL
+  `nombre` varchar(255) DEFAULT NULL,
+  `clave` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `registrador`
 --
 
-INSERT INTO `registrador` (`id`, `nombre`) VALUES
-(201061911, 'registreador1');
+INSERT INTO `registrador` (`id`, `nombre`, `clave`) VALUES
+(201061911, 'registreador1', 'clave');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`id_administrador`);
+
+--
 -- Indices de la tabla `ipd`
 --
 ALTER TABLE `ipd`
-  ADD PRIMARY KEY (`rut_paciente`);
+  ADD PRIMARY KEY (`identificacion`);
 
 --
 -- Indices de la tabla `monitor`
@@ -136,9 +179,7 @@ ALTER TABLE `monitor`
 -- Indices de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  ADD PRIMARY KEY (`rut`),
-  ADD UNIQUE KEY `id_paciente` (`id_paciente`),
-  ADD KEY `ipd_id` (`ipd_id`);
+  ADD PRIMARY KEY (`rut`);
 
 --
 -- Indices de la tabla `patologia`
@@ -166,35 +207,19 @@ ALTER TABLE `registrador`
 -- AUTO_INCREMENT de la tabla `monitor`
 --
 ALTER TABLE `monitor`
-  MODIFY `identificacion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67807082;
-
---
--- AUTO_INCREMENT de la tabla `paciente`
---
-ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `identificacion` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `patologia`
 --
 ALTER TABLE `patologia`
-  MODIFY `identificacion` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `identificacion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `registrador`
 --
 ALTER TABLE `registrador`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201061912;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `paciente`
---
-ALTER TABLE `paciente`
-  ADD CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`ipd_id`) REFERENCES `ipd` (`rut_paciente`);
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201061913;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -54,6 +54,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.RUTJTextField1.addKeyListener(this);
         this.RUTJTextField2.addKeyListener(this);
         this.PatologiasJComboBox.addActionListener(this);
+        this.NombreFuncionarioJLabel.setText("");
+        this.RUTFuncionarioJLabel.setText("");
+        this.FechaJLabel.setText("");
+        this.FechaIngresoJLabel.setText("");
+        this.FuncionarioRegistroJLabel.setText("");
 
     }
 

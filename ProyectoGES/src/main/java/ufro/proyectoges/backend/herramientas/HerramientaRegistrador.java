@@ -20,7 +20,7 @@ import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
- *
+ * Clase que maneja las funciones del registrador
  * @author shido
  */
 public class HerramientaRegistrador implements Herramienta {
@@ -30,7 +30,7 @@ public class HerramientaRegistrador implements Herramienta {
     private final SqlHandler sqlHandler;
 
     /**
-     *
+     * Constructor de HerramientaRegistrador
      */
     public HerramientaRegistrador() {
         sqlHandler = handler;
@@ -38,10 +38,10 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param inicio
-     * @param termino
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param inicio Recibe un paremetro de tipo Date
+     * @param termino Recibe un parametro de tipo Date
+     * @return No retorna nada
      */
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
@@ -51,9 +51,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param nombre
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Busca un paciente por nombre
+     * @param nombre Recibe un parametro de tipo String
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente buscado
      */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
@@ -68,9 +68,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param rut
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo busca a un paciente en la base de datos mediante el rut
+     * @param rut Recibe un objeto de clase Rut, que hace alusion al rut del paciente
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente
      */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
@@ -86,9 +86,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param p
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo verifica la existencia de la persona en la base de datos
+     * @param p Recibe un objeto de clase Persona , que hace alusion a la persona que se pretende buscar
+     * @return Retorna un valor booleano que indica si la persona existe en la base de datos
      */
     @Override
     public boolean personaExiste(Persona p) {
@@ -96,9 +96,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param rut
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo busca a una persona en la base de datos mediante el rut
+     * @param rut Recibe un objeto de clase Rut
+     * @return Retorna un objeto de clase Persona, que contiene los datos de la persona buscada
      */
     @Override
     public Persona buscarPersona(Rut rut) {
@@ -114,8 +114,8 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo recupera de la base de datos la tabla de los pacientes
+     * @return Retorna una lista de objetos de clase Paciente, que contiene los datos de los pacientes almacenados en la base de datos
      */
     @Override
     public List<Paciente> obtenerPacientes() {
@@ -133,8 +133,8 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param r
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Este metodo registra un Monitor en la base de datos
+     * @param r Recibe un objeto de clase Monitor
      */
     @Override
     public void registrarMonitor(Monitor r) {
@@ -145,8 +145,8 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param r
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Este metodo registra un Registrador en la base de datos
+     * @param r Recibe un objeto de clase Registrador
      */
     @Override
     public void registrarRegistrador(Registrador r) {
@@ -157,9 +157,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param paciente
-     * @param registrador
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Este metodo registra un paciente a la base de datos
+     * @param paciente Recibe un objeto de clase Paciente, que hace alusion a los datos del paciente que se va a ingresar en la base de datos
+     * @param registrador Recibe un objeto de clase Registrador, que hace alusion al registrador que ingreso al paciente ne la base de datos
      */
     @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
@@ -174,9 +174,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param ipd
-     * @param registrador
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo registra el IPD del paciente en la base de datos
+     * @param ipd Recibe un objeto de clase IPDPaciente, que hace alusion al IPD del paciente
+     * @param registrador Recibe un objeto de clase Registrador, que hace alusion al registrador que ingresa el IPD del paciente
      */
     @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
@@ -198,8 +198,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     *
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Este metodo busca el ipd del paciente en la base de datos mediante el ID
+     * @param id Recibe una variable de tipo entero
+     * @return Retorna un objeto de clase IPDPaciente, que contiene los datos del IPD del paciente
      */
     @Override
     public IPDPaciente buscarIPDporId(int id) {
@@ -215,8 +216,8 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo recupera las patologias de la base de datos
+     * @return Retorna un arreglo de String que contiene las patologias
      */
     @Override
     public String[] obtenerPatologias() {
@@ -241,9 +242,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param nombre
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo consulta el ID de la patologia por nombre
+     * @param nombre Recibe una variable de tipo String, que contiene el nombre de la patologia
+     * @return Retorna un entero que contiene el ID de la patologia consultada
      */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
@@ -260,9 +261,9 @@ public class HerramientaRegistrador implements Herramienta {
     }
 
     /**
-     *
-     * @param ipd
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, este metodo permite obtener el Registrador que ingreso el IPD del paciente
+     * @param ipd Recibe un objeto de clase IPDPaciente, que contiene los datos del IPD del paciente
+     * @return Retorna un objeto de clase Registrador que contiene los datos del registrador que ingreso el IPD del paciente
      */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {

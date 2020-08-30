@@ -23,6 +23,7 @@ import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
+ * Esta es la ventana que se usa para la busqueda de pacientes
  *
  * @author Roald
  */
@@ -35,7 +36,8 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     /**
      * Creates new form BusquedaPaciente 0
      *
-     * @param p
+     * @param p Recibe un objeto de clase Persona que contiene los datos de la
+     * persona que utiliza el programa
      */
     public BusquedaPaciente(Persona p) {
         this.p = p;
@@ -144,11 +146,6 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         getContentPane().add(BuscarRUTJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         NombreJTextField.setEnabled(false);
-        NombreJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreJTextFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 190, -1));
 
         BuscarNombreJButton.setText("Buscar");
@@ -176,8 +173,10 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+     * Este metodo sirve para regresar al menu principal al hacer click en el
+     * boton Volver
      *
-     * @param evt
+     * @param evt Este evento se genera al hacer click en el boton
      */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
@@ -185,8 +184,11 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
     /**
+     * Este metodo sirve para habilitar los campos para la busqueda del paciente
+     * mediante el Rut, a la vez que desactiva los otros campos
      *
-     * @param evt
+     * @param evt Este es el evento generado al hacer click en el boton
+     * BusquedaRut
      */
     private void BusquedaRutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaRutJButtonActionPerformed
         // TODO add your handling code here:
@@ -197,8 +199,11 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         BuscarRUTJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaRutJButtonActionPerformed
     /**
+     * Este metodo sirve para habilitar los campos para la busqueda del paciente
+     * mediante el nombre, a la vez que desactiva los otros campos
      *
-     * @param evt
+     * @param evt Este evento se genera cuando se hace click en el boton
+     * BusquedaNombre
      */
     private void BusquedaNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaNombreJButtonActionPerformed
         // TODO add your handling code here:
@@ -209,8 +214,11 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         BuscarNombreJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
     /**
+     * Este metodo sirve para generar la busqueda del paciente por rut a la base
+     * de datos con los datos ingresados en los campos a utilizar, y mostrarlo
+     * en la tabla de resultados
      *
-     * @param evt
+     * @param evt Este evento se genera al hacer click en el boton BuscarRUT
      */
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
         String rutAnotado = RutJTextField1.getText() + RutJTextField2.getText();
@@ -243,16 +251,21 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
     /**
+     * Este metodo retorna el atributo que contiene la persona que usa este
+     * programa
      *
-     * @return
+     * @return Retorna un objeto de clase Persona
      */
     public Persona getP() {
         return p;
     }
 
     /**
+     * Este metodo genera la busqueda del paciente en la base de datos mediante
+     * el nombre obtenido de los campos que estaban destinados para ese fin, y
+     * luego los muestra en la tabla de resultados
      *
-     * @param evt
+     * @param evt Este evento se genera al hacer click en el boton BuscarNombre
      */
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
 
@@ -278,21 +291,17 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         }
     }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
     /**
+     * Este metodo corrobora si un paciente ya fue agregado a la lista de
+     * resultados
      *
-     * @param p
-     * @return
+     * @param p Recibe un objeto de clase Paciente que contiene los datos del
+     * paciente a verificar
+     * @return Retorna una variable boolean que contiene si el paciente fue
+     * agregado o no
      */
     private boolean pacienteYaAgregado(Paciente p) {
         return pacientesObtenidos.stream().anyMatch(pacientesObtenido -> (p.getRutValidado().equals(pacientesObtenido.getRutValidado())));
     }
-
-    /**
-     *
-     * @param evt
-     */
-    private void NombreJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,9 +322,10 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     private javax.swing.JButton VolverJButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-/**
-     *
-     * @param e
+    
+    /**
+     * Este metodo genera una accion en caso de que se haga click en algun resultado de la tabla de resultados de la busqueda del paciente
+     * @param e Este es el evento que se espera de la accion de hacer click en la tabla de resultados
      */
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -327,19 +337,31 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         }
 
     }
-
+    /**
+     * Este metodo no tiene implementacion
+     * @param e Evento generado por presionar un boton del mouse
+     */
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
+    /**
+     * Este metodo no tiene implementacion
+     * @param e Evento generado por soltar un boton de mouse
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
     }
-
+    /**
+     * Este metodo no tiene implementacion
+     * @param e Este evento se genera al posar el mouse sobre un componente
+     */
     @Override
     public void mouseEntered(MouseEvent e) {
     }
-
+    /**
+     * Este metodo no tiene implementacion
+     * @param e Este evento se genera al posar el mouse sobre un componente
+     */
     @Override
     public void mouseExited(MouseEvent e) {
     }

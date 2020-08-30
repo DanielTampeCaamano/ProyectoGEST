@@ -23,7 +23,6 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  * Clase encargada de manejar los metodos que usa la entidad Monitor
- *
  * @author shido
  */
 public class HerramientaMonitor implements Herramienta {
@@ -31,17 +30,17 @@ public class HerramientaMonitor implements Herramienta {
     private SqlHandler sqlHandler;
 
     /**
-     *
+     * Constructor de la clase HerramientaMonitor
      */
     public HerramientaMonitor() {
         sqlHandler = handler;
     }
 
     /**
-     *
-     * @param inicio
-     * @param termino
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param inicio Recibe una variable de tipo Date
+     * @param termino Recibe una variable de tipo Date
+     * @return Debiera retornar un boolean, aqui solo retorna falso
      */
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
@@ -49,9 +48,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param nombre
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Se utiliza para buscar paciente por nombre
+     * @param nombre Recibe una variable String, que hace alusion al nombre del paciente que se pretende buscar
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente que se pretende buscar
      */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
@@ -66,9 +65,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param rut
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui se utiliza para buscar un paciente atraves del rut
+     * @param rut Recibe un objeto de tipo Rut
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente que se busco
      */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
@@ -84,9 +83,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param p
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, verifica si la persona existe
+     * @param p Recibe un objeto de tipo Persona, que contiene los datos de la persona a verificar
+     * @return Retorna si la persona existe 
      */
     @Override
     public boolean personaExiste(Persona p) {
@@ -94,9 +93,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param rut
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, sirve para buscar una persona por el rut
+     * @param rut Recibe un objeto de clase Rut, que contiene el rut de la persona a buscar
+     * @return Retorna un objeto de clase Persona que contiene los datos de la persona buscada
      */
     @Override
     public Persona buscarPersona(Rut rut) {
@@ -120,8 +119,8 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, obtiene una lista de pacientes de la base de datos
+     * @return Retorna una lista de objetos de clase de Paciente
      */
     @Override
     public List<Paciente> obtenerPacientes() {
@@ -139,8 +138,8 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param r
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param r Recibe un objeto de tipo Monitor
      */
     @Override
     public void registrarMonitor(Monitor r) {
@@ -148,8 +147,8 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param r
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param r Recibe un objeto de clase Registrador
      */
     @Override
     public void registrarRegistrador(Registrador r) {
@@ -157,9 +156,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param id
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param id Recibe un parametro de tipo entero que contiene el id del IPD del paciente
+     * @return Debiera retornar un objeto de clase IPDPaciente, aqui no retorna nada
      */
     @Override
     public IPDPaciente buscarIPDporId(int id) {
@@ -167,8 +166,8 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @return No retorna nada
      */
     @Override
     public String[] obtenerPatologias() {
@@ -176,9 +175,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param nombre
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param nombre Recibe un parametro de tipo String
+     * @return No retorna nada
      */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
@@ -186,9 +185,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param paciente
-     * @param registrador
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param paciente Recibe un parametro de de clase Paciente
+     * @param registrador Recibe un parametro de clase Registrador
      */
     @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
@@ -196,9 +195,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param ipd
-     * @param registrador
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param ipd Recibe un parametro de clase IPDPaciente
+     * @param registrador Recibe un parametro de clase Registrador
      */
     @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
@@ -206,9 +205,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     *
-     * @param ipd
-     * @return
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * @param ipd Recibe un parametro de clase IPDPaciente
+     * @return No retorna nada
      */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {

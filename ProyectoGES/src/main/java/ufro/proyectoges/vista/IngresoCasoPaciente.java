@@ -24,7 +24,7 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
- *
+ * Esta ventana gestiona el ingreso de los datos del paciente al sistema, o su visualizacion
  * @author Roald
  */
 public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener, ActionListener {
@@ -38,8 +38,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     /**
      * Creates new form IngresoCasoPaciente
-     *
-     * @param p
+     * Este metodo setea la forma para cuando se va a ingresar a un paciente al sistema
+     * @param p Recibe un objeto de clase Persona, que hace alusion a la persona usando el programa
      */
     public IngresoCasoPaciente(Persona p) {
         this.p = p;
@@ -63,9 +63,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
-     * @param p
-     * @param previous
+     * Este metodo setea la forma para cuando se va a visualizar los datos de un paciente que se haya buscado
+     * @param p Recibe un objeto de clase Persona, que hace alusion a la persona usando el programa
+     * @param previous Recibe los datos de la ventana BusquedaPaciente
      */
     public IngresoCasoPaciente(Paciente p, BusquedaPaciente previous) {
         this.previous = previous;
@@ -96,56 +96,56 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
-     * @return
+     * Retorna el el contenido del campo Nombre
+     * @return Retorna el contenido del JTextField Nombre
      */
     public JTextField getNombreJTextField() {
         return NombreJTextField;
     }
 
     /**
-     *
-     * @return
+     * Retorna el contenido del campo Patologias
+     * @return Retorna el contenido del JTextField Patologias
      */
     public JTextField getPatologiasJTextField() {
         return PatologiasJTextField;
     }
 
     /**
-     *
-     * @return
+     * Retorna el contenido del campo RUT
+     * @return Retorna el contenido del JTextField RUT
      */
     public JTextField getRUTJTextField1() {
         return RUTJTextField1;
     }
 
     /**
-     *
-     * @return
+     * Retorna el contenido del campo RUT
+     * @return Retorna el contenido del JTextField RUT
      */
     public JTextField getRUTJTextField2() {
         return RUTJTextField2;
     }
 
     /**
-     *
-     * @return
+     * Retorna el contenido del IPD del paciente
+     * @return Retorna un objeto de clase IPDPaciente, que contiene los datos del IPD del paciente al que esta relacionado
      */
     public IPDPaciente getIpd() {
         return ipd;
     }
 
     /**
-     *
-     * @param ipd
+     * Este metodo edita el contenido del IPD del paciente
+     * @param ipd Este parametro edita el contenido del IPD del paciente
      */
     public void setIpd(IPDPaciente ipd) {
         this.ipd = ipd;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna la persona usando el sistema
+     * @return Retorna un objeto de clase Persona, aludiendo a la persona usando el sistema
      */
     public Persona getP() {
         return p;

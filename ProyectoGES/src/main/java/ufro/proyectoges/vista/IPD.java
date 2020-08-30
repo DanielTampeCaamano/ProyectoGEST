@@ -17,7 +17,7 @@ import ufro.proyectoges.backend.entidades.fecha.Fecha;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
- *
+ * Esta ventana gestiona el IPD del paciente al que esta relacionado
  * @author Roald
  */
 public class IPD extends javax.swing.JFrame {
@@ -28,9 +28,9 @@ public class IPD extends javax.swing.JFrame {
 
     /**
      * Creates new form IPD
-     *
-     * @param p
-     * @param formPaciente
+     * Este metodo setea la forma para ingresar el ipd del paciente a la base de datos
+     * @param p Recibe un objeto clase Persona que contiene los datos de la persona que usa el sistema
+     * @param formPaciente Recibe los datos de la ventana IngresoCasoPaciente
      */
     public IPD(Persona p, IngresoCasoPaciente formPaciente) {
         this.formPaciente = formPaciente;
@@ -51,9 +51,9 @@ public class IPD extends javax.swing.JFrame {
 
     /**
      * Creates new form IPD
-     *
-     * @param paciente
-     * @param formPaciente
+     * Este metodo setea la forma de la ventana para cuando se hace la busqueda de paciente
+     * @param paciente Recibe un objeto de clase Paciente, que contiene los datos del paciente que ha sido buscado
+     * @param previous Recibe los datos de la ventana IngresoCasoPaciente, que posee los datos del paciente
      */
     public IPD(Paciente paciente, IngresoCasoPaciente previous) {
         System.out.println("entra2");
@@ -165,12 +165,6 @@ public class IPD extends javax.swing.JFrame {
 
         NombreCompletoJLabel.setText("Nombre Completo:");
         getContentPane().add(NombreCompletoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 84, -1, -1));
-
-        NombreCompletoJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreCompletoJTextFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(NombreCompletoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 233, -1));
 
         RUTJLabel.setText("RUT");
@@ -291,9 +285,9 @@ public class IPD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-/**
-     *
-     * @param evt
+    /**
+     * Este metodo ingresa los datos del IPD del paciente al que va relacionado en la base de datos
+     * @param evt Este evento se genera cuando se hace click en el boton Aceptar
      */
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
@@ -350,8 +344,8 @@ public class IPD extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AceptarJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox GES aparezca seleccionado, y deselecciona el checkbox NoGes
+     * @param evt Este evento se genera cuando se hace click en el checkbox GES
      */
     private void GESJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GESJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -359,8 +353,8 @@ public class IPD extends javax.swing.JFrame {
         NoGesJCheckBox.setSelected(false);
     }//GEN-LAST:event_GESJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox NoGES aparezca seleccionado, y deselecciona el checkbox Ges
+     * @param evt Este evento se genera cuando se hace click en el checkbox noGES
      */
     private void NoGesJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoGesJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -368,8 +362,8 @@ public class IPD extends javax.swing.JFrame {
         NoGesJCheckBox.setSelected(true);
     }//GEN-LAST:event_NoGesJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox Si aparezca seleccionado, y deselecciona el checkbox No
+     * @param evt Este evento se genera cuando se hace click en el checkbox Si
      */
     private void SiJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -377,8 +371,8 @@ public class IPD extends javax.swing.JFrame {
         NoJCheckBox.setSelected(false);
     }//GEN-LAST:event_SiJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox No aparezca seleccionado, y deselecciona el checkbox Si
+     * @param evt Este evento se genera cuando se hace click en el checkbox No
      */
     private void NoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -386,8 +380,8 @@ public class IPD extends javax.swing.JFrame {
         NoJCheckBox.setSelected(true);
     }//GEN-LAST:event_NoJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox Confirmado aparezca seleccionado, y deselecciona el checkbox Descartado
+     * @param evt Este evento se genera cuando se hace click en el checkbox Confirmado
      */
     private void ConfirmadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmadoJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -395,8 +389,8 @@ public class IPD extends javax.swing.JFrame {
         DescartadoJCheckBox.setSelected(false);
     }//GEN-LAST:event_ConfirmadoJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo edita el checkbox Descartado aparezca seleccionado, y deselecciona el checkbox Confirmado
+     * @param evt Este evento se genera cuando se hace click en el checkbox Descartado
      */
     private void DescartadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescartadoJCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -404,8 +398,8 @@ public class IPD extends javax.swing.JFrame {
         DescartadoJCheckBox.setSelected(true);
     }//GEN-LAST:event_DescartadoJCheckBoxActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo permite regresar a la ventana de visualizacion de los datos del paciente
+     * @param evt Este evento se genera al hacer click en el boton Volver
      */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
@@ -416,13 +410,6 @@ public class IPD extends javax.swing.JFrame {
         }
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-    /**
-     *
-     * @param evt
-     */
-    private void NombreCompletoJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreCompletoJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreCompletoJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

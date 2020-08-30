@@ -18,6 +18,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
     /**
      * Creates new form DescargabaseDatos
+     *
      * @param p
      */
     public DescargabaseDatos(Persona p) {
@@ -212,13 +213,14 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-/**
- * 
- * @param evt 
- */
+    
+    /**
+     * Este metodo sirve para descargar informacion de la base de dato dependiendo de los datos que este disponibles en los campos habilitados
+     * @param evt Este evento se genera al hacer click en el boton Descargar
+     */
     private void DescargaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaJButtonActionPerformed
         // TODO add your handling code here:
-        if(RangoFechaInicialJLabel.isEnabled()){
+        if (RangoFechaInicialJLabel.isEnabled()) {
             p.getHerramientaPersona().descargarBasesDeDatos(new Date(Integer.parseInt(AnioFechaInicialCasosVigentesJTextField.getText()),
                     Integer.parseInt(MesFechaInicialCasosVigentesJTextField.getText()),
                     Integer.parseInt(DiaFechaInicialCasosVigentesJTextField.getText())),
@@ -228,19 +230,19 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         }
         new GuardadoArchivo(p).setVisible(true);
     }//GEN-LAST:event_DescargaJButtonActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * Metodo que sirve para volver al menu principal
+     * @param evt Este evento se genera al hacer click en el boton Volver
+     */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos vigentes
+     * @param evt Este evento se genera al hacer click en el boton Casos Vigentes
+     */
     private void CasosVigentesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosVigentesJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
@@ -251,7 +253,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosCerradosJTextField.setEnabled(false);
         AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
         RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
-        
+
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
         MesFechaInicialCasosExceptuadosJTextField.setEnabled(false);
         AnioFechaInicialCasosExceptuadosJTextField.setEnabled(false);
@@ -260,7 +262,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
         AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
         RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
-        
+
         DiaFechaInicialCasosVigentesJTextField.setEnabled(true);
         MesFechaInicialCasosVigentesJTextField.setEnabled(true);
         AnioFechaInicialCasosVigentesJTextField.setEnabled(true);
@@ -270,10 +272,10 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         AnioFechaFinalCasosVigentesJTextField.setEnabled(true);
         RangoFechaFinalJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosVigentesJButtonActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos exceptuados
+     * @param evt Este evento se genera al hacer click en el boton Casos Exceptuados
+     */
     private void CasosExceptuadosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosExceptuadosJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
@@ -284,7 +286,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosCerradosJTextField.setEnabled(false);
         AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
         RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
-        
+
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(true);
         MesFechaInicialCasosExceptuadosJTextField.setEnabled(true);
         AnioFechaInicialCasosExceptuadosJTextField.setEnabled(true);
@@ -293,7 +295,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosExceptuadosJTextField.setEnabled(true);
         AnioFechaFinalCasosExceptuadosJTextField.setEnabled(true);
         RangoFechaFinalCasosExceptuadosJLabel.setEnabled(true);
-        
+
         DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
         MesFechaInicialCasosVigentesJTextField.setEnabled(false);
         AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
@@ -302,12 +304,12 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosVigentesJTextField.setEnabled(false);
         AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
         RangoFechaFinalJLabel.setEnabled(false);
-        
+
     }//GEN-LAST:event_CasosExceptuadosJButtonActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos cerrados
+     * @param evt Este evento se genera al hacer click en el boton Casos Cerrados
+     */
     private void CasosCerradosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosCerradosJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
@@ -318,7 +320,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
         AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
         RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
-        
+
         DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
         MesFechaInicialCasosVigentesJTextField.setEnabled(false);
         AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
@@ -327,7 +329,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         MesFechaFinalCasosVigentesJTextField.setEnabled(false);
         AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
         RangoFechaFinalJLabel.setEnabled(false);
-        
+
         DiaFechaInicialCasosCerradosJTextField.setEnabled(true);
         MesFechaInicialCasosCerradosJTextField.setEnabled(true);
         AnioFechaInicialCasosCerradosJTextField.setEnabled(true);
@@ -341,7 +343,6 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnioFechaFinalCasosCerradosJTextField;

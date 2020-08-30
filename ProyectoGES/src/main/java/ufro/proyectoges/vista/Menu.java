@@ -111,23 +111,32 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     *
+     * @param evt
+     */
     private void IngresoPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoPacientesJButtonActionPerformed
         // TODO add your handling code here:
         if (persona instanceof Registrador) {
-            new IngresoCasoPaciente((Registrador)persona).setVisible(true);
+            new IngresoCasoPaciente((Registrador) persona).setVisible(true);
             this.dispose();
         } else {
             System.out.println("No es un registrador");
         }
     }//GEN-LAST:event_IngresoPacientesJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed
         new BusquedaPaciente(persona).setVisible(true);
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_BusquedaPacientesJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void DescargaBaseDatosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaBaseDatosJButtonActionPerformed
         // TODO add your handling code here:
         new DescargabaseDatos(persona).setVisible(true);

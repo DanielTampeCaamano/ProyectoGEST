@@ -29,11 +29,20 @@ public class HerramientaRegistrador implements Herramienta {
 
     private final SqlHandler sqlHandler;
 
+    /**
+     *
+     */
     public HerramientaRegistrador() {
         sqlHandler = handler;
 
     }
 
+    /**
+     *
+     * @param inicio
+     * @param termino
+     * @return
+     */
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
 
@@ -41,6 +50,11 @@ public class HerramientaRegistrador implements Herramienta {
 
     }
 
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         try {
@@ -53,6 +67,11 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     *
+     * @param rut
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
         try {
@@ -66,11 +85,21 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     *
+     * @param p
+     * @return
+     */
     @Override
     public boolean personaExiste(Persona p) {
         return buscarPersona(p.getRut()) != null;
     }
 
+    /**
+     *
+     * @param rut
+     * @return
+     */
     @Override
     public Persona buscarPersona(Rut rut) {
         try {
@@ -84,6 +113,10 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Paciente> obtenerPacientes() {
         List<Paciente> pacientes = new ArrayList<>();
@@ -99,6 +132,10 @@ public class HerramientaRegistrador implements Herramienta {
         return pacientes;
     }
 
+    /**
+     *
+     * @param r
+     */
     @Override
     public void registrarMonitor(Monitor r) {
 
@@ -107,6 +144,10 @@ public class HerramientaRegistrador implements Herramienta {
 
     }
 
+    /**
+     *
+     * @param r
+     */
     @Override
     public void registrarRegistrador(Registrador r) {
 
@@ -115,6 +156,11 @@ public class HerramientaRegistrador implements Herramienta {
 
     }
 
+    /**
+     *
+     * @param paciente
+     * @param registrador
+     */
     @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
 
@@ -127,6 +173,11 @@ public class HerramientaRegistrador implements Herramienta {
         }
     }
 
+    /**
+     *
+     * @param ipd
+     * @param registrador
+     */
     @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
         int ges = ipd.isEsGes() ? 1 : 0;
@@ -146,6 +197,10 @@ public class HerramientaRegistrador implements Herramienta {
 
     }
 
+    /**
+     *
+     *
+     */
     @Override
     public IPDPaciente buscarIPDporId(int id) {
         try {
@@ -159,6 +214,10 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String[] obtenerPatologias() {
         List<String> patologiasGuardadas = new ArrayList<>();
@@ -181,6 +240,11 @@ public class HerramientaRegistrador implements Herramienta {
         return patToString;
     }
 
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
 
@@ -195,6 +259,11 @@ public class HerramientaRegistrador implements Herramienta {
         return 0;
     }
 
+    /**
+     *
+     * @param ipd
+     * @return
+     */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {
 

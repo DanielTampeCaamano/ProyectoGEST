@@ -12,9 +12,12 @@ import java.sql.Date;
  * @author shido
  */
 public class Fecha {
-    
-    
-    
+
+    /**
+     *
+     * @param date
+     * @return
+     */
     public static String getYear(Date date) {
         if (date != null) {
             String fecha = date.toString();
@@ -23,6 +26,11 @@ public class Fecha {
         return "";
     }
 
+    /**
+     *
+     * @param date
+     * @return
+     */
     public static String getMonth(Date date) {
         if (date != null) {
             String fecha = date.toString();
@@ -31,6 +39,11 @@ public class Fecha {
         return "";
     }
 
+    /**
+     *
+     * @param date
+     * @return
+     */
     public static String getDay(Date date) {
         if (date != null) {
             String fecha = date.toString();
@@ -38,9 +51,15 @@ public class Fecha {
         }
         return "";
     }
-    
-    public static boolean fecha1MenorQueFecha2(Date fecha1, Date fecha2){
-        if (fecha2 == null){
+
+    /**
+     *
+     * @param fecha1
+     * @param fecha2
+     * @return
+     */
+    public static boolean fecha1MenorQueFecha2(Date fecha1, Date fecha2) {
+        if (fecha2 == null) {
             return true;
         }
         return fecha1.compareTo(fecha2) < 0;

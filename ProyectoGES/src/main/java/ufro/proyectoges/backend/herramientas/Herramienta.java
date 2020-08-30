@@ -14,7 +14,10 @@ import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
-
+/**
+ * 
+ * @author Roald
+ */
 public interface Herramienta {
 
     public SqlHandler handler = new SqlHandler("127.0.0.1", "ges");

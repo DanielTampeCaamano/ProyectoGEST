@@ -62,11 +62,16 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     }
 
+    /**
+     *
+     * @param p
+     * @param previous
+     */
     public IngresoCasoPaciente(Paciente p, BusquedaPaciente previous) {
         this.previous = previous;
         this.pacienteAObservar = p;
         initComponents();
-        
+
         this.confirmacionIPD.setText("IPD Confirmado");
 
         this.PatologiasJTextField.setEditable(false);
@@ -79,9 +84,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.RUTJTextField1.setText(p.getRutValidado().substring(0, p.getRutValidado().length() - 1));
         this.RUTJTextField2.setText("" + p.getRutValidado().charAt(p.getRutValidado().length() - 1));
         this.PatologiasJTextField.setText(p.getIpdPaciente().getCodigoPatologia());
-        
+
         Registrador registrador = previous.getP().getHerramientaPersona().obtenerRegistradorIPD(p.getIpdPaciente());
-        
+
         this.NombreFuncionarioJLabel.setText(registrador.getNombre());
         this.RUTFuncionarioJLabel.setText(registrador.getRut().getRut());
         this.FechaJLabel.setText(p.getIpdPaciente().getFechaDeGuardado().toString());
@@ -90,38 +95,74 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNombreJTextField() {
         return NombreJTextField;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPatologiasJTextField() {
         return PatologiasJTextField;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getRUTJTextField1() {
         return RUTJTextField1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getRUTJTextField2() {
         return RUTJTextField2;
     }
 
+    /**
+     *
+     * @return
+     */
     public IPDPaciente getIpd() {
         return ipd;
     }
 
+    /**
+     *
+     * @param ipd
+     */
     public void setIpd(IPDPaciente ipd) {
         this.ipd = ipd;
     }
 
+    /**
+     *
+     * @return
+     */
     public Persona getP() {
         return p;
     }
 
+    /**
+     *
+     * @param p
+     */
     public void setP(Persona p) {
         this.p = p;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getConfirmacionIPD() {
         return confirmacionIPD;
     }
@@ -257,7 +298,10 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     private void NombreJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreJTextFieldActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
         if (!soloVista) {
@@ -269,12 +313,15 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             }
         } else {
             this.setEnabled(false);
-            new IPD( pacienteAObservar,this).setVisible(true);
+            new IPD(pacienteAObservar, this).setVisible(true);
         }
 
 
     }//GEN-LAST:event_IPDJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
         // TODO add your handling code here:
         String rut = RUTJTextField1.getText() + RUTJTextField2.getText();
@@ -293,18 +340,24 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             JOptionPane.showMessageDialog(null, "Campo de rut vacio", "Error de validacion", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_IngresarJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         if (!soloVista) {
             new Menu(p).setVisible(true);
-        }else{
+        } else {
             this.previous.setEnabled(true);
         }
 
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
 
@@ -345,12 +398,19 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     private javax.swing.JLabel confirmacionIPD;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
+/**
+     *
+     * @param e
+     */
     @Override
     public void keyTyped(KeyEvent e) {
 
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         if (ipd != null) {
@@ -358,16 +418,27 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         }
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void keyReleased(KeyEvent e) {
 
     }
 
+    /**
+     *
+     */
     private void advertirCambios() {
         ipd = null;
         confirmacionIPD.setText("Datos modificados, se debe re-hacer ipd");
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.PatologiasJComboBox && ipd != null) {

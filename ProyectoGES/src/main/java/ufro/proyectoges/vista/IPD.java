@@ -76,7 +76,7 @@ public class IPD extends javax.swing.JFrame {
         DescartadoJCheckBox.setEnabled(false);
 
         IPDPaciente ipd = paciente.getIpdPaciente();
-        
+
         SiJCheckBox.setEnabled(false);
         NoJCheckBox.setEnabled(false);
         ConfirmadoJCheckBox.setEnabled(false);
@@ -99,7 +99,7 @@ public class IPD extends javax.swing.JFrame {
         NoJCheckBox.setSelected(!ipd.isNotificacionPacienteGES());
         ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
         GESJCheckBox.setSelected(ipd.isEsGes());
-        
+
         ExceptuadoJCheckBox.setSelected(ipd.isExceptuado());
         ConfirmadoJCheckBox.setSelected(ipd.isConfirmado());
         DescartadoJCheckBox.setSelected(ipd.isDescartado());
@@ -291,7 +291,10 @@ public class IPD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     *
+     * @param evt
+     */
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
 
@@ -314,14 +317,13 @@ public class IPD extends javax.swing.JFrame {
 
         try {
             Date fecha_inicio = Date.valueOf(AnioFechaInicioJTextField.getText() + "-" + MesFechaInicioJTextField.getText() + "-" + DiaFechaInicioJTextField.getText());
-            
-            
+
             java.util.Date ahora = Date.from(Instant.now());
             Date fecha_ahora = new Date(ahora.getTime());
-            
-            System.out.println("p.rut="+p.getRut());
-            System.out.println("p.rut.rut"+p.getRut().getRut());
-            
+
+            System.out.println("p.rut=" + p.getRut());
+            System.out.println("p.rut.rut" + p.getRut().getRut());
+
             if (nomNoVacio && rutNoVacio && fechaInNoVac && gesONoGES && notif && ConExDes && obser && Fecha.fecha1MenorQueFecha2(fecha_inicio, fecha_termin)) {
                 formPaciente.setIpd(new IPDPaciente(RUTJTextField1.getText() + RUTJTextField2.getText(),
                         NombreCompletoJTextField.getText(),
@@ -347,43 +349,64 @@ public class IPD extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_AceptarJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void GESJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GESJCheckBoxActionPerformed
         // TODO add your handling code here:
         GESJCheckBox.setSelected(true);
         NoGesJCheckBox.setSelected(false);
     }//GEN-LAST:event_GESJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void NoGesJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoGesJCheckBoxActionPerformed
         // TODO add your handling code here:
         GESJCheckBox.setSelected(false);
         NoGesJCheckBox.setSelected(true);
     }//GEN-LAST:event_NoGesJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void SiJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiJCheckBoxActionPerformed
         // TODO add your handling code here:
         SiJCheckBox.setSelected(true);
         NoJCheckBox.setSelected(false);
     }//GEN-LAST:event_SiJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void NoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoJCheckBoxActionPerformed
         // TODO add your handling code here:
         SiJCheckBox.setSelected(false);
         NoJCheckBox.setSelected(true);
     }//GEN-LAST:event_NoJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void ConfirmadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmadoJCheckBoxActionPerformed
         // TODO add your handling code here:
         ConfirmadoJCheckBox.setSelected(true);
         DescartadoJCheckBox.setSelected(false);
     }//GEN-LAST:event_ConfirmadoJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void DescartadoJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescartadoJCheckBoxActionPerformed
         // TODO add your handling code here:
         ConfirmadoJCheckBox.setSelected(false);
         DescartadoJCheckBox.setSelected(true);
     }//GEN-LAST:event_DescartadoJCheckBoxActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         if (this.previous == null) {
@@ -393,7 +416,10 @@ public class IPD extends javax.swing.JFrame {
         }
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void NombreCompletoJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreCompletoJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreCompletoJTextFieldActionPerformed

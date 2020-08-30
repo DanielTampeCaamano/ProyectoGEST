@@ -174,15 +174,20 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    
-    
+
+    /**
+     *
+     * @param evt
+     */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void BusquedaRutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaRutJButtonActionPerformed
         // TODO add your handling code here:
         NombreJTextField.setEnabled(false);
@@ -191,7 +196,10 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         RutJTextField2.setEnabled(true);
         BuscarRUTJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaRutJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void BusquedaNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaNombreJButtonActionPerformed
         // TODO add your handling code here:
         RutJTextField1.setEnabled(false);
@@ -200,7 +208,10 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         NombreJTextField.setEnabled(true);
         BuscarNombreJButton.setEnabled(true);
     }//GEN-LAST:event_BusquedaNombreJButtonActionPerformed
-
+    /**
+     *
+     * @param evt
+     */
     private void BuscarRUTJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarRUTJButtonActionPerformed
         String rutAnotado = RutJTextField1.getText() + RutJTextField2.getText();
         if (!RutJTextField1.getText().isEmpty() && !RutJTextField2.getText().isEmpty()) {
@@ -231,14 +242,18 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         }
 
     }//GEN-LAST:event_BuscarRUTJButtonActionPerformed
-
+    /**
+     *
+     * @return
+     */
     public Persona getP() {
         return p;
     }
-    
-    
-    
 
+    /**
+     *
+     * @param evt
+     */
     private void BuscarNombreJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNombreJButtonActionPerformed
 
         if (!NombreJTextField.getText().isEmpty()) {
@@ -262,11 +277,19 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
             JOptionPane.showMessageDialog(null, "Rellene todos los campos");
         }
     }//GEN-LAST:event_BuscarNombreJButtonActionPerformed
-
+    /**
+     *
+     * @param p
+     * @return
+     */
     private boolean pacienteYaAgregado(Paciente p) {
         return pacientesObtenidos.stream().anyMatch(pacientesObtenido -> (p.getRutValidado().equals(pacientesObtenido.getRutValidado())));
     }
 
+    /**
+     *
+     * @param evt
+     */
     private void NombreJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreJTextFieldActionPerformed
@@ -290,15 +313,17 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     private javax.swing.JButton VolverJButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
+/**
+     *
+     * @param e
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == ResultadosJTable && e.getClickCount() == 2) {
-            
-            
-            new IngresoCasoPaciente(pacientesObtenidos.get(ResultadosJTable.getSelectedRow()),this).setVisible(true);
-            
+
+            new IngresoCasoPaciente(pacientesObtenidos.get(ResultadosJTable.getSelectedRow()), this).setVisible(true);
+
         }
 
     }

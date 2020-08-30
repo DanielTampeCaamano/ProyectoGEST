@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.vista;
 
+import java.sql.Date;
 import ufro.proyectoges.backend.entidades.Persona;
 
 /**
@@ -211,18 +212,35 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * 
+ * @param evt 
+ */
     private void DescargaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaJButtonActionPerformed
         // TODO add your handling code here:
+        if(RangoFechaInicialJLabel.isEnabled()){
+            p.getHerramientaPersona().descargarBasesDeDatos(new Date(Integer.parseInt(AnioFechaInicialCasosVigentesJTextField.getText()),
+                    Integer.parseInt(MesFechaInicialCasosVigentesJTextField.getText()),
+                    Integer.parseInt(DiaFechaInicialCasosVigentesJTextField.getText())),
+                    new Date(Integer.parseInt(AnioFechaFinalCasosVigentesJTextField.getText()),
+                            Integer.parseInt(MesFechaFinalCasosVigentesJTextField.getText()),
+                            Integer.parseInt(DiaFechaFinalCasosVigentesJTextField.getText())));
+        }
         new GuardadoArchivo(p).setVisible(true);
     }//GEN-LAST:event_DescargaJButtonActionPerformed
-
+/**
+ * 
+ * @param evt 
+ */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
         new Menu(p).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
-
+/**
+ * 
+ * @param evt 
+ */
     private void CasosVigentesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosVigentesJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
@@ -252,7 +270,10 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         AnioFechaFinalCasosVigentesJTextField.setEnabled(true);
         RangoFechaFinalJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosVigentesJButtonActionPerformed
-
+/**
+ * 
+ * @param evt 
+ */
     private void CasosExceptuadosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosExceptuadosJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
@@ -283,7 +304,10 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         RangoFechaFinalJLabel.setEnabled(false);
         
     }//GEN-LAST:event_CasosExceptuadosJButtonActionPerformed
-
+/**
+ * 
+ * @param evt 
+ */
     private void CasosCerradosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosCerradosJButtonActionPerformed
         // TODO add your handling code here:
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);

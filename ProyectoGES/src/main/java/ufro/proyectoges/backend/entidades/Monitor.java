@@ -13,7 +13,12 @@ import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
  * @author shido
  */
 public class Monitor extends Persona{
-    
+    /**
+     * 
+     * @param nombre
+     * @param rut
+     * @param clave 
+     */
     public Monitor(String nombre, Rut rut, String clave) {
         super(nombre, rut, "MONITOR", clave);
         super.setTipo_persona("MONITOR");

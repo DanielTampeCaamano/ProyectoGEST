@@ -15,76 +15,107 @@ public class Rut {
     private String rutSinDv;
     private boolean rutValido;
     private String rutInv;
-    
 
+    /**
+     *
+     * @param rutSinValidar
+     */
     public Rut(String rutSinValidar) {
-        
+
         this.rutValido = false;
         this.rutSinValidar = rutSinValidar.replace("-", "");
         this.rutSinValidar = rutSinValidar.replace(".", "");
         this.rutSinDv = rutSinValidar.substring(0, rutSinValidar.length() - 1);
         this.rutInv = "";
-        
+
     }
-    
-    public static boolean rutBienEscrito(String rut){
+
+    /**
+     *
+     * @param rut
+     * @return
+     */
+    public static boolean rutBienEscrito(String rut) {
         return rut.matches("[0-9]{7,8}[-]{0,1}[0-9]{1,1}");
     }
-    
-    public String getRut(){
+
+    /**
+     *
+     * @return
+     */
+    public String getRut() {
         return rutSinValidar;
     }
 
+    /**
+     *
+     * @return
+     */
     private String invertirRut() {
         for (int i = 0; i < rutSinDv.length(); i++) {
             rutInv += rutSinDv.charAt(rutSinDv.length() - i - 1);
         }
         return rutInv;
     }
-    
-    private int multiplicarPorIndicesYSumar(){
+
+    /**
+     *
+     * @return
+     */
+    private int multiplicarPorIndicesYSumar() {
         String rutInv = invertirRut();
-        int[] indices = {2,3,4,5,6,7};
+        int[] indices = {2, 3, 4, 5, 6, 7};
         int j = 0;
         int suma = 0;
         for (int i = 0; i < rutInv.length(); i++) {
             suma += Integer.parseInt(Character.toString(rutInv.charAt(i))) * indices[j];
             j++;
-            if (j == indices.length){
+            if (j == indices.length) {
                 j = 0;
             }
         }
         return suma;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isRutValido() {
-        return obtenerDigitoVerificado().equals(Character.toString(rutSinValidar.charAt(rutSinValidar.length()-1)));
+        return obtenerDigitoVerificado().equals(Character.toString(rutSinValidar.charAt(rutSinValidar.length() - 1)));
     }
-    
-    private int obtenerResto(){
+
+    /**
+     *
+     * @return
+     */
+    private int obtenerResto() {
         int suma = multiplicarPorIndicesYSumar();
         return suma % 11;
     }
 
-    
-    private String obtenerDigitoVerificado(){
+    /**
+     *
+     * @return
+     */
+    private String obtenerDigitoVerificado() {
         int DV = 11 - obtenerResto();
-        if (DV == 11){
+        if (DV == 11) {
             return "0";
-        }else if (DV == 10){
+        } else if (DV == 10) {
             return "k";
-        }else{
+        } else {
             return String.valueOf(DV);
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Rut{" + "rutSinValidar=" + rutSinValidar + ", rutSinDv=" + rutSinDv + ", rutValido=" + rutValido + ", rutInv=" + rutInv + '}';
     }
-
-    
-    
-    
 
 }

@@ -22,6 +22,7 @@ import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
+ * Clase encargada de manejar los metodos que usa la entidad Monitor
  *
  * @author shido
  */
@@ -29,15 +30,29 @@ public class HerramientaMonitor implements Herramienta {
 
     private SqlHandler sqlHandler;
 
+    /**
+     *
+     */
     public HerramientaMonitor() {
         sqlHandler = handler;
     }
 
+    /**
+     *
+     * @param inicio
+     * @param termino
+     * @return
+     */
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         return false;
     }
 
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         try {
@@ -50,13 +65,17 @@ public class HerramientaMonitor implements Herramienta {
         return null;
     }
 
-    
+    /**
+     *
+     * @param rut
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
-       try {
-           ResultSet queryResult = handler.selectFromWhere("*", "paciente", "rut", rut.getRut());
+        try {
+            ResultSet queryResult = handler.selectFromWhere("*", "paciente", "rut", rut.getRut());
             while (queryResult.next()) {
-                return new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)),buscarIPDporId(Integer.valueOf(queryResult.getString(1))));
+                return new Paciente(queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporId(Integer.valueOf(queryResult.getString(1))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,11 +83,21 @@ public class HerramientaMonitor implements Herramienta {
         return null;
     }
 
+    /**
+     *
+     * @param p
+     * @return
+     */
     @Override
     public boolean personaExiste(Persona p) {
         return buscarPersona(p.getRut()) != null;
     }
 
+    /**
+     *
+     * @param rut
+     * @return
+     */
     @Override
     public Persona buscarPersona(Rut rut) {
         List<Persona> personasObtenidas = new ArrayList<>();
@@ -90,6 +119,10 @@ public class HerramientaMonitor implements Herramienta {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Paciente> obtenerPacientes() {
         List<Paciente> pacientes = new ArrayList<>();
@@ -105,43 +138,78 @@ public class HerramientaMonitor implements Herramienta {
         return pacientes;
     }
 
+    /**
+     *
+     * @param r
+     */
     @Override
     public void registrarMonitor(Monitor r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param r
+     */
     @Override
     public void registrarRegistrador(Registrador r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public IPDPaciente buscarIPDporId(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String[] obtenerPatologias() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param paciente
+     * @param registrador
+     */
     @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param ipd
+     * @param registrador
+     */
     @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param ipd
+     * @return
+     */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

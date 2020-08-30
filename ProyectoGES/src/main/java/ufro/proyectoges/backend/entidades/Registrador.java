@@ -12,14 +12,18 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author shido
  */
-public class Registrador extends Persona{
+public class Registrador extends Persona {
 
+    /**
+     *
+     * @param nombre
+     * @param rut
+     * @param clave
+     */
     public Registrador(String nombre, Rut rut, String clave) {
-        super(nombre, rut,"REGISTRADOR", clave);
+        super(nombre, rut, "REGISTRADOR", clave);
         super.setTipo_persona("REGISTRADOR");
         super.setHerramientaPersona(new HerramientaRegistrador());
     }
-    
-   
-    
+
 }

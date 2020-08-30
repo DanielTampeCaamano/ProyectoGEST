@@ -9,16 +9,16 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
- *
+ * Esta clase contiene la informacion del Registrador
  * @author shido
  */
 public class Registrador extends Persona {
 
     /**
-     *
-     * @param nombre
-     * @param rut
-     * @param clave
+     * Constructor de la clase Registrador
+     * @param nombre Este parametro es el nombre del registrador
+     * @param rut Este parametro es el rut del registrador
+     * @param clave Este parametro es la clave del registrador
      */
     public Registrador(String nombre, Rut rut, String clave) {
         super(nombre, rut, "REGISTRADOR", clave);

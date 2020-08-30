@@ -6,7 +6,7 @@
 package ufro.proyectoges.backend.entidades;
 
 /**
- *
+ * Esta clase serviria para enumerar las patologias existentes en el sistema
  * @author Roald
  */
 public enum Patologia {

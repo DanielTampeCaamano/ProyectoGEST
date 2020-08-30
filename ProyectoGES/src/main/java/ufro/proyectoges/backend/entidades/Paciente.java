@@ -8,7 +8,7 @@ package ufro.proyectoges.backend.entidades;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
- *
+ * Esta clase esta encargada de almacenar los datos de la entidad Paciente
  * @author shido
  */
 public class Paciente extends Persona {
@@ -20,10 +20,10 @@ public class Paciente extends Persona {
     private int ipdId;
 
     /**
-     *
-     * @param nombreCompleto
-     * @param rut
-     * @param ipd
+     * Constructor de la clase Paciente
+     * @param nombreCompleto Este parametro contiene el nombre completo del paciente
+     * @param rut Este parametro contiene el rut del paciente
+     * @param ipd Este parametro contiene el ipd del paciente
      */
     public Paciente(String nombreCompleto, Rut rut, IPDPaciente ipd) {
         super(nombreCompleto, rut, "PACIENTE", null);
@@ -36,48 +36,48 @@ public class Paciente extends Persona {
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna el atributo que contiene el rut del paciente, sin convertir en otro formato
+     * @return Retorna un objeto de la clase Rut, que posee el rut del paciente, sin convertir en otro formato
      */
     public Rut getRutSinConvertir() {
         return rutSinConvertir;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna el atributo que contiene el nombe completo del paciente
+     * @return Retorna un valor de tipo String, que contiene el nombre completo del paciente
      */
     public String getNombreCompleto() {
         return nombreCompleto;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna el atributo que contiene el rut del paciente validado
+     * @return Retorna un valor de tipo String, que posee el rut del paciente validado
      */
     public String getRutValidado() {
         return rutValidado;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna el atributo que contiene el IPD del paciente
+     * @return Retorna un objeto de tipo IPDPaciente, que contiene el IPD del paciente
      */
     public IPDPaciente getIpdPaciente() {
         return ipdPaciente;
     }
 
     /**
-     *
-     * @param ipdPaciente
+     * Este metodo edita el atributo que contiene IPD del paciente
+     * @param ipdPaciente Este parametro edita el atributo que contiene el IPD del paciente
      */
     public void setIpdPaciente(IPDPaciente ipdPaciente) {
         this.ipdPaciente = ipdPaciente;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna los contenidos del Objeto que haya sido creado de esta clase
+     * @return Retorna un valor de tipo String, que posee el contenido del objeto que haya sido creado de esta clase
      */
     @Override
     public String toString() {

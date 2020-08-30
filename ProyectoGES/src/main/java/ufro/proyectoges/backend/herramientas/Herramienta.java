@@ -15,7 +15,7 @@ import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 /**
- * 
+ * Esta es la interface que genera la implementacion de metodos en las clases que implementan esta interfaz
  * @author Roald
  */
 public interface Herramienta {

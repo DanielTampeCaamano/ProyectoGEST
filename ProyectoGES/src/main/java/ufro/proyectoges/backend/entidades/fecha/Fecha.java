@@ -8,15 +8,15 @@ package ufro.proyectoges.backend.entidades.fecha;
 import java.sql.Date;
 
 /**
- *
+ * Esta clase sirve para manejar las fechas
  * @author shido
  */
 public class Fecha {
 
     /**
-     *
-     * @param date
-     * @return
+     * Este metodo retorna el año de una fecha
+     * @param date Este parametro entrega la fecha
+     * @return Retorna el año , mediante un String
      */
     public static String getYear(Date date) {
         if (date != null) {
@@ -27,9 +27,9 @@ public class Fecha {
     }
 
     /**
-     *
-     * @param date
-     * @return
+     * Este metodo retorna el mes de una fecha
+     * @param date Este parametro entrega la fecha
+     * @return Retorna el mes, mediante un String
      */
     public static String getMonth(Date date) {
         if (date != null) {
@@ -40,9 +40,9 @@ public class Fecha {
     }
 
     /**
-     *
-     * @param date
-     * @return
+     * Este metodo Retorna el dia de una fecha
+     * @param date Este parametro entrega la fecha
+     * @return Retorna el dia, Mediante un String
      */
     public static String getDay(Date date) {
         if (date != null) {
@@ -53,10 +53,10 @@ public class Fecha {
     }
 
     /**
-     *
-     * @param fecha1
-     * @param fecha2
-     * @return
+     * Este metodo compara si la primera fecha es menor que las segunda fecha
+     * @param fecha1 Este parametro entrega la primera fecha
+     * @param fecha2 Este parametro entrega la segunda fecha
+     * @return Retorna la primera fecha es menor, mediante un boolean
      */
     public static boolean fecha1MenorQueFecha2(Date fecha1, Date fecha2) {
         if (fecha2 == null) {

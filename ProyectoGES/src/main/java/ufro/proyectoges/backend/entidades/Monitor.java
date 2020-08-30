@@ -9,15 +9,15 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 
 /**
- *
+ * Clase encargada de almacenar la entidad Monitor
  * @author shido
  */
 public class Monitor extends Persona{
     /**
-     * 
-     * @param nombre
-     * @param rut
-     * @param clave 
+     * Constructor de la clase Monitor
+     * @param nombre Este parametro contiene le nombre del monitor
+     * @param rut Este parametro contiene el rut del monitor
+     * @param clave Este parametro contiene la clave del monitor
      */
     public Monitor(String nombre, Rut rut, String clave) {
         super(nombre, rut, "MONITOR", clave);

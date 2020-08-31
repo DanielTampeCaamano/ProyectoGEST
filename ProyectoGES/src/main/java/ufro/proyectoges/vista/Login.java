@@ -18,6 +18,8 @@ import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
+ * Esta clase genera la Ventana de Login para iniciar sesion en el sistema, es
+ * tambien la ventana inicial del programa
  *
  * @author Roald
  */
@@ -30,7 +32,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        
+
     }
 
     /**
@@ -109,10 +111,11 @@ public class Login extends javax.swing.JFrame {
     private void ContraseñaJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaJTextFieldActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * Este metodo se encarga de verificar el inicio de sesion del usuario
+     *
+     * @param evt Este evento se genera al hacer click en el boton Aceptar
+     */
     private void AceptarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarJButtonActionPerformed
         // TODO add your handling code here:
         herramienta = new HerramientaLogIn();
@@ -121,7 +124,7 @@ public class Login extends javax.swing.JFrame {
             if (p != null && p.getClave().equals(ContraseñaJTextField.getText())) {
                 new Menu(p).setVisible(true);
                 this.dispose();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);
             }
         } else {
@@ -163,7 +166,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
-                
+
             }
         });
     }

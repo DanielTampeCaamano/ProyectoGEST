@@ -152,16 +152,16 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
-     * @param p
+     * Este metodo edita el contenido de la Persona en el sistema
+     * @param p Recibe un objeto clase Persona que edita la Persona en el sistema
      */
     public void setP(Persona p) {
         this.p = p;
     }
 
     /**
-     *
-     * @return
+     * Este metodo edita el label que indidica si hay un IPD para el paciente
+     * @return Retorna el JLabel indicandor de si existe el IPD
      */
     public JLabel getConfirmacionIPD() {
         return confirmacionIPD;
@@ -299,8 +299,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreJTextFieldActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo gestiona la apertura y muestra de datos en la ventana IPD del paciente
+     * @param evt Este evento se genera cuando se hace click en el boton IPD
      */
     private void IPDJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPDJButtonActionPerformed
         // TODO add your handling code here:
@@ -319,8 +319,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     }//GEN-LAST:event_IPDJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo gestiona el ingreso de los datos del paciente al sistema
+     * @param evt Este evento se genera cuando se hace click en el boton Ingresar
      */
     private void IngresarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarJButtonActionPerformed
         // TODO add your handling code here:
@@ -341,8 +341,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         }
     }//GEN-LAST:event_IngresarJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo permite volver al menu principal
+     * @param evt Este evento se genera cuando se hace click en el boton Volver
      */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
         // TODO add your handling code here:
@@ -355,8 +355,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo gestiona el agregado de patologias al campo de patologias cuando se seleccionan desde el menu desplegable
+     * @param evt Este evento se genera cuando se selecciona un item del combobox que contiene la lista de las patologias
      */
     private void agregadorpatologia(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agregadorpatologia
         // TODO add your handling code here:
@@ -398,9 +398,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     private javax.swing.JLabel confirmacionIPD;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-/**
-     *
-     * @param e
+    /**
+     * Metodo no implementado
+     * @param e Recibe un evento que se genera al escribir una letra
      */
     @Override
     public void keyTyped(KeyEvent e) {
@@ -408,8 +408,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
-     * @param e
+     * Metodo que gestiona el aviso de si existe un cambio en la existencia del IPD
+     * @param e Recibe un evento que se genera al presionar una tecla
      */
     @Override
     public void keyPressed(KeyEvent e) {
@@ -419,8 +419,8 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
-     * @param e
+     * Metodo no implementado
+     * @param e Recibe un evento que se genera al soltar una tecla
      */
     @Override
     public void keyReleased(KeyEvent e) {
@@ -428,7 +428,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
+     * Este metodo se encarga de avisar si existe una modificacion de datos para rehacer el IPD
      */
     private void advertirCambios() {
         ipd = null;
@@ -436,7 +436,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     }
 
     /**
-     *
+     * Metodo que se encarga de avisar si existe un cambio de informacion de la patologias para editar el IPD
      * @param e
      */
     @Override

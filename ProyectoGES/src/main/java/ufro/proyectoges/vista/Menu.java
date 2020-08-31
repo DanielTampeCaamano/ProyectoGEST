@@ -12,7 +12,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
- *
+ * Esta clase maneja la visualizacion de la Ventana de Menu Principal
  * @author Roald
  */
 public class Menu extends javax.swing.JFrame {
@@ -21,18 +21,18 @@ public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
-     *
-     * @param persona
+     * Constructor de la ventana Menu 
+     * @param persona Recibe un objeto clase Persona, que alude a la persona que esta utilizando el sistema
      */
-    public Menu(Persona p) {
-        this.persona = p;
+    public Menu(Persona persona) {
+        this.persona = persona;
         if (persona.getHerramientaPersona() == null) {
             switch (persona.getTipo_persona()) {
                 case "REGISTRADOR":
-                    this.persona = new Registrador(p.getNombre(), p.getRut(), p.getClave());
+                    this.persona = new Registrador(persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
                 case "MONITOR":
-                    this.persona = new Monitor(p.getNombre(), p.getRut(), p.getClave());
+                    this.persona = new Monitor(persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
                 default:
                     System.out.println("caso default");
@@ -66,12 +66,10 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 28)); // NOI18N
-        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 26, -1, -1));
 
         MenuJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        MenuJLabel.setForeground(new java.awt.Color(0, 0, 0));
         MenuJLabel.setText("MENU");
         getContentPane().add(MenuJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 104, -1, -1));
 
@@ -112,8 +110,8 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     /**
-     *
-     * @param evt
+     * Este metodo maneja la apertura y muestra de datos para la ventana Ingreso de Pacientes
+     * @param evt Este evento se genenera cuando se hace click en el boton Ingreso de Casos de Pacientes
      */
     private void IngresoPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoPacientesJButtonActionPerformed
         // TODO add your handling code here:
@@ -125,8 +123,8 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_IngresoPacientesJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo gestiona la visualizacion y muestra de datos de la ventana Busqueda de Pacientes
+     * @param evt Este evento se genera al hacer click en el boton Busqueda de Casos de Pacientes
      */
     private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed
         new BusquedaPaciente(persona).setVisible(true);
@@ -134,8 +132,8 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BusquedaPacientesJButtonActionPerformed
     /**
-     *
-     * @param evt
+     * Este metodo gestiona la apertura y muestra de datos de la ventana Descarga de Base de Datos de Casos de Pacientes
+     * @param evt Este evento se genera al hacer click en el boton Descarga de Base de Datos
      */
     private void DescargaBaseDatosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaBaseDatosJButtonActionPerformed
         // TODO add your handling code here:

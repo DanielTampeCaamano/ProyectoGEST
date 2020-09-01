@@ -118,8 +118,9 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
         } else if (personaOcupandoElPrograma instanceof Monitor) {
             this.previous = previous;
+            this.limpPat.setEnabled(false);
             this.pacienteAObservar = p;
-
+            
             this.confirmacionIPD.setText("IPD Confirmado");
 
             this.PatologiasJTextField.setEditable(false);
@@ -138,7 +139,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             this.NombreFuncionarioJLabel.setText(registrador.getNombre());
             this.RUTFuncionarioJLabel.setText(registrador.getRut().getRut());
             this.FechaJLabel.setText(p.getIpdPaciente().getFechaDeGuardado().toString());
-
+            this.IngresarJButton.setEnabled(false);
             this.soloVista = true;
         }
 
@@ -289,6 +290,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         IngresarJButton = new javax.swing.JButton();
         VolverJButton = new javax.swing.JButton();
         confirmacionIPD = new javax.swing.JLabel();
+        limpPat = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -337,7 +339,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
                 PatologiasJComboBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 261, 176, -1));
+        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 176, -1));
 
         IPDJButton.setText("I.P.D.");
         IPDJButton.setToolTipText("Informe Proceso Diagnostico");
@@ -381,6 +383,14 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
         confirmacionIPD.setText("TEXT");
         getContentPane().add(confirmacionIPD, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 339, -1, -1));
+
+        limpPat.setText("Limpiar Campos Patologias");
+        limpPat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpPatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(limpPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 170, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -434,11 +444,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             if (rutValidado.isRutValido()) {
                 int lastIdPaciente = editando ? idOcupada : personaOcupandoElPrograma.getHerramientaPersona().getLastIdPaciente() + 1;
                 ipd.setSecondary_key_paciente(lastIdPaciente);
-                System.out.println("lastIdPaciente=" + lastIdPaciente);
                 Paciente pacienteAIngresar = new Paciente(lastIdPaciente, NombreJTextField.getText(), new Rut(RUTJTextField1.getText() + RUTJTextField2.getText()), ipd);
                 if (!personaOcupandoElPrograma.getHerramientaPersona().personaExiste(pacienteAIngresar) && !editando) {
                     personaOcupandoElPrograma.getHerramientaPersona().registrarPacientes(pacienteAIngresar, (Registrador) personaOcupandoElPrograma);
                     new Menu(personaOcupandoElPrograma).setVisible(true);
+                    
                     this.dispose();
                     
                 } else if (editando) {
@@ -500,6 +510,11 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         // TODO add your handling code here:
     }//GEN-LAST:event_PatologiasJComboBoxActionPerformed
 
+    private void limpPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpPatActionPerformed
+        this.PatologiasJTextField.setText("");
+        this.patologias.clear();
+    }//GEN-LAST:event_limpPatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -525,6 +540,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
     private javax.swing.JButton VolverJButton;
     private javax.swing.JLabel confirmacionIPD;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton limpPat;
     // End of variables declaration//GEN-END:variables
     /**
      * Metodo no implementado

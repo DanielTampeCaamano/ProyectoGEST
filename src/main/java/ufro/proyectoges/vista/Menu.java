@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.vista;
 
+import ufro.proyectoges.backend.entidades.Administrador;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;

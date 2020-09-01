@@ -7,6 +7,7 @@ package ufro.proyectoges.vista;
 
 import java.sql.Date;
 import javax.swing.JOptionPane;
+import ufro.proyectoges.backend.entidades.Administrador;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Paciente;
@@ -123,12 +124,20 @@ public class Login extends javax.swing.JFrame {
             Persona p = herramienta.buscarPersona(new Rut(UsuarioJTextField.getText()));
             if (p != null && p.getClave() != null) {
                 if (p.getClave().equals(ContraseñaJTextField.getText())) {
-                    new Menu(p).setVisible(true);
-                    this.dispose();
+
+                    if (p.getTipo_persona().equals("ADMINISTRADOR")) {
+                        p = new Administrador(p.getId(), p.getNombre(), p.getRut(), p.getClave());
+                        this.dispose();
+                        new PanelControlAdmin(p).setVisible(true);
+                    } else {
+                        new Menu(p).setVisible(true);
+                        this.dispose();
+                    }
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No existe ningun monitor, registrador o administrador con ese nombre y clave");
             }
 

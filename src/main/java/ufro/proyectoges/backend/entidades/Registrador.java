@@ -16,6 +16,7 @@ public class Registrador extends Persona {
 
     /**
      * Constructor de la clase Registrador
+     * @param id Este es el ID del registrador
      * @param nombre Este parametro es el nombre del registrador
      * @param rut Este parametro es el rut del registrador
      * @param clave Este parametro es la clave del registrador

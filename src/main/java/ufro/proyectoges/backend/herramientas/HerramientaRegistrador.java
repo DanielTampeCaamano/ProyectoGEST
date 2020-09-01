@@ -8,7 +8,6 @@ package ufro.proyectoges.backend.herramientas;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;

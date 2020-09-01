@@ -23,6 +23,7 @@ public class Persona {
 
     /**
      * Este es el Constructor de la clase Persona
+     * @param id este es el ID de la persona
      * @param nombre Este Parametro contiene el nombre de la persona
      * @param rut Este parametro contiene el rut de la persona
      * @param tipo_persona Este parametro contiene el tipo de persona

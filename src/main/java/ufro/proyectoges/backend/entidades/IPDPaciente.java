@@ -6,7 +6,6 @@
 package ufro.proyectoges.backend.entidades;
 
 import java.sql.Date;
-import java.util.List;
 
 /**
  * Clase encargada de almacenar los datos de la Entidad IPD del Paciente
@@ -50,6 +49,7 @@ public class IPDPaciente {
      * @param codPatologias Este parametro contiene los codigos de las patologias
      * @param idRegistrador Este parametro contiene el id del registrador
      * @param fechaDeGuardado Este parametro contiene la fecha de ingreso
+     * @param sec_id_paciente Este parametro contiene 2do id del paciente
      */
     public IPDPaciente(String rutPaciente, String nombrePaciente, Date fechaInicio, Date fechaTermino, boolean esGes, boolean notificacionPacienteGES, boolean confirmado, boolean descartado, boolean exceptuado, String observacion, String codPatologias, String idRegistrador, Date fechaDeGuardado, int sec_id_paciente) {
         this.rutPaciente = rutPaciente;

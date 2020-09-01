@@ -22,6 +22,7 @@ public class Paciente extends Persona {
 
     /**
      * Constructor de la clase Paciente
+     * @param id Este es el ID del paciente
      * @param nombreCompleto Este parametro contiene el nombre completo del paciente
      * @param rut Este parametro contiene el rut del paciente
      * @param ipd Este parametro contiene el ipd del paciente
@@ -37,10 +38,12 @@ public class Paciente extends Persona {
         this.id = id;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }

@@ -15,6 +15,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
 public class Monitor extends Persona{
     /**
      * Constructor de la clase Monitor
+     * @param id Este paremetro alude al id del monitor
      * @param nombre Este parametro contiene le nombre del monitor
      * @param rut Este parametro contiene el rut del monitor
      * @param clave Este parametro contiene la clave del monitor

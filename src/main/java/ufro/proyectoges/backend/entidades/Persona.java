@@ -9,7 +9,9 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.Herramienta;
 
 /**
- * Esta clase contiene la estructura que se utilizara para definir tipos de persona que tendran acceso al sistema
+ * Esta clase contiene la estructura que se utilizara para definir tipos de
+ * persona que tendran acceso al sistema
+ *
  * @author shido
  */
 public class Persona {
@@ -23,13 +25,14 @@ public class Persona {
 
     /**
      * Este es el Constructor de la clase Persona
+     *
      * @param id este es el ID de la persona
      * @param nombre Este Parametro contiene el nombre de la persona
      * @param rut Este parametro contiene el rut de la persona
      * @param tipo_persona Este parametro contiene el tipo de persona
      * @param clave Este parametro contiene la clave de la persona
      */
-    public Persona(int id,String nombre, Rut rut, String tipo_persona, String clave) {
+    public Persona(int id, String nombre, Rut rut, String tipo_persona, String clave) {
         this.nombre = nombre;
         this.rut = rut;
         this.tipo_persona = tipo_persona;
@@ -37,18 +40,27 @@ public class Persona {
         this.id = id;
     }
 
+    /**
+     * retorna el ID de la persona
+     *
+     * @return Retorna un Entero
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Edita el ID dentro del objeto Persona
+     *
+     * @param id recibe un entero que conntiene el id de la persona
+     */
     public void setId(int id) {
         this.id = id;
     }
-    
-    
 
     /**
      * Este metodo retorna el atributo Herramienta de esta clase
+     *
      * @return Retorna un objeto Herramienta
      */
     public Herramienta getHerramientaPersona() {
@@ -57,7 +69,9 @@ public class Persona {
 
     /**
      * Este metodo edita el atributo herramientaPersona
-     * @param herramientaPersona Este parametro reemplaza lo contenido en el atributo herramientaPersona
+     *
+     * @param herramientaPersona Este parametro reemplaza lo contenido en el
+     * atributo herramientaPersona
      */
     public void setHerramientaPersona(Herramienta herramientaPersona) {
         this.herramientaPersona = herramientaPersona;
@@ -65,6 +79,7 @@ public class Persona {
 
     /**
      * Este metodo retorna el atributo nombre
+     *
      * @return Retorna el nombre de la persona
      */
     public String getNombre() {
@@ -73,6 +88,7 @@ public class Persona {
 
     /**
      * Este metodo retorna el rut de la persona
+     *
      * @return Retorna el rut, un objeto de clase Rut
      */
     public Rut getRut() {
@@ -81,6 +97,7 @@ public class Persona {
 
     /**
      * Este metodo retorna la clave de la persona
+     *
      * @return Retorna la clave, un valor tipo String
      */
     public String getClave() {
@@ -89,6 +106,7 @@ public class Persona {
 
     /**
      * Este metodo retorna el contenido del objeto de la clase Persona
+     *
      * @return Retorna un String que contiene los datos del objeto de la clase
      */
     @Override
@@ -98,6 +116,7 @@ public class Persona {
 
     /**
      * Este metodo retorna el tipo de persona
+     *
      * @return Retorna el tipo de persona, un valor tipo String
      */
     public String getTipo_persona() {
@@ -106,6 +125,7 @@ public class Persona {
 
     /**
      * Este metodo edita el tipo de persona
+     *
      * @param tipo_persona Este parametro reemplaza el tipo de persona
      */
     public void setTipo_persona(String tipo_persona) {

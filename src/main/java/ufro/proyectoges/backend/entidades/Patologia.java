@@ -7,6 +7,7 @@ package ufro.proyectoges.backend.entidades;
 
 /**
  * Esta clase serviria para enumerar las patologias existentes en el sistema
+ *
  * @author Roald
  */
 public enum Patologia {
@@ -14,5 +15,5 @@ public enum Patologia {
     Patologia2,
     PatologiaN
     //llenamos con las patologias que vamos a usar, en la aplicacion tambien hay que modificar esa lista, y agregar esa funcionalidad
-    
+
 }

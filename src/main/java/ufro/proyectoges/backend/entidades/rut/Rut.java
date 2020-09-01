@@ -7,6 +7,7 @@ package ufro.proyectoges.backend.entidades.rut;
 
 /**
  * Clase que gestiona operaciones relacionadas con el rut
+ *
  * @author shido
  */
 public class Rut {
@@ -18,6 +19,7 @@ public class Rut {
 
     /**
      * Constructor de la clase Rut
+     *
      * @param rutSinValidar Este parametro entrega un rut, sin validar
      */
     public Rut(String rutSinValidar) {
@@ -32,6 +34,7 @@ public class Rut {
 
     /**
      * Este metodo verifica que el rut este bien escrito
+     *
      * @param rut Este parametro entrega un rut para validar
      * @return Retorna si el rut esta bien escrito, mediante un boolean
      */
@@ -41,6 +44,7 @@ public class Rut {
 
     /**
      * Este metodo retorna el rut sin validar
+     *
      * @return Retorna el rut sin validar, mediante un String
      */
     public String getRut() {
@@ -49,6 +53,7 @@ public class Rut {
 
     /**
      * Este metodo invierte el orden de un rut
+     *
      * @return Retorna el rut invertido, mediante un String
      */
     private String invertirRut() {
@@ -60,6 +65,7 @@ public class Rut {
 
     /**
      * Este metodo multiplica el rut invertido por indices, y lo suma
+     *
      * @return Retorna la suma de esta operacion, mediante un entero
      */
     private int multiplicarPorIndicesYSumar() {
@@ -79,6 +85,7 @@ public class Rut {
 
     /**
      * Este metodo verifica que el rut es valido
+     *
      * @return Retorna si el rut es valido, mediante un boolean
      */
     public boolean isRutValido() {
@@ -86,7 +93,9 @@ public class Rut {
     }
 
     /**
-     * Este metodo obtiene el resto de la suma hecha en el metodo multiplicarPorIndicesYSumar
+     * Este metodo obtiene el resto de la suma hecha en el metodo
+     * multiplicarPorIndicesYSumar
+     *
      * @return Retorna el resto
      */
     private int obtenerResto() {
@@ -96,6 +105,7 @@ public class Rut {
 
     /**
      * Este metodo Obtiene el digito verificador del rut
+     *
      * @return Retorna el digito verificador del rut
      */
     private String obtenerDigitoVerificado() {
@@ -111,6 +121,7 @@ public class Rut {
 
     /**
      * Este metodo Retorna el contenido del objeto de esta clase
+     *
      * @return retorna el contenido del objeto, mediant un String
      */
     @Override

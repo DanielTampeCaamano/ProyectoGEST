@@ -9,6 +9,7 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  * Esta clase esta encargada de almacenar los datos de la entidad Paciente
+ *
  * @author shido
  */
 public class Paciente extends Persona {
@@ -22,13 +23,15 @@ public class Paciente extends Persona {
 
     /**
      * Constructor de la clase Paciente
+     *
      * @param id Este es el ID del paciente
-     * @param nombreCompleto Este parametro contiene el nombre completo del paciente
+     * @param nombreCompleto Este parametro contiene el nombre completo del
+     * paciente
      * @param rut Este parametro contiene el rut del paciente
      * @param ipd Este parametro contiene el ipd del paciente
      */
-    public Paciente(int id,String nombreCompleto, Rut rut, IPDPaciente ipd) {
-        super(id,nombreCompleto, rut, "PACIENTE", null);
+    public Paciente(int id, String nombreCompleto, Rut rut, IPDPaciente ipd) {
+        super(id, nombreCompleto, rut, "PACIENTE", null);
         super.setTipo_persona("PACIENTE");
         super.setHerramientaPersona(null);
         this.nombreCompleto = nombreCompleto;
@@ -38,31 +41,43 @@ public class Paciente extends Persona {
         this.id = id;
     }
 
+    /**
+     * Obtiene el ID del paciente
+     *
+     * @return retorna un entero que contiene el ID
+     */
     @Override
     public int getId() {
         return id;
     }
 
+    /**
+     * Edita el ID del paciente dentro del objeto
+     *
+     * @param id recibe un Entero que contiene el ID
+     */
     @Override
     public void setId(int id) {
         this.id = id;
     }
 
-    
-    
-    
-
     /**
-     * Este metodo retorna el atributo que contiene el rut del paciente, sin convertir en otro formato
-     * @return Retorna un objeto de la clase Rut, que posee el rut del paciente, sin convertir en otro formato
+     * Este metodo retorna el atributo que contiene el rut del paciente, sin
+     * convertir en otro formato
+     *
+     * @return Retorna un objeto de la clase Rut, que posee el rut del paciente,
+     * sin convertir en otro formato
      */
     public Rut getRutSinConvertir() {
         return rutSinConvertir;
     }
 
     /**
-     * Este metodo retorna el atributo que contiene el nombe completo del paciente
-     * @return Retorna un valor de tipo String, que contiene el nombre completo del paciente
+     * Este metodo retorna el atributo que contiene el nombe completo del
+     * paciente
+     *
+     * @return Retorna un valor de tipo String, que contiene el nombre completo
+     * del paciente
      */
     public String getNombreCompleto() {
         return nombreCompleto;
@@ -70,7 +85,9 @@ public class Paciente extends Persona {
 
     /**
      * Este metodo retorna el atributo que contiene el rut del paciente validado
-     * @return Retorna un valor de tipo String, que posee el rut del paciente validado
+     *
+     * @return Retorna un valor de tipo String, que posee el rut del paciente
+     * validado
      */
     public String getRutValidado() {
         return rutValidado;
@@ -78,7 +95,9 @@ public class Paciente extends Persona {
 
     /**
      * Este metodo retorna el atributo que contiene el IPD del paciente
-     * @return Retorna un objeto de tipo IPDPaciente, que contiene el IPD del paciente
+     *
+     * @return Retorna un objeto de tipo IPDPaciente, que contiene el IPD del
+     * paciente
      */
     public IPDPaciente getIpdPaciente() {
         return ipdPaciente;
@@ -86,15 +105,20 @@ public class Paciente extends Persona {
 
     /**
      * Este metodo edita el atributo que contiene IPD del paciente
-     * @param ipdPaciente Este parametro edita el atributo que contiene el IPD del paciente
+     *
+     * @param ipdPaciente Este parametro edita el atributo que contiene el IPD
+     * del paciente
      */
     public void setIpdPaciente(IPDPaciente ipdPaciente) {
         this.ipdPaciente = ipdPaciente;
     }
 
     /**
-     * Este metodo retorna los contenidos del Objeto que haya sido creado de esta clase
-     * @return Retorna un valor de tipo String, que posee el contenido del objeto que haya sido creado de esta clase
+     * Este metodo retorna los contenidos del Objeto que haya sido creado de
+     * esta clase
+     *
+     * @return Retorna un valor de tipo String, que posee el contenido del
+     * objeto que haya sido creado de esta clase
      */
     @Override
     public String toString() {

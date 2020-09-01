@@ -15,105 +15,233 @@ import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
+ * Clase que maneja los metodos de la clase Administrador
  *
  * @author shido
  */
-public class HerramientaAdmin implements Herramienta{
+public class HerramientaAdmin implements Herramienta {
 
+    /**
+     * Constructor de la clase HerramientaAdmin, sin parametros
+     */
     public HerramientaAdmin() {
-        
-    }
-    
-    
 
+    }
+
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param id
+     * @return
+     */
     @Override
     public IPDPaciente buscarIPDporRut(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param inicio
+     * @param termino
+     * @return
+     */
     @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param nombre
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param rut
+     * @return
+     */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param p
+     * @return
+     */
     @Override
     public boolean personaExiste(Persona p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Persona buscarPersona(Rut rut) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @Override public Persona buscarPersona(Rut rut) { throw new
+     * UnsupportedOperationException("Not supported yet."); //To change body of
+     * generated methods, choose Tools | Templates. } /**
+     *
+     * @return
+     */
     @Override
     public List<Paciente> obtenerPacientes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param r
+     */
     @Override
     public void registrarMonitor(Monitor r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param r
+     */
     @Override
     public void registrarRegistrador(Registrador r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param paciente
+     * @param registrador
+     */
     @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param ipd
+     * @param registrador
+     */
     @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @return
+     */
     @Override
     public String[] obtenerPatologias() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param nombre
+     * @return
+     */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param ipd
+     * @return
+     */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param paciente
+     * @param registrador
+     */
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param ipd
+     * @param registrador
+     */
     @Override
     public void actualizarDatosIpd(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @return
+     */
     @Override
     public int getLastIdPaciente() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param rut
+     * @return
+     */
     @Override
     public int getSecIdByRut(Rut rut) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param rut
+     * @return
+     */
+    @Override
+    public Persona buscarPersona(Rut rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

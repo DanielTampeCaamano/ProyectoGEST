@@ -10,19 +10,21 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
  * Esta clase contiene la informacion del Registrador
+ *
  * @author shido
  */
 public class Registrador extends Persona {
 
     /**
      * Constructor de la clase Registrador
+     *
      * @param id Este es el ID del registrador
      * @param nombre Este parametro es el nombre del registrador
      * @param rut Este parametro es el rut del registrador
      * @param clave Este parametro es la clave del registrador
      */
-    public Registrador(int id,String nombre, Rut rut, String clave) {
-        super(id,nombre, rut, "REGISTRADOR", clave);
+    public Registrador(int id, String nombre, Rut rut, String clave) {
+        super(id, nombre, rut, "REGISTRADOR", clave);
         super.setTipo_persona("REGISTRADOR");
         super.setHerramientaPersona(new HerramientaRegistrador());
     }

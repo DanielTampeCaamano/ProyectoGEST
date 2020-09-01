@@ -9,12 +9,14 @@ import java.sql.Date;
 
 /**
  * Esta clase sirve para manejar las fechas
+ *
  * @author shido
  */
 public class Fecha {
 
     /**
      * Este metodo retorna el año de una fecha
+     *
      * @param date Este parametro entrega la fecha
      * @return Retorna el año , mediante un String
      */
@@ -28,6 +30,7 @@ public class Fecha {
 
     /**
      * Este metodo retorna el mes de una fecha
+     *
      * @param date Este parametro entrega la fecha
      * @return Retorna el mes, mediante un String
      */
@@ -41,6 +44,7 @@ public class Fecha {
 
     /**
      * Este metodo Retorna el dia de una fecha
+     *
      * @param date Este parametro entrega la fecha
      * @return Retorna el dia, Mediante un String
      */
@@ -54,6 +58,7 @@ public class Fecha {
 
     /**
      * Este metodo compara si la primera fecha es menor que las segunda fecha
+     *
      * @param fecha1 Este parametro entrega la primera fecha
      * @param fecha2 Este parametro entrega la segunda fecha
      * @return Retorna la primera fecha es menor, mediante un boolean

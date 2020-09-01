@@ -5,12 +5,9 @@
  */
 package ufro.proyectoges.vista;
 
-import ufro.proyectoges.backend.entidades.Administrador;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
-import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
-import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
  * Esta clase maneja la visualizacion de la Ventana de Menu Principal
@@ -33,11 +30,11 @@ public class Menu extends javax.swing.JFrame {
         if (persona.getHerramientaPersona() == null) {
             switch (persona.getTipo_persona()) {
                 case "REGISTRADOR":
-                    this.persona = new Registrador(persona.getId(),persona.getNombre(), persona.getRut(), persona.getClave());
+                    this.persona = new Registrador(persona.getId(), persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
                 case "MONITOR":
                     this.IngresoPacientesJButton.setVisible(false);
-                    this.persona = new Monitor(persona.getId(),persona.getNombre(), persona.getRut(), persona.getClave());
+                    this.persona = new Monitor(persona.getId(), persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
                 default:
                     System.out.println("caso default");
@@ -45,7 +42,6 @@ public class Menu extends javax.swing.JFrame {
             }
         }
 
-        
         this.setTitle("TIPO DE CUENTA: " + persona.getTipo_persona());
     }
 
@@ -134,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
      * Casos de Pacientes
      */
     private void BusquedaPacientesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPacientesJButtonActionPerformed
-        new BusquedaPaciente(persona,this).setVisible(true);
+        new BusquedaPaciente(persona, this).setVisible(true);
         this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_BusquedaPacientesJButtonActionPerformed

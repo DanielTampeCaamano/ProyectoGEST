@@ -33,7 +33,6 @@ public class HerramientaRegistrador implements Herramienta {
      * Constructor de HerramientaRegistrador
      */
     public HerramientaRegistrador() {
-        
 
     }
 
@@ -193,7 +192,7 @@ public class HerramientaRegistrador implements Herramienta {
         if (paciente.getRutSinConvertir().isRutValido()) {
             sqlHandler.insertInto("paciente", "(rut,nombreCompleto,id)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "'," + paciente.getId() + ")");
             sqlHandler.insertInto("personas", "(id,nombre,tipo_persona,secondary_id)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "','" + paciente.getTipo_persona() + "'," + paciente.getId() + ")");
-            
+
             registrarIPD(paciente.getIpdPaciente(), registrador);
 
         }
@@ -249,19 +248,25 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     * Este metodo Obtiene el ultimo ID de del paciente dentro de la base de
+     * datos
+     *
+     * @return Retorna un entero que contiene dicha ID
+     */
     @Override
     public int getLastIdPaciente() {
         int mayor = 0;
         try {
             ResultSet queryResult = sqlHandler.selectFrom("(id)", "paciente");
-            
+
             while (queryResult.next()) {
-                
-                if (mayor < queryResult.getInt(1)){
+
+                if (mayor < queryResult.getInt(1)) {
                     mayor = queryResult.getInt(1);
                 }
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -342,6 +347,14 @@ public class HerramientaRegistrador implements Herramienta {
         return null;
     }
 
+    /**
+     * Este metodo actualiza los datos del paciente en la base de datos
+     *
+     * @param paciente Los datos del paciente, recibe un objeto de clase
+     * Paciente
+     * @param registrador Los datos del registrador, recibe un objeto de clase
+     * Registrador
+     */
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
 
@@ -350,6 +363,13 @@ public class HerramientaRegistrador implements Herramienta {
         actualizarDatosIpd(paciente.getIpdPaciente(), registrador);
     }
 
+    /**
+     * Este metodo actualiza los datos del IPD de un paciente
+     *
+     * @param ipd El IPD de un paciente, recibe un objeto de clase IPDPaciente
+     * @param registrador Los datos del registrador, recib un objeto de clase
+     * Registrador
+     */
     @Override
     public void actualizarDatosIpd(IPDPaciente ipd, Registrador registrador) {
 
@@ -378,14 +398,20 @@ public class HerramientaRegistrador implements Herramienta {
         }
     }
 
+    /**
+     * Este metodo recupera la segunda ID del paciente desde la base de datos
+     *
+     * @param rut El rut del paciente, recibe un objeto de clase Rut
+     * @return retorna un Entero que contiene dicha ID
+     */
     @Override
     public int getSecIdByRut(Rut rut) {
         queryResult = handler.selectFromWhere("id", "paciente", "rut", rut.getRut());
-        try{
-            while(queryResult.next()){
+        try {
+            while (queryResult.next()) {
                 return queryResult.getInt(1);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return 0;

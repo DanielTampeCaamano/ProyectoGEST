@@ -33,8 +33,9 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
      *
      * @param p Recibe un objeto de clase Persona que contiene los datos de la
      * persona que utiliza el programa
+     * @param menu Recibe la ventana Menu
      */
-    public BusquedaPaciente(Persona p,Menu menu) {
+    public BusquedaPaciente(Persona p, Menu menu) {
         this.menu = menu;
         this.p = p;
         initComponents();
@@ -44,11 +45,15 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         this.ResultadosJTable.addMouseListener(this);
     }
 
+    /**
+     * Este metodo recupera la lista de pacientes
+     *
+     * @return Retorna la lista de pacientes, una lista de objetos de clase
+     * Paciente
+     */
     public List<Paciente> getPacientesObtenidos() {
         return pacientesObtenidos;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -324,10 +329,13 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     private javax.swing.JButton VolverJButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-    
+
     /**
-     * Este metodo genera una accion en caso de que se haga click en algun resultado de la tabla de resultados de la busqueda del paciente
-     * @param e Este es el evento que se espera de la accion de hacer click en la tabla de resultados
+     * Este metodo genera una accion en caso de que se haga click en algun
+     * resultado de la tabla de resultados de la busqueda del paciente
+     *
+     * @param e Este es el evento que se espera de la accion de hacer click en
+     * la tabla de resultados
      */
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -343,39 +351,41 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
     public JTable getResultadosJTable() {
         return ResultadosJTable;
     }
-    
-    
 
     public DefaultTableModel getModel() {
         return model;
     }
-    
-    
-    
-    
+
     /**
      * Este metodo no tiene implementacion
+     *
      * @param e Evento generado por presionar un boton del mouse
      */
     @Override
     public void mousePressed(MouseEvent e) {
     }
+
     /**
      * Este metodo no tiene implementacion
+     *
      * @param e Evento generado por soltar un boton de mouse
      */
     @Override
     public void mouseReleased(MouseEvent e) {
     }
+
     /**
      * Este metodo no tiene implementacion
+     *
      * @param e Este evento se genera al posar el mouse sobre un componente
      */
     @Override
     public void mouseEntered(MouseEvent e) {
     }
+
     /**
      * Este metodo no tiene implementacion
+     *
      * @param e Este evento se genera al posar el mouse sobre un componente
      */
     @Override

@@ -9,6 +9,7 @@ import java.sql.Date;
 import ufro.proyectoges.backend.entidades.Persona;
 
 /**
+ * Esta ventana se encarga de la descarga de base de datos
  *
  * @author Roald
  */
@@ -213,9 +214,11 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
-     * Este metodo sirve para descargar informacion de la base de dato dependiendo de los datos que este disponibles en los campos habilitados
+     * Este metodo sirve para descargar informacion de la base de dato
+     * dependiendo de los datos que este disponibles en los campos habilitados
+     *
      * @param evt Este evento se genera al hacer click en el boton Descargar
      */
     private void DescargaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaJButtonActionPerformed
@@ -232,6 +235,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_DescargaJButtonActionPerformed
     /**
      * Metodo que sirve para volver al menu principal
+     *
      * @param evt Este evento se genera al hacer click en el boton Volver
      */
     private void VolverJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverJButtonActionPerformed
@@ -240,8 +244,11 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
     /**
-     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos vigentes
-     * @param evt Este evento se genera al hacer click en el boton Casos Vigentes
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de
+     * fechas de los casos vigentes
+     *
+     * @param evt Este evento se genera al hacer click en el boton Casos
+     * Vigentes
      */
     private void CasosVigentesJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosVigentesJButtonActionPerformed
         // TODO add your handling code here:
@@ -273,8 +280,11 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         RangoFechaFinalJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosVigentesJButtonActionPerformed
     /**
-     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos exceptuados
-     * @param evt Este evento se genera al hacer click en el boton Casos Exceptuados
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de
+     * fechas de los casos exceptuados
+     *
+     * @param evt Este evento se genera al hacer click en el boton Casos
+     * Exceptuados
      */
     private void CasosExceptuadosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosExceptuadosJButtonActionPerformed
         // TODO add your handling code here:
@@ -307,8 +317,11 @@ public class DescargabaseDatos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CasosExceptuadosJButtonActionPerformed
     /**
-     * Este metodo sirve para habilitar los campos para el ingreso del rango de fechas de los casos cerrados
-     * @param evt Este evento se genera al hacer click en el boton Casos Cerrados
+     * Este metodo sirve para habilitar los campos para el ingreso del rango de
+     * fechas de los casos cerrados
+     *
+     * @param evt Este evento se genera al hacer click en el boton Casos
+     * Cerrados
      */
     private void CasosCerradosJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasosCerradosJButtonActionPerformed
         // TODO add your handling code here:

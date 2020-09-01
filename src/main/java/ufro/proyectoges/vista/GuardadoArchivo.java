@@ -8,7 +8,9 @@ package ufro.proyectoges.vista;
 import ufro.proyectoges.backend.entidades.Persona;
 
 /**
- * Esta ventana gestiona el guardado del archivo de la descarga de base de datos de pacientes
+ * Esta ventana gestiona el guardado del archivo de la descarga de base de datos
+ * de pacientes
+ *
  * @author Roald
  */
 public class GuardadoArchivo extends javax.swing.JFrame {
@@ -18,7 +20,7 @@ public class GuardadoArchivo extends javax.swing.JFrame {
     /**
      * Creates new form GuardadoArchivo
      *
-     * @param p
+     * @param p Persona que usa este programa
      */
     public GuardadoArchivo(Persona p) {
         this.p = p;
@@ -54,9 +56,11 @@ public class GuardadoArchivo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
-     * Este metodo gestiona la accion de guardar el archivo de la informacion descargada de la base de datos
+     * Este metodo gestiona la accion de guardar el archivo de la informacion
+     * descargada de la base de datos
+     *
      * @param evt Este evento se genera al hacer click en el boton guardar
      */
     private void SelectorArchivoJFileChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectorArchivoJFileChooserActionPerformed

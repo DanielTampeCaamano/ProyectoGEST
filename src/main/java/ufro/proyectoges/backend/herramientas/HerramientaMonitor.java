@@ -5,14 +5,11 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
-import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.connection.SqlHandler;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
 import ufro.proyectoges.backend.entidades.Monitor;
@@ -23,6 +20,7 @@ import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  * Clase encargada de manejar los metodos que usa la entidad Monitor
+ *
  * @author shido
  */
 public class HerramientaMonitor implements Herramienta {
@@ -37,7 +35,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param inicio Recibe una variable de tipo Date
      * @param termino Recibe una variable de tipo Date
      * @return Debiera retornar un boolean, aqui solo retorna falso
@@ -48,16 +48,20 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, Se utiliza para buscar paciente por nombre
-     * @param nombre Recibe una variable String, que hace alusion al nombre del paciente que se pretende buscar
-     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente que se pretende buscar
+     * Metodo que venia con la implementacion de la interfaz Herramienta, Se
+     * utiliza para buscar paciente por nombre
+     *
+     * @param nombre Recibe una variable String, que hace alusion al nombre del
+     * paciente que se pretende buscar
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del
+     * paciente que se pretende buscar
      */
     @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         try {
-            ResultSet queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", "'"+nombre+"'");
+            ResultSet queryResult = handler.selectFromWhere("*", "paciente", "nombreCompleto", "'" + nombre + "'");
             while (queryResult.next()) {
-                return new Paciente(queryResult.getInt(1),queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
+                return new Paciente(queryResult.getInt(1), queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
             }
         } catch (SQLException e) {
         }
@@ -65,16 +69,19 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui se utiliza para buscar un paciente atraves del rut
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * se utiliza para buscar un paciente atraves del rut
+     *
      * @param rut Recibe un objeto de tipo Rut
-     * @return Retorna un objeto de clase Paciente, que contiene los datos del paciente que se busco
+     * @return Retorna un objeto de clase Paciente, que contiene los datos del
+     * paciente que se busco
      */
     @Override
     public Paciente buscarPacientePorRut(Rut rut) {
         try {
             ResultSet queryResult = handler.selectFromWhere("*", "paciente", "rut", rut.getRut());
             while (queryResult.next()) {
-                return new Paciente(queryResult.getInt(1),queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
+                return new Paciente(queryResult.getInt(1), queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,9 +90,12 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, verifica si la persona existe
-     * @param p Recibe un objeto de tipo Persona, que contiene los datos de la persona a verificar
-     * @return Retorna si la persona existe 
+     * Metodo que venia con la implementacion de la interfaz Herramienta,
+     * verifica si la persona existe
+     *
+     * @param p Recibe un objeto de tipo Persona, que contiene los datos de la
+     * persona a verificar
+     * @return Retorna si la persona existe
      */
     @Override
     public boolean personaExiste(Persona p) {
@@ -93,9 +103,13 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, sirve para buscar una persona por el rut
-     * @param rut Recibe un objeto de clase Rut, que contiene el rut de la persona a buscar
-     * @return Retorna un objeto de clase Persona que contiene los datos de la persona buscada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, sirve
+     * para buscar una persona por el rut
+     *
+     * @param rut Recibe un objeto de clase Rut, que contiene el rut de la
+     * persona a buscar
+     * @return Retorna un objeto de clase Persona que contiene los datos de la
+     * persona buscada
      */
     @Override
     public Persona buscarPersona(Rut rut) {
@@ -103,7 +117,7 @@ public class HerramientaMonitor implements Herramienta {
         try {
             ResultSet queryResult = handler.selectFromWhere("*", "personas", "id", rut.getRut());
             while (queryResult.next()) {
-                personasObtenidas.add(new Persona(queryResult.getInt(5),queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4)));
+                personasObtenidas.add(new Persona(queryResult.getInt(5), queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3), queryResult.getString(4)));
             }
 
             if (!personasObtenidas.isEmpty()) {
@@ -119,7 +133,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, obtiene una lista de pacientes de la base de datos
+     * Metodo que venia con la implementacion de la interfaz Herramienta,
+     * obtiene una lista de pacientes de la base de datos
+     *
      * @return Retorna una lista de objetos de clase de Paciente
      */
     @Override
@@ -128,7 +144,7 @@ public class HerramientaMonitor implements Herramienta {
         try {
             ResultSet queryResult = handler.selectFrom("*", "paciente");
             while (queryResult.next()) {
-                Paciente pacienteObt = new Paciente(queryResult.getInt(1),queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
+                Paciente pacienteObt = new Paciente(queryResult.getInt(1), queryResult.getString(2), new Rut(queryResult.getString(1)), buscarIPDporRut(Integer.valueOf(queryResult.getString(1))));
                 pacientes.add(pacienteObt);
             }
         } catch (SQLException sqe) {
@@ -138,7 +154,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param r Recibe un objeto de tipo Monitor
      */
     @Override
@@ -147,7 +165,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param r Recibe un objeto de clase Registrador
      */
     @Override
@@ -156,13 +176,17 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
-     * @param id Recibe un parametro de tipo entero que contiene el id del IPD del paciente
-     * @return Si las sintaxis de la query es correcta y no es un valor vacio retorna un objeto tipo IPDPaciente
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
+     * @param id Recibe un parametro de tipo entero que contiene el id del IPD
+     * del paciente
+     * @return Si las sintaxis de la query es correcta y no es un valor vacio
+     * retorna un objeto tipo IPDPaciente
      */
     @Override
     public IPDPaciente buscarIPDporRut(int id) {
-       try {
+        try {
             ResultSet queryResult = sqlHandler.selectFromWhere("*", "ipd", "identificacion", String.valueOf(id));
             while (queryResult.next()) {
                 return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(11), queryResult.getString(12), queryResult.getDate(13), queryResult.getInt(14));
@@ -174,7 +198,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @return No retorna nada
      */
     @Override
@@ -200,7 +226,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param nombre Recibe un parametro de tipo String
      * @return No retorna nada
      */
@@ -210,7 +238,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param paciente Recibe un parametro de de clase Paciente
      * @param registrador Recibe un parametro de clase Registrador
      */
@@ -220,7 +250,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param ipd Recibe un parametro de clase IPDPaciente
      * @param registrador Recibe un parametro de clase Registrador
      */
@@ -230,7 +262,9 @@ public class HerramientaMonitor implements Herramienta {
     }
 
     /**
-     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui no hace nada
+     * Metodo que venia con la implementacion de la interfaz Herramienta, aqui
+     * no hace nada
+     *
      * @param ipd Recibe un parametro de clase IPDPaciente
      * @return No retorna nada
      */
@@ -240,7 +274,7 @@ public class HerramientaMonitor implements Herramienta {
 
         try {
             while (queryResult.next()) {
-                return new Registrador(queryResult.getInt(4),queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3));
+                return new Registrador(queryResult.getInt(4), queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -248,21 +282,48 @@ public class HerramientaMonitor implements Herramienta {
         return null;
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param paciente
+     * @param registrador
+     */
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param ipd
+     * @param registrador
+     */
     @Override
     public void actualizarDatosIpd(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @return
+     */
     @Override
     public int getLastIdPaciente() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param rut
+     * @return
+     */
     @Override
     public int getSecIdByRut(Rut rut) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -5,18 +5,11 @@
  */
 package ufro.proyectoges.vista;
 
-import java.sql.Date;
 import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.Administrador;
-import ufro.proyectoges.backend.entidades.IPDPaciente;
-import ufro.proyectoges.backend.entidades.Monitor;
-import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
-import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
 import ufro.proyectoges.backend.herramientas.HerramientaLogIn;
-import ufro.proyectoges.backend.herramientas.HerramientaMonitor;
-import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
  * Esta clase genera la Ventana de Login para iniciar sesion en el sistema, es
@@ -104,11 +97,19 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void UsuarioJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsuarioJTextFieldActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void ContraseñaJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaJTextFieldActionPerformed

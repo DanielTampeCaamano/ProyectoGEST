@@ -8,7 +8,7 @@ package ufro.proyectoges.vista;
 import ufro.proyectoges.backend.entidades.Persona;
 
 /**
- *
+ * Esta ventana meneja las acciones del administrador
  * @author shido
  */
 public class PanelControlAdmin extends javax.swing.JFrame {
@@ -80,7 +80,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
             }
         });
         panelAdmin.add(agregarRegistradorRadioButton);
-        agregarRegistradorRadioButton.setBounds(32, 31, 123, 23);
+        agregarRegistradorRadioButton.setBounds(32, 31, 124, 23);
 
         agregarMonitorButton.setText("Agregar Monitor");
         agregarMonitorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -168,15 +168,15 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         );
 
         panelAdmin.add(paneAgreg);
-        paneAgreg.setBounds(71, 56, 581, 140);
+        paneAgreg.setBounds(71, 56, 584, 140);
 
         elimRegis.setText("Eliminar Registrador");
         panelAdmin.add(elimRegis);
-        elimRegis.setBounds(32, 203, 121, 23);
+        elimRegis.setBounds(32, 203, 120, 23);
 
         elimMonitor.setText("Eliminar Monitor");
         panelAdmin.add(elimMonitor);
-        elimMonitor.setBounds(428, 203, 101, 23);
+        elimMonitor.setBounds(428, 203, 99, 23);
 
         registradores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -204,7 +204,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         );
 
         panelAdmin.add(panelElim);
-        panelElim.setBounds(136, 228, 270, 77);
+        panelElim.setBounds(136, 228, 277, 79);
 
         labelNombre2.setText("Nombre");
 
@@ -293,7 +293,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         );
 
         panelAdmin.add(panelModificacion);
-        panelModificacion.setBounds(20, 353, 581, 196);
+        panelModificacion.setBounds(20, 353, 583, 199);
 
         modifRegis.setText("Modificar Datos Registrador");
         modifRegis.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +306,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
 
         modisMoni.setText("Modificar Datos Monitor");
         panelAdmin.add(modisMoni);
-        modisMoni.setBounds(390, 328, 139, 23);
+        modisMoni.setBounds(390, 328, 138, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -318,44 +318,79 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void agregarRegistradorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarRegistradorRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarRegistradorRadioButtonActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void agregarMonitorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMonitorButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarMonitorButtonActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombreActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void rutFielld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rutFielld1ActionPerformed
-
+/**
+ * 
+ * @param evt 
+ */
     private void confirmClaveFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmClaveFieldActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void fieldNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombre2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombre2ActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void rutFielld3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rutFielld3ActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void confirmClaveField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmClaveField2ActionPerformed
-
+/**
+ * no contiene implementaciones
+ * @deprecated 
+ * @param evt 
+ */
     private void modifRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifRegisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modifRegisActionPerformed

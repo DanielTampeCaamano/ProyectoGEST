@@ -100,7 +100,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             editando = true;
             this.previous = previous;
             this.previous.setEnabled(false);
-            
+
             this.pacienteAObservar = p;
 
             this.NombreJTextField.setText(p.getNombreCompleto());
@@ -120,7 +120,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
             this.previous = previous;
             this.limpPat.setEnabled(false);
             this.pacienteAObservar = p;
-            
+
             this.confirmacionIPD.setText("IPD Confirmado");
 
             this.PatologiasJTextField.setEditable(false);
@@ -145,10 +145,18 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
     }
 
+    /**
+     * Este metodo verifica si se esta editando
+     *
+     * @return Retorna un booleano con el resultado del estado
+     */
     public boolean isEditando() {
         return editando;
     }
 
+    /**
+     * Este metodo ingresa las patologias del paciente
+     */
     private void ingresarPatologiasDelPaciente() {
         String patologia = "";
 
@@ -448,16 +456,16 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
                 if (!personaOcupandoElPrograma.getHerramientaPersona().personaExiste(pacienteAIngresar) && !editando) {
                     personaOcupandoElPrograma.getHerramientaPersona().registrarPacientes(pacienteAIngresar, (Registrador) personaOcupandoElPrograma);
                     new Menu(personaOcupandoElPrograma).setVisible(true);
-                    
+
                     this.dispose();
-                    
+
                 } else if (editando) {
                     previous.setEnabled(true);
-                    
+
                     for (int i = 0; i < previous.getModel().getRowCount(); i++) {
-                       previous.getModel().removeRow(i); 
+                        previous.getModel().removeRow(i);
                     }
-                    
+
                     previous.getPacientesObtenidos().clear();
                     personaOcupandoElPrograma.getHerramientaPersona().actualizarDatosPaciente(pacienteAIngresar, (Registrador) personaOcupandoElPrograma);
                     this.dispose();
@@ -505,11 +513,20 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         }
 
     }//GEN-LAST:event_agregadorpatologia
-
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt
+     */
     private void PatologiasJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatologiasJComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PatologiasJComboBoxActionPerformed
-
+    /**
+     * Este metodo limpia las patologias ingresadas al formulario
+     *
+     * @param evt Este evento se genera por hacer click en el boton Limpiar
+     */
     private void limpPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpPatActionPerformed
         this.PatologiasJTextField.setText("");
         advertirCambios();

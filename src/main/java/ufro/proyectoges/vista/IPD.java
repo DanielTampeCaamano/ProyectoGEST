@@ -37,9 +37,11 @@ public class IPD extends javax.swing.JFrame {
      * @param p Recibe un objeto clase Persona que contiene los datos de la
      * persona que usa el sistema
      * @param formPaciente Recibe los datos de la ventana IngresoCasoPaciente
+     * @param paciente recibe la informacion del paciente en la ventana Ingreso
+     * de Paciente
      */
     public IPD(Persona p, IngresoCasoPaciente formPaciente, Paciente paciente) {
-        
+
         initComponents();
         if (p instanceof Registrador) {
             this.formPaciente = formPaciente;
@@ -51,7 +53,7 @@ public class IPD extends javax.swing.JFrame {
             PatologiasJTextField.setEditable(false);
 
             if (paciente == null) {
-                
+
                 NombreCompletoJTextField.setText(formPaciente.getNombreJTextField().getText());
                 RUTJTextField1.setText(formPaciente.getRUTJTextField1().getText());
                 RUTJTextField2.setText(formPaciente.getRUTJTextField2().getText());
@@ -63,8 +65,6 @@ public class IPD extends javax.swing.JFrame {
                 RUTJTextField1.setText(formPaciente.getRUTJTextField1().getText());
                 RUTJTextField2.setText(formPaciente.getRUTJTextField2().getText());
                 PatologiasJTextField.setText(formPaciente.getPatologiasJTextField().getText());
-
-                
 
                 AnioFechaInicioJTextField.setText(Fecha.getYear(ipd.getFechaInicio()));
                 MesFechaInicioJTextField.setText(Fecha.getMonth(ipd.getFechaInicio()));

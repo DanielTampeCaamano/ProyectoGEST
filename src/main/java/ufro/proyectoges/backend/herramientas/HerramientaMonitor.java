@@ -286,8 +286,8 @@ public class HerramientaMonitor implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param paciente
-     * @param registrador
+     * @param paciente .
+     * @param registrador .
      */
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
@@ -298,8 +298,8 @@ public class HerramientaMonitor implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param ipd
-     * @param registrador
+     * @param ipd .
+     * @param registrador .
      */
     @Override
     public void actualizarDatosIpd(IPDPaciente ipd, Registrador registrador) {
@@ -310,7 +310,7 @@ public class HerramientaMonitor implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @return
+     * @return .
      */
     @Override
     public int getLastIdPaciente() {
@@ -321,8 +321,8 @@ public class HerramientaMonitor implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param rut
-     * @return
+     * @param rut .
+     * @return .
      */
     @Override
     public int getSecIdByRut(Rut rut) {

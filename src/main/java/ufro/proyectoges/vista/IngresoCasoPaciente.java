@@ -533,10 +533,6 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         this.patologias.clear();
     }//GEN-LAST:event_limpPatActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FechaIngresoJLabel;
     private javax.swing.JLabel FechaJLabel;
@@ -606,7 +602,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
      * Metodo que se encarga de avisar si existe un cambio de informacion de la
      * patologias para editar el IPD
      *
-     * @param e
+     * @param e Evento que recibe
      */
     @Override
     public void actionPerformed(ActionEvent e) {

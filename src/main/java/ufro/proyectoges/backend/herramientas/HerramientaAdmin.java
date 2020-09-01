@@ -32,10 +32,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param id
-     * @return
+     * @param id Entero
+     * @return objeto IPDPAciente
      */
-    @Override
     public IPDPaciente buscarIPDporRut(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -44,11 +43,10 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param inicio
-     * @param termino
-     * @return
+     * @param inicio variable Date
+     * @param termino Variable Date
+     * @return .
      */
-    @Override
     public boolean descargarBasesDeDatos(Date inicio, Date termino) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -57,10 +55,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param nombre
-     * @return
+     * @param nombre.
+     * @return .
      */
-    @Override
     public Paciente buscarPacientePorNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -69,10 +66,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param rut
-     * @return
+     * @param rut.
+     * @return .
      */
-    @Override
     public Paciente buscarPacientePorRut(Rut rut) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -81,10 +77,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param p
-     * @return
+     * @param p.
+     * @return .
      */
-    @Override
     public boolean personaExiste(Persona p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -92,14 +87,23 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
+     * 
      * @deprecated
-     * @Override public Persona buscarPersona(Rut rut) { throw new
-     * UnsupportedOperationException("Not supported yet."); //To change body of
-     * generated methods, choose Tools | Templates. } /**
-     *
-     * @return
+     * @param rut.
+     * @return .
      */
     @Override
+    public Persona buscarPersona(Rut rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
+
+    }
+
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @return .
+     */
     public List<Paciente> obtenerPacientes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -108,9 +112,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param r
+     * @param r .
      */
-    @Override
     public void registrarMonitor(Monitor r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -119,9 +122,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param r
+     * @param r .
      */
-    @Override
     public void registrarRegistrador(Registrador r) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -130,10 +132,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param paciente
-     * @param registrador
+     * @param paciente .
+     * @param registrador.
      */
-    @Override
     public void registrarPacientes(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -142,10 +143,9 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param ipd
-     * @param registrador
+     * @param ipd .
+     * @param registrador.
      */
-    @Override
     public void registrarIPD(IPDPaciente ipd, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -153,10 +153,9 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
-     * @return
+     * @deprecated 
+     * @return .
      */
-    @Override
     public String[] obtenerPatologias() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -165,8 +164,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param nombre
-     * @return
+     * @param nombre.
+     * @return .
      */
     @Override
     public int consultarIDPatologiaPorNombre(String nombre) {
@@ -177,8 +176,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param ipd
-     * @return
+     * @param ipd.
+     * @return .
      */
     @Override
     public Registrador obtenerRegistradorIPD(IPDPaciente ipd) {
@@ -189,8 +188,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param paciente
-     * @param registrador
+     * @param paciente.
+     * @param registrador.
      */
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
@@ -201,8 +200,8 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param ipd
-     * @param registrador
+     * @param ipd.
+     * @param registrador.
      */
     @Override
     public void actualizarDatosIpd(IPDPaciente ipd, Registrador registrador) {
@@ -212,8 +211,8 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
-     * @return
+     * @deprecated 
+     * @return .
      */
     @Override
     public int getLastIdPaciente() {
@@ -224,24 +223,14 @@ public class HerramientaAdmin implements Herramienta {
      * no contiene implementaciones
      *
      * @deprecated
-     * @param rut
-     * @return
+     * @param rut.
+     * @return .
      */
     @Override
     public int getSecIdByRut(Rut rut) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     * no contiene implementaciones
-     *
-     * @deprecated
-     * @param rut
-     * @return
-     */
-    @Override
-    public Persona buscarPersona(Rut rut) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 }

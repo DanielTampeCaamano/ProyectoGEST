@@ -147,10 +147,6 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_DescargaBaseDatosJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BusquedaPacientesJButton;
     private javax.swing.JButton DescargaBaseDatosJButton;

@@ -465,9 +465,6 @@ public class IPD extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_VolverJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarJButton;

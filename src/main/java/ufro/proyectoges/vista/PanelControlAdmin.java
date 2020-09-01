@@ -9,6 +9,7 @@ import ufro.proyectoges.backend.entidades.Persona;
 
 /**
  * Esta ventana meneja las acciones del administrador
+ *
  * @author shido
  */
 public class PanelControlAdmin extends javax.swing.JFrame {
@@ -17,6 +18,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form PanelControlAdmin
+     * @param persona Persona que suar este programa
      */
     public PanelControlAdmin(Persona persona) {
         this.persona = persona;
@@ -324,81 +326,86 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void agregarRegistradorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarRegistradorRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarRegistradorRadioButtonActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void agregarMonitorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMonitorButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarMonitorButtonActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombreActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void rutFielld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rutFielld1ActionPerformed
-/**
- * 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void confirmClaveFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmClaveFieldActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void fieldNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombre2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombre2ActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void rutFielld3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rutFielld3ActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void confirmClaveField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmClaveField2ActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void modifRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifRegisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modifRegisActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton agregarMonitorButton;

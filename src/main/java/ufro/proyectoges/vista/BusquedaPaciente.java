@@ -310,9 +310,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         return pacientesObtenidos.stream().anyMatch(pacientesObtenido -> (p.getRutValidado().equals(pacientesObtenido.getRutValidado())));
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarNombreJButton;

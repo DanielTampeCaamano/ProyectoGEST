@@ -20,7 +20,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     /**
      * Creates new form DescargabaseDatos
      *
-     * @param p
+     * @param p Persona que usa este programa
      */
     public DescargabaseDatos(Persona p) {
         this.p = p;
@@ -353,9 +353,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         RangoFechaFinalCasosCerradosJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosCerradosJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnioFechaFinalCasosCerradosJTextField;

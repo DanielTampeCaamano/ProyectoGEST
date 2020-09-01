@@ -68,10 +68,6 @@ public class GuardadoArchivo extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_SelectorArchivoJFileChooserActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser SelectorArchivoJFileChooser;
     private javax.swing.JLabel jLabel1;

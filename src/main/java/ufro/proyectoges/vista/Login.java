@@ -98,18 +98,20 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void UsuarioJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsuarioJTextFieldActionPerformed
-/**
- * no contiene implementaciones
- * @deprecated 
- * @param evt 
- */
+    /**
+     * no contiene implementaciones
+     *
+     * @deprecated
+     * @param evt .
+     */
     private void ContraseñaJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaJTextFieldActionPerformed

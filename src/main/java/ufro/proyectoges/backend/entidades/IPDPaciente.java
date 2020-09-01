@@ -89,7 +89,8 @@ public class IPDPaciente {
     /**
      * Metodo que edita la clave secundaria del paciente
      *
-     * @param secondary_key_paciente
+     * @param secondary_key_paciente Recibe un Entero que contiene la clave
+     * secundaria del paciente
      */
     public void setSecondary_key_paciente(int secondary_key_paciente) {
         this.secondary_key_paciente = secondary_key_paciente;

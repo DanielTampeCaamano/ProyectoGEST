@@ -202,29 +202,29 @@ public class IPD extends javax.swing.JFrame {
         getContentPane().add(IPDJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 12, -1, -1));
 
         NombreCompletoJLabel.setText("Nombre Completo:");
-        getContentPane().add(NombreCompletoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 84, -1, -1));
-        getContentPane().add(NombreCompletoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 233, -1));
+        getContentPane().add(NombreCompletoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 84, 130, -1));
+        getContentPane().add(NombreCompletoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 82, 270, -1));
 
         RUTJLabel.setText("RUT");
-        getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 115, -1, -1));
-        getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 96, -1));
-        getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 28, -1));
+        getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 116, -1, -1));
+        getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 114, 96, -1));
+        getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 114, 28, -1));
 
         PatologiasJLabel.setText("Patologias:");
-        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 152, -1, -1));
-        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 150, 268, -1));
+        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 148, 270, -1));
 
         FechaInicioJLabel.setText("Fecha de Inicio");
-        getContentPane().add(FechaInicioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 84, -1, -1));
-        getContentPane().add(DiaFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 101, 30, -1));
-        getContentPane().add(MesFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 101, 29, -1));
-        getContentPane().add(AnioFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 101, 59, -1));
+        getContentPane().add(FechaInicioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
+        getContentPane().add(DiaFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 30, -1));
+        getContentPane().add(MesFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 29, -1));
+        getContentPane().add(AnioFechaInicioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 59, -1));
 
         FechaTerminoJLabel.setText("Fecha de Termino");
-        getContentPane().add(FechaTerminoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 132, -1, -1));
-        getContentPane().add(DiaFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 150, 30, -1));
-        getContentPane().add(MesFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 29, -1));
-        getContentPane().add(AnioFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 150, 59, -1));
+        getContentPane().add(FechaTerminoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
+        getContentPane().add(DiaFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 30, -1));
+        getContentPane().add(MesFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 29, -1));
+        getContentPane().add(AnioFechaTerminoJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 59, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 187, 607, 10));
 
         GESJCheckBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N

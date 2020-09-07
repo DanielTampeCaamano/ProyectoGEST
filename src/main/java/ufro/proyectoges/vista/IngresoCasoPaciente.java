@@ -311,28 +311,28 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
 
         IngresoPacienteJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         IngresoPacienteJLabel.setText("Ingreso Caso Paciente");
-        getContentPane().add(IngresoPacienteJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 98, -1, -1));
+        getContentPane().add(IngresoPacienteJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
 
         NombreJLabel.setText("Nombre Completo:");
-        getContentPane().add(NombreJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 190, -1, -1));
+        getContentPane().add(NombreJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, -1));
 
         NombreJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreJTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 188, 394, -1));
+        getContentPane().add(NombreJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 187, 370, -1));
 
         RUTJLabel.setText("RUT:");
-        getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 225, -1, -1));
-        getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 225, 78, -1));
-        getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 225, 23, -1));
+        getContentPane().add(RUTJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        getContentPane().add(RUTJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 228, 78, -1));
+        getContentPane().add(RUTJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 228, 23, -1));
 
         PatologiasJLabel.setText("Patologias:");
-        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 266, -1, -1));
+        getContentPane().add(PatologiasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         PatologiasJTextField.setToolTipText("Puede utilizar el desplegable para ingresar patologias");
-        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 264, 296, -1));
+        getContentPane().add(PatologiasJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 267, 240, -1));
 
         PatologiasJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patologia 1", "Patologia 2", "Patologia 3", "Patologia 4", "Patologia 5", "Patologia 6", "Patologia 7", "Patologia 8", "Patologia 9", "Patologia 10", "Patologia 11", "Patologia 12", "Patologia 13", "Patologia 14", "Patologia 15", "Patologia 16", "Patologia 17", "Patologia 18", "Patologia 19", "Patologia 20", "Patologia 21", "Patologia 22", "Patologia 23", "Patologia 24", "Patologia 25" }));
         PatologiasJComboBox.setToolTipText("Seleccione las patologia que desee ingresar");
@@ -347,7 +347,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
                 PatologiasJComboBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 176, -1));
+        getContentPane().add(PatologiasJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 260, 170, -1));
 
         IPDJButton.setText("I.P.D.");
         IPDJButton.setToolTipText("Informe Proceso Diagnostico");
@@ -371,7 +371,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         getContentPane().add(FechaIngresoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 390, -1, -1));
 
         FechaJLabel.setText("dd/mm/aaaa");
-        getContentPane().add(FechaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 436, -1, -1));
+        getContentPane().add(FechaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, -1, -1));
 
         IngresarJButton.setText("Ingresar");
         IngresarJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -398,7 +398,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
                 limpPatActionPerformed(evt);
             }
         });
-        getContentPane().add(limpPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 170, -1));
+        getContentPane().add(limpPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 160, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

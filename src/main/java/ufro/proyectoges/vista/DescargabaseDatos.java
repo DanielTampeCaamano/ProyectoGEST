@@ -76,7 +76,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         TituloJLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("GEST-ION");
-        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 23, -1, -1));
+        getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         DescargaBaseDatosJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         DescargaBaseDatosJLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -108,41 +108,41 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         getContentPane().add(CasosCerradosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 133, -1, -1));
 
         DiaFechaInicialCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 46, -1));
+        getContentPane().add(DiaFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 46, -1));
 
         MesFechaInicialCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(MesFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 230, 47, -1));
+        getContentPane().add(MesFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 40, -1));
 
         AnioFechaInicialCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 230, 56, -1));
+        getContentPane().add(AnioFechaInicialCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 56, -1));
 
         RangoFechaInicialJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialJLabel.setText("Rango Fecha Incial");
         RangoFechaInicialJLabel.setEnabled(false);
-        getContentPane().add(RangoFechaInicialJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 198, -1, -1));
+        getContentPane().add(RangoFechaInicialJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 200, -1, -1));
 
         DiaFechaFinalCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 294, 46, -1));
+        getContentPane().add(DiaFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 46, -1));
 
         MesFechaFinalCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(MesFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 294, 43, -1));
+        getContentPane().add(MesFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 40, -1));
 
         AnioFechaFinalCasosVigentesJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 294, 58, -1));
+        getContentPane().add(AnioFechaFinalCasosVigentesJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 58, -1));
 
         RangoFechaFinalJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalJLabel.setText("Rango Fecha Final");
         RangoFechaFinalJLabel.setEnabled(false);
-        getContentPane().add(RangoFechaFinalJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 261, -1, -1));
+        getContentPane().add(RangoFechaFinalJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 270, -1, -1));
 
         DiaFechaInicialCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 231, 45, -1));
+        getContentPane().add(DiaFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 50, -1));
 
         MesFechaInicialCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(MesFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 231, 50, -1));
+        getContentPane().add(MesFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 40, -1));
 
         AnioFechaInicialCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 231, 52, -1));
+        getContentPane().add(AnioFechaInicialCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 60, -1));
 
         RangoFechaInicialCasosExceptuados.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialCasosExceptuados.setText("Rango Fecha Incial");
@@ -150,46 +150,46 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         getContentPane().add(RangoFechaInicialCasosExceptuados, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 198, -1, -1));
 
         DiaFechaFinalCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 294, 45, -1));
+        getContentPane().add(DiaFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 50, -1));
 
         MesFechaFinalCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(MesFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 294, 50, -1));
+        getContentPane().add(MesFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 40, -1));
 
         AnioFechaFinalCasosExceptuadosJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 294, 51, -1));
+        getContentPane().add(AnioFechaFinalCasosExceptuadosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 60, -1));
 
         RangoFechaFinalCasosExceptuadosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalCasosExceptuadosJLabel.setText("Rango Fecha Final");
         RangoFechaFinalCasosExceptuadosJLabel.setEnabled(false);
-        getContentPane().add(RangoFechaFinalCasosExceptuadosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 261, -1, -1));
+        getContentPane().add(RangoFechaFinalCasosExceptuadosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
         DiaFechaInicialCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 231, 48, -1));
+        getContentPane().add(DiaFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 48, -1));
 
         MesFechaInicialCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(MesFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 231, 50, -1));
+        getContentPane().add(MesFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 50, -1));
 
         AnioFechaInicialCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 231, 62, -1));
+        getContentPane().add(AnioFechaInicialCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 62, -1));
 
         RangoFechaInicialCasosCerradosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaInicialCasosCerradosJLabel.setText("Rango Fecha Incial");
         RangoFechaInicialCasosCerradosJLabel.setEnabled(false);
-        getContentPane().add(RangoFechaInicialCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 198, -1, -1));
+        getContentPane().add(RangoFechaInicialCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 200, -1, -1));
 
         DiaFechaFinalCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(DiaFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 294, 48, -1));
+        getContentPane().add(DiaFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 48, -1));
 
         MesFechaFinalCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(MesFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 294, 50, -1));
+        getContentPane().add(MesFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 50, -1));
 
         AnioFechaFinalCasosCerradosJTextField.setEnabled(false);
-        getContentPane().add(AnioFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 294, 62, -1));
+        getContentPane().add(AnioFechaFinalCasosCerradosJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 62, -1));
 
         RangoFechaFinalCasosCerradosJLabel.setForeground(new java.awt.Color(0, 0, 0));
         RangoFechaFinalCasosCerradosJLabel.setText("Rango Fecha Final");
         RangoFechaFinalCasosCerradosJLabel.setEnabled(false);
-        getContentPane().add(RangoFechaFinalCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 262, -1, -1));
+        getContentPane().add(RangoFechaFinalCasosCerradosJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 270, -1, -1));
 
         DescargaJButton.setText("Descargar");
         DescargaJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +197,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 DescargaJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(DescargaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 393, -1, -1));
+        getContentPane().add(DescargaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, -1, -1));
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
                 VolverJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 393, -1, -1));
+        getContentPane().add(VolverJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med1.jpg"))); // NOI18N

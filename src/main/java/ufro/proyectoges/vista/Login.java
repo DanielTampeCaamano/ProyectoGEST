@@ -52,12 +52,10 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloJLabel.setFont(new java.awt.Font("Dialog", 3, 28)); // NOI18N
-        TituloJLabel.setForeground(new java.awt.Color(0, 0, 0));
         TituloJLabel.setText("GEST-ION");
         getContentPane().add(TituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 21, -1, -1));
 
         UsuarioJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        UsuarioJLabel.setForeground(new java.awt.Color(0, 0, 0));
         UsuarioJLabel.setText("Usuario");
         getContentPane().add(UsuarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 108, -1, -1));
 
@@ -69,7 +67,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(UsuarioJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 144, 207, -1));
 
         ContraseñaJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        ContraseñaJLabel.setForeground(new java.awt.Color(0, 0, 0));
         ContraseñaJLabel.setText("Contraseña");
         getContentPane().add(ContraseñaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 181, -1, -1));
 
@@ -81,7 +78,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(ContraseñaJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 211, 207, -1));
 
         AceptarJButton.setBackground(new java.awt.Color(102, 204, 255));
-        AceptarJButton.setForeground(new java.awt.Color(0, 0, 0));
         AceptarJButton.setText("Ingresar");
         AceptarJButton.setOpaque(false);
         AceptarJButton.addActionListener(new java.awt.event.ActionListener() {

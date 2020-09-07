@@ -138,10 +138,10 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         getContentPane().add(ResultadosJScrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 317, -1, 99));
 
         RutJTextField1.setEnabled(false);
-        getContentPane().add(RutJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 90, -1));
+        getContentPane().add(RutJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 90, -1));
 
         RutJTextField2.setEnabled(false);
-        getContentPane().add(RutJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 37, -1));
+        getContentPane().add(RutJTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 37, -1));
 
         BuscarRUTJButton.setText("Buscar");
         BuscarRUTJButton.setEnabled(false);
@@ -162,7 +162,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
                 BuscarNombreJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarNombreJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
+        getContentPane().add(BuscarNombreJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
         VolverJButton.setText("Volver");
         VolverJButton.addActionListener(new java.awt.event.ActionListener() {

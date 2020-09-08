@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import java.io.File;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,7 +45,7 @@ public class HerramientaLogIn implements Herramienta {
      * @return retorna un boolean con el valor de falso
      */
     @Override
-    public boolean descargarBasesDeDatos(Date inicio, Date termino) {
+    public boolean descargarBasesDeDatos(Date inicio, Date termino, File ruta) {
         JOptionPane.showMessageDialog(null, "Permisos insuficientes");
         return false;
     }

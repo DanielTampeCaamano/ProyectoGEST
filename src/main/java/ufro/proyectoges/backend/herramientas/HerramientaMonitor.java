@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import java.io.File;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,10 +41,12 @@ public class HerramientaMonitor implements Herramienta {
      *
      * @param inicio Recibe una variable de tipo Date
      * @param termino Recibe una variable de tipo Date
+     * @param ruta Recibe un parametro tipo File, entrega la ruta del archivo a
+     * guardar
      * @return Debiera retornar un boolean, aqui solo retorna falso
      */
     @Override
-    public boolean descargarBasesDeDatos(Date inicio, Date termino) {
+    public boolean descargarBasesDeDatos(Date inicio, Date termino, File ruta) {
         return false;
     }
 

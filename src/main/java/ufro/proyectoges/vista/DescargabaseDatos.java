@@ -223,15 +223,30 @@ public class DescargabaseDatos extends javax.swing.JFrame {
      */
     private void DescargaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescargaJButtonActionPerformed
         // TODO add your handling code here:
+        Date[] fechas = null;
         if (RangoFechaInicialJLabel.isEnabled()) {
-            p.getHerramientaPersona().descargarBasesDeDatos(new Date(Integer.parseInt(AnioFechaInicialCasosVigentesJTextField.getText()),
-                    Integer.parseInt(MesFechaInicialCasosVigentesJTextField.getText()),
-                    Integer.parseInt(DiaFechaInicialCasosVigentesJTextField.getText())),
-                    new Date(Integer.parseInt(AnioFechaFinalCasosVigentesJTextField.getText()),
-                            Integer.parseInt(MesFechaFinalCasosVigentesJTextField.getText()),
-                            Integer.parseInt(DiaFechaFinalCasosVigentesJTextField.getText())));
+            fechas = new Date[]{new Date((Integer.parseInt(AnioFechaInicialCasosVigentesJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaInicialCasosVigentesJTextField.getText()),
+                Integer.parseInt(DiaFechaInicialCasosVigentesJTextField.getText())),
+                new Date((Integer.parseInt(AnioFechaFinalCasosVigentesJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaFinalCasosVigentesJTextField.getText()),
+                Integer.parseInt(DiaFechaFinalCasosVigentesJTextField.getText()))};
+        } else if (RangoFechaInicialCasosExceptuados.isEnabled()) {
+            fechas = new Date[]{new Date((Integer.parseInt(AnioFechaInicialCasosExceptuadosJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaInicialCasosExceptuadosJTextField.getText()),
+                Integer.parseInt(DiaFechaInicialCasosExceptuadosJTextField.getText())),
+                new Date((Integer.parseInt(AnioFechaFinalCasosExceptuadosJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaFinalCasosExceptuadosJTextField.getText()),
+                Integer.parseInt(DiaFechaFinalCasosExceptuadosJTextField.getText()))};
+        } else if (RangoFechaInicialCasosCerradosJLabel.isEnabled()) {
+            fechas = new Date[]{new Date((Integer.parseInt(AnioFechaInicialCasosCerradosJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaInicialCasosCerradosJTextField.getText()),
+                Integer.parseInt(DiaFechaInicialCasosCerradosJTextField.getText())),
+                new Date((Integer.parseInt(AnioFechaFinalCasosCerradosJTextField.getText()) - 1900),
+                Integer.parseInt(MesFechaFinalCasosCerradosJTextField.getText()),
+                Integer.parseInt(DiaFechaFinalCasosCerradosJTextField.getText()))};
         }
-        new GuardadoArchivo(p).setVisible(true);
+        new GuardadoArchivo(p, fechas).setVisible(true);
     }//GEN-LAST:event_DescargaJButtonActionPerformed
     /**
      * Metodo que sirve para volver al menu principal
@@ -353,7 +368,6 @@ public class DescargabaseDatos extends javax.swing.JFrame {
         RangoFechaFinalCasosCerradosJLabel.setEnabled(true);
     }//GEN-LAST:event_CasosCerradosJButtonActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnioFechaFinalCasosCerradosJTextField;

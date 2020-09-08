@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import java.io.File;
 import java.sql.Date;
 import java.util.List;
 import ufro.proyectoges.backend.connection.SqlHandler;
@@ -27,7 +28,7 @@ public interface Herramienta {
 
     public abstract IPDPaciente buscarIPDporRut(int id);
 
-    public abstract boolean descargarBasesDeDatos(Date inicio, Date termino);
+    public abstract boolean descargarBasesDeDatos(Date inicio, Date termino, File ruta);
 
     public abstract Paciente buscarPacientePorNombre(String nombre);
 

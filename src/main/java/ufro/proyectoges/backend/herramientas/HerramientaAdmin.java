@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import java.io.File;
 import java.sql.Date;
 import java.util.List;
 import ufro.proyectoges.backend.entidades.IPDPaciente;
@@ -87,7 +88,7 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @deprecated
      * @param rut.
      * @return .
@@ -153,7 +154,7 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
-     * @deprecated 
+     * @deprecated
      * @return .
      */
     public String[] obtenerPatologias() {
@@ -211,7 +212,7 @@ public class HerramientaAdmin implements Herramienta {
     /**
      * no contiene implementaciones
      *
-     * @deprecated 
+     * @deprecated
      * @return .
      */
     @Override
@@ -231,6 +232,9 @@ public class HerramientaAdmin implements Herramienta {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
+    @Override
+    public boolean descargarBasesDeDatos(Date inicio, Date termino, File ruta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

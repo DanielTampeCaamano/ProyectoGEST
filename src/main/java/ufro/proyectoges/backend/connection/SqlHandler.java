@@ -111,6 +111,69 @@ public class SqlHandler {
     }
 
     /**
+     * Metodo para consultar a la basde datos, que "seleccione" datos de
+     * "columna(s)" de "desde" una(s) "tabla(s)" en particular "en donde" cierta
+     * "columna" posea un "valor" en especifico
+     *
+     * @param selected_columns Este parametro contiene las columnas de las
+     * cuales se pretende obtener datos
+     * @param table_name Este parametro contiene el nombre de la tabla a la cual
+     * se pretende hacer la consulta
+     * @param column_to_find Este parametro contiene el nombre de la columna
+     * donde se buscara el valor de filtro
+     * @param value_expected_initial Este parametro contiene el valor de filtro
+     * inicial que se utilizara
+     * @param value_expected_final Este parametro contiene el valor de filtro
+     * final que se utilizara
+     * @return Retorna un conjunto de datos encapsulado en un "ResultSet"
+     */
+    public ResultSet selectFromWhereBetween(String selected_columns, String table_name, String column_to_find, String value_expected_initial, String value_expected_final) {
+        ResultSet queryResult = null;
+        try {
+            queryResult = statement.executeQuery("SELECT " + selected_columns + " FROM " + table_name + " WHERE " + column_to_find + " BETWEEN " + value_expected_initial + " AND " + value_expected_final);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
+
+    /**
+     * Metodo para consultar a la basde datos, que "seleccione" datos de
+     * "columna(s)" de "desde" una(s) "tabla(s)" en particular "en donde" cierta
+     * "columna" posea un "valor" en especifico
+     *
+     * @param selected_columns Este parametro contiene las columnas de las
+     * cuales se pretende obtener datos
+     * @param table_name Este parametro contiene el nombre de la tabla a la cual
+     * se pretende hacer la consulta
+     * @param column_to_find Este parametro contiene el nombre de la columna
+     * donde se buscara el valor de filtro
+     * @param value_expected_initial Este parametro contiene el valor de filtro
+     * inicial que se utilizara
+     * @param value_expected_final Este parametro contiene el valor de filtro
+     * final que se utilizara
+     * @param ruta Este parametro contiene el valor de la ruta donde el archivo
+     * se guardara
+     * @return Retorna un conjunto de datos encapsulado en un "ResultSet"
+     */
+    public ResultSet selectFromWhereBetweenIntoOutfile(String selected_columns, String table_name, String column_to_find, String value_expected_initial, String value_expected_final, String ruta) {
+        ResultSet queryResult = null;
+        try {
+            queryResult = statement.executeQuery("SELECT 'identificacion', 'nombreCompletoPaciente', 'fechaInicio', 'fechaTermino', 'GES', 'notificacionPacienteGes', 'confirmado', 'descartado', 'exceptuado', 'observacion', 'patologia', 'registrador', 'fechaIngreso', 'secondary_key_paciente'\n"
+                    + "UNION ALL \n"
+                    + "SELECT " + selected_columns + " FROM " + table_name + " WHERE " + column_to_find + " BETWEEN " + value_expected_initial + " AND " + value_expected_final
+                    + "INTO OUTFILE " + ruta
+                    + " FIELDS ENCLOSED BY '\"' \n"
+                    + "TERMINATED BY ';' \n"
+                    + "ESCAPED BY '\"' \n"
+                    + "LINES TERMINATED BY '\\r\\n'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
+
+    /**
      * Este Metodo sirve para obtener el atributo "statement"
      *
      * @return Retorna el atributo "statement", de tipo Statement

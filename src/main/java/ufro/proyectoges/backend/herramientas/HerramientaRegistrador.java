@@ -5,6 +5,7 @@
  */
 package ufro.proyectoges.backend.herramientas;
 
+import java.io.File;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,11 +43,13 @@ public class HerramientaRegistrador implements Herramienta {
      *
      * @param inicio Recibe un paremetro de tipo Date
      * @param termino Recibe un parametro de tipo Date
+     * @param ruta Recibe un parametro de tipo File, que entrega la ruta donde
+     * se guarda el archivo
      * @return No retorna nada
      */
     @Override
-    public boolean descargarBasesDeDatos(Date inicio, Date termino) {
-
+    public boolean descargarBasesDeDatos(Date inicio, Date termino, File ruta) {
+        queryResult = handler.selectFromWhereBetweenIntoOutfile("*", "ipd", "fechaInicio", "'" + inicio + "'", "'" + termino + "'", "'" + ruta.getAbsolutePath() + ".csv'");
         return false;
 
     }
@@ -239,7 +242,20 @@ public class HerramientaRegistrador implements Herramienta {
         try {
             ResultSet queryResult = sqlHandler.selectFromWhere("*", "ipd", "identificacion", String.valueOf(id));
             while (queryResult.next()) {
-                return new IPDPaciente(queryResult.getString(1), queryResult.getString(2), queryResult.getDate(3), queryResult.getDate(4), queryResult.getInt(5) == 1, queryResult.getInt(6) == 1, queryResult.getInt(7) == 1, queryResult.getInt(8) == 1, queryResult.getInt(9) == 1, queryResult.getString(10), queryResult.getString(11), queryResult.getString(12), queryResult.getDate(13), queryResult.getInt(14));
+                return new IPDPaciente(queryResult.getString(1),
+                        queryResult.getString(2),
+                        queryResult.getDate(3),
+                        queryResult.getDate(4),
+                        queryResult.getInt(5) == 1,
+                        queryResult.getInt(6) == 1,
+                        queryResult.getInt(7) == 1,
+                        queryResult.getInt(8) == 1,
+                        queryResult.getInt(9) == 1,
+                        queryResult.getString(10),
+                        queryResult.getString(11),
+                        queryResult.getString(12),
+                        queryResult.getDate(13),
+                        queryResult.getInt(14));
 
             }
         } catch (SQLException e) {
@@ -313,7 +329,8 @@ public class HerramientaRegistrador implements Herramienta {
     public int consultarIDPatologiaPorNombre(String nombre) {
 
         try {
-            queryResult = sqlHandler.selectFromWhere("identificacion", "patologia", "nombrePatologia", nombre);
+            queryResult = sqlHandler.selectFromWhere("identificacion",
+                    "patologia", "nombrePatologia", nombre);
             while (queryResult.next()) {
                 return queryResult.getInt(1);
             }
@@ -339,7 +356,10 @@ public class HerramientaRegistrador implements Herramienta {
 
         try {
             while (queryResult.next()) {
-                return new Registrador(queryResult.getInt(4), queryResult.getString(2), new Rut(queryResult.getString(1)), queryResult.getString(3));
+                return new Registrador(queryResult.getInt(4),
+                        queryResult.getString(2),
+                        new Rut(queryResult.getString(1)),
+                        queryResult.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -358,8 +378,13 @@ public class HerramientaRegistrador implements Herramienta {
     @Override
     public void actualizarDatosPaciente(Paciente paciente, Registrador registrador) {
 
-        sqlHandler.updateWhere("personas", "id='" + paciente.getRutValidado() + "', nombre='" + paciente.getNombreCompleto() + "', tipo_persona='" + paciente.getTipo_persona() + "'", "secondary_id=" + paciente.getId());
-        sqlHandler.updateWhere("paciente", "rut='" + paciente.getRut().getRut() + "', nombreCompleto='" + paciente.getNombreCompleto() + "'", "id=" + paciente.getId());
+        sqlHandler.updateWhere("personas",
+                "id='" + paciente.getRutValidado() + "', nombre='"
+                + paciente.getNombreCompleto() + "', tipo_persona='"
+                + paciente.getTipo_persona() + "'",
+                "secondary_id=" + paciente.getId());
+        sqlHandler.updateWhere("paciente", "rut='" + paciente.getRut().getRut()
+                + "', nombreCompleto='" + paciente.getNombreCompleto() + "'", "id=" + paciente.getId());
         actualizarDatosIpd(paciente.getIpdPaciente(), registrador);
     }
 

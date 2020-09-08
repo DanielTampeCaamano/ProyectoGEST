@@ -5,6 +5,9 @@
  */
 package ufro.proyectoges.vista;
 
+import java.io.File;
+import java.sql.Date;
+import java.sql.SQLException;
 import ufro.proyectoges.backend.entidades.Persona;
 
 /**
@@ -16,14 +19,18 @@ import ufro.proyectoges.backend.entidades.Persona;
 public class GuardadoArchivo extends javax.swing.JFrame {
 
     private final Persona p;
+    private final Date[] datos;
 
     /**
      * Creates new form GuardadoArchivo
      *
      * @param p Persona que usa este programa
+     * @param datos Datos que se usan para guardar el archivo de la base de
+     * datos
      */
-    public GuardadoArchivo(Persona p) {
+    public GuardadoArchivo(Persona p, Date[] datos) {
         this.p = p;
+        this.datos = datos;
         initComponents();
     }
 
@@ -65,6 +72,10 @@ public class GuardadoArchivo extends javax.swing.JFrame {
      */
     private void SelectorArchivoJFileChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectorArchivoJFileChooserActionPerformed
         // TODO add your handling code here:
+        File archivo = this.SelectorArchivoJFileChooser.getSelectedFile();
+        if (archivo != null) {
+            p.getHerramientaPersona().descargarBasesDeDatos(datos[0], datos[1], archivo);
+        }
         this.dispose();
     }//GEN-LAST:event_SelectorArchivoJFileChooserActionPerformed
 

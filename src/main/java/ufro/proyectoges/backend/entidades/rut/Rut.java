@@ -39,7 +39,7 @@ public class Rut {
      * @return Retorna si el rut esta bien escrito, mediante un boolean
      */
     public static boolean rutBienEscrito(String rut) {
-        return rut.matches("[0-9]{7,8}[-]{0,1}[0-9]{1,1}");
+        return rut.matches("[0-9]{7,8}[-]{0,1}[0-9k]{1,1}");
     }
 
     /**

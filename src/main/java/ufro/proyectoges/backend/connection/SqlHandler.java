@@ -1,7 +1,12 @@
 package ufro.proyectoges.backend.connection;
 
+import com.opencsv.CSVWriter;
+import java.io.File;
+import java.io.FileWriter;
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase encargada de manejar la conexion a la base de datos SQL

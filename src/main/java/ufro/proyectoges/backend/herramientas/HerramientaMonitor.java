@@ -248,7 +248,7 @@ public class HerramientaMonitor implements Herramienta {
      * @param registrador Recibe un parametro de clase Registrador
      */
     @Override
-    public void registrarPacientes(Paciente paciente, Registrador registrador) {
+    public boolean registrarPacientes(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

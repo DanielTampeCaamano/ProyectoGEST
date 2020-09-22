@@ -191,14 +191,15 @@ public class HerramientaRegistrador implements Herramienta {
      * alusion al registrador que ingreso al paciente ne la base de datos
      */
     @Override
-    public void registrarPacientes(Paciente paciente, Registrador registrador) {
+    public boolean registrarPacientes(Paciente paciente, Registrador registrador) {
         if (paciente.getRutSinConvertir().isRutValido()) {
             sqlHandler.insertInto("paciente", "(rut,nombreCompleto,id)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "'," + paciente.getId() + ")");
             sqlHandler.insertInto("personas", "(id,nombre,tipo_persona,secondary_id)", "('" + paciente.getRut().getRut() + "','" + paciente.getNombre() + "','" + paciente.getTipo_persona() + "'," + paciente.getId() + ")");
 
             registrarIPD(paciente.getIpdPaciente(), registrador);
-
+            return true;
         }
+        return false;
     }
 
     /**

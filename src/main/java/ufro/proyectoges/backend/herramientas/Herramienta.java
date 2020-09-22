@@ -44,7 +44,7 @@ public interface Herramienta {
 
     public abstract void registrarRegistrador(Registrador r);
 
-    public abstract void registrarPacientes(Paciente paciente, Registrador registrador);
+    public abstract boolean registrarPacientes(Paciente paciente, Registrador registrador);
 
     public abstract void registrarIPD(IPDPaciente ipd, Registrador registrador);
 

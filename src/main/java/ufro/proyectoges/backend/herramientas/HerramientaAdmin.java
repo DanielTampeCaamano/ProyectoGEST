@@ -136,7 +136,7 @@ public class HerramientaAdmin implements Herramienta {
      * @param paciente .
      * @param registrador.
      */
-    public void registrarPacientes(Paciente paciente, Registrador registrador) {
+    public boolean registrarPacientes(Paciente paciente, Registrador registrador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

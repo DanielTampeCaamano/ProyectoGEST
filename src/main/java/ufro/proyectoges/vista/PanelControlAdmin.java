@@ -328,7 +328,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
 /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void agregarRegistradorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarRegistradorRadioButtonActionPerformed
@@ -337,7 +337,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void agregarMonitorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMonitorButtonActionPerformed
@@ -346,7 +346,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
@@ -355,7 +355,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void rutFielld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld1ActionPerformed
@@ -364,7 +364,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void confirmClaveFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveFieldActionPerformed
@@ -373,7 +373,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void fieldNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombre2ActionPerformed
@@ -382,7 +382,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     *
      * @param evt .
      */
     private void rutFielld3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld3ActionPerformed
@@ -391,7 +391,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void confirmClaveField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveField2ActionPerformed
@@ -400,7 +400,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * @deprecated
+     * 
      * @param evt .
      */
     private void modifRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifRegisActionPerformed

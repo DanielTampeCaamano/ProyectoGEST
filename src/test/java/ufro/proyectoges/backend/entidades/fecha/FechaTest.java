@@ -14,10 +14,10 @@ import static org.testng.Assert.*;
  */
 public class FechaTest {
 
-    private Date date1 = Date.valueOf("1999-08-07");
-    private Date date2 = Date.valueOf("2001-02-03");
-    private Date date3 = Date.valueOf("2005-12-30");
-    private Date date4 = Date.valueOf("2010-06-21");
+    private final Date date1 = Date.valueOf("1999-08-07");
+    private final Date date2 = Date.valueOf("2001-02-03");
+    private final Date date3 = Date.valueOf("2005-12-30");
+    private final Date date4 = Date.valueOf("2010-06-21");
 
     @org.testng.annotations.Test
     public void testGetDay1() {

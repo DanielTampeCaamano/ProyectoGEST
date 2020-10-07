@@ -67,4 +67,5 @@ public class HerramientaRegistradorTest {
         assertNull(h.buscarPacientePorRut(new Rut("67807081")));
 
     }
+
 }

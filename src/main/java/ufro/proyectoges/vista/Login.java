@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import ufro.proyectoges.backend.entidades.Administrador;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 import ufro.proyectoges.backend.herramientas.HerramientaLogIn;
 
 /**
@@ -132,7 +133,7 @@ public class Login extends javax.swing.JFrame {
                         new Menu(p).setVisible(true);
                         this.dispose();
                     }
-
+                    Temporizador.initTimerThatLasts(10000);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);
                 }

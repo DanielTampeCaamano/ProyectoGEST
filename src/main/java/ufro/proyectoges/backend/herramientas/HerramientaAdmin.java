@@ -121,9 +121,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
-     * no contiene implementaciones
+     * Este metodo se encarga de ingresar un nuevo Monitor al sistema
      *
-     * @param monitor
+     * @param monitor Este parametro entrega la informacion que se ingresara,
+     * mediante un objeto de clase Monitor
      */
     @Override
     public void registrarMonitor(Monitor monitor) {
@@ -145,9 +146,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
-     * no contiene implementaciones
+     * Este metodo ingresa un Registrador al sistema
      *
-     * @param registrador
+     * @param registrador Este parametro entrega los datos que se ingresaran al
+     * sistema, mediante un objeto de clase Registrador
      */
     @Override
     public void registrarRegistrador(Registrador registrador) {
@@ -169,8 +171,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo obtiene los nombres de los monitores
      *
-     * @return
+     * @return Retorna un vector que contiene la lista de los nombres de los
+     * monitores
      */
     public String[] obtenerMonitores() {
         List<Monitor> monitores = new ArrayList<>();
@@ -194,8 +198,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo recupera la lista de monitores con todos sus datos
      *
-     * @return
+     * @return Retrona una List que contiene los datos de los monitores para que
+     * sean utilizados mas tarde
      */
     @Override
     public List<Monitor> obtenerListaMonitores() {
@@ -210,8 +216,9 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo entrega una lista de nombres de los registradores
      *
-     * @return
+     * @return Retorna un vector que contiene los nombes de los registradores
      */
     @Override
     public String[] obtenerRegistradores() {
@@ -236,8 +243,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo recupera la informacion de los registradores con todos sus
+     * datos
      *
-     * @return
+     * @return Retorna una List que contiene los datos de los registradores
      */
     @Override
     public List<Registrador> obtenerListaRegistradores() {
@@ -252,8 +261,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo se utiliza para eliminar Monitores del sistema
      *
-     * @param nombre
+     * @param nombre Este parametro es el nombre del Monitor que sera eliminado
+     * del sistema
      */
     @Override
     public void eliminarMonitor(String nombre) {
@@ -262,8 +273,10 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo se utiliza para eliminar Registradores del sistema
      *
-     * @param nombre
+     * @param nombre Este parametro es el nombre del Registrador que sera
+     * eliminado del sistema
      */
     @Override
     public void eliminarRegistrador(String nombre) {
@@ -272,8 +285,11 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metodo se utiliza para actualizar los datos de los Monitores del
+     * sistema
      *
-     * @param monitor
+     * @param monitor Este parametro es el nombre del Monitor que actualizaran
+     * los datos
      */
     @Override
     public void actualizarDatosMonitor(Monitor monitor) {
@@ -282,8 +298,11 @@ public class HerramientaAdmin implements Herramienta {
     }
 
     /**
+     * Este metod se utiliza para actualizar los datos de los regitradores del
+     * sistema
      *
-     * @param registrador
+     * @param registrador Este parametro es el nombre del Registrador que
+     * actualizaran los datos
      */
     @Override
     public void actualizarDatosRegistrador(Registrador registrador) {

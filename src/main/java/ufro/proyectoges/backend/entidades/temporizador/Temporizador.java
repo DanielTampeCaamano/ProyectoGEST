@@ -44,9 +44,10 @@ public class Temporizador {
      * @param frame resetea el timer para la ventana dada   
     **/
 
-    public static void resetTemporizador(JFrame frame) {
+    public static boolean resetTemporizador(JFrame frame) {
         timer.cancel();
         setTimerToFrame(frame);
+        return true;
     }
 
     /**
@@ -63,8 +64,9 @@ public class Temporizador {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                JOptionPane.showMessageDialog(null, "La sesion expiro");
+                
                 if (frame != null) {
+                    JOptionPane.showMessageDialog(null, "La sesion expiro");
                     frame.dispose();
                     new Login().setVisible(true);
                 }

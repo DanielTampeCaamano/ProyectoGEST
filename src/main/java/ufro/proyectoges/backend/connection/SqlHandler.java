@@ -61,6 +61,15 @@ public class SqlHandler {
 
     }
 
+    /**
+     * Este metodo maneja las actualizaciones en la base de datos
+     *
+     * @param table_name Este parametro es el nombre de la tabla que sera
+     * editada
+     * @param set Este parametro entrega todos los datos que seran actualizados
+     * @param where Este parametro define donde se actualizaran los datos en la
+     * base de datos
+     */
     public void updateWhere(String table_name, String set, String where) {
         try {
             statement.executeUpdate("UPDATE " + table_name + " SET " + set + " WHERE " + where);
@@ -70,10 +79,20 @@ public class SqlHandler {
             System.out.println("query: " + "UPDATE " + table_name + " SET " + set + " WHERE " + where);
         }
     }
-    
-    public void deleteFromWhere(String table_name,String column_name,String value){
+
+    /**
+     * Este metodo maneja las eliminacions en la base de datos
+     *
+     * @param table_name Este parametro es el nombre de la tabla que sera
+     * editada
+     * @param column_name Este parametro es el nombre de la columna que servira
+     * como filtro
+     * @param value Este parametro es el valor es el valor que define el filtro
+     * a seguir
+     */
+    public void deleteFromWhere(String table_name, String column_name, String value) {
         try {
-            statement.executeUpdate("DELETE FROM "+table_name+" WHERE "+column_name+"=%"+value+"%;");
+            statement.executeUpdate("DELETE FROM " + table_name + " WHERE " + column_name + "=%" + value + "%;");
         } catch (SQLException e) {
             e.printStackTrace();
         }

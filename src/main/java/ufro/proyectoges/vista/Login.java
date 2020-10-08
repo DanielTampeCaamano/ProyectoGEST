@@ -133,6 +133,7 @@ public class Login extends javax.swing.JFrame {
                         new Menu(p).setVisible(true);
                         this.dispose();
                     }
+
                     Temporizador.miliseconds = 10000;
                     Temporizador.setTimerToFrame(this);
                 } else {

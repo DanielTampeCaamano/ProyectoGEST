@@ -38,16 +38,12 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
         if (persona.getHerramientaPersona() == null) {
             switch (persona.getTipo_persona()) {
                 case "REGISTRADOR":
-                    this.HerramientaAdministrativaJButton.setVisible(false);
                     this.persona = new Registrador(persona.getId(), persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
                 case "MONITOR":
                     this.IngresoPacientesJButton.setVisible(false);
-                    this.HerramientaAdministrativaJButton.setVisible(false);
                     this.persona = new Monitor(persona.getId(), persona.getNombre(), persona.getRut(), persona.getClave());
                     break;
-                case "ADMINISTRADOR":
-                    this.persona = new Administrador(persona.getId(), persona.getNombre(), persona.getRut(), persona.getClave());
                 default:
                     System.out.println("caso default");
                     break;
@@ -71,7 +67,6 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
         IngresoPacientesJButton = new javax.swing.JButton();
         BusquedaPacientesJButton = new javax.swing.JButton();
         DescargaBaseDatosJButton = new javax.swing.JButton();
-        HerramientaAdministrativaJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -85,7 +80,7 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
 
         MenuJLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         MenuJLabel.setText("MENU");
-        getContentPane().add(MenuJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
+        getContentPane().add(MenuJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 104, -1, -1));
 
         IngresoPacientesJButton.setBackground(new java.awt.Color(102, 204, 255));
         IngresoPacientesJButton.setText("Ingreso de Casos de Pacientes");
@@ -94,7 +89,7 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
                 IngresoPacientesJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(IngresoPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 220, 40));
+        getContentPane().add(IngresoPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, 50));
 
         BusquedaPacientesJButton.setBackground(new java.awt.Color(102, 204, 255));
         BusquedaPacientesJButton.setText("Busqueda de Casos de Pacientes");
@@ -103,7 +98,7 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
                 BusquedaPacientesJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(BusquedaPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 220, 40));
+        getContentPane().add(BusquedaPacientesJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 220, 50));
 
         DescargaBaseDatosJButton.setBackground(new java.awt.Color(102, 204, 255));
         DescargaBaseDatosJButton.setText("Descarga de Base de Datos");
@@ -112,16 +107,7 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
                 DescargaBaseDatosJButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(DescargaBaseDatosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 220, 40));
-
-        HerramientaAdministrativaJButton.setBackground(new java.awt.Color(102, 204, 255));
-        HerramientaAdministrativaJButton.setText("Herramienta Administrativa");
-        HerramientaAdministrativaJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HerramientaAdministrativaJButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(HerramientaAdministrativaJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 220, 40));
+        getContentPane().add(DescargaBaseDatosJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 220, 50));
 
         jLabel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.light"));
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -169,6 +155,7 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
         this.dispose();
     }//GEN-LAST:event_DescargaBaseDatosJButtonActionPerformed
 
+
     private void HerramientaAdministrativaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HerramientaAdministrativaJButtonActionPerformed
         // TODO add your handling code here:
         new PanelControlAdmin((Administrador) persona).setVisible(true);
@@ -178,7 +165,6 @@ public class Menu extends javax.swing.JFrame implements MouseListener, KeyListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BusquedaPacientesJButton;
     private javax.swing.JButton DescargaBaseDatosJButton;
-    private javax.swing.JButton HerramientaAdministrativaJButton;
     private javax.swing.JButton IngresoPacientesJButton;
     private javax.swing.JLabel MenuJLabel;
     private javax.swing.JLabel TituloJLabel;

@@ -108,7 +108,7 @@ public class Rut {
      *
      * @return Retorna el digito verificador del rut
      */
-    private String obtenerDigitoVerificado() {
+    public String obtenerDigitoVerificado() {
         int DV = 11 - obtenerResto();
         if (DV == 11) {
             return "0";

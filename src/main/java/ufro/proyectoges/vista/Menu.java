@@ -5,17 +5,23 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import ufro.proyectoges.backend.entidades.Administrador;
 import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 
 /**
  * Esta clase maneja la visualizacion de la Ventana de Menu Principal
  *
  * @author Roald
  */
-public class Menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame implements MouseListener, KeyListener, MouseMotionListener {
 
     private Persona persona;
 
@@ -27,6 +33,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu(Persona persona) {
         initComponents();
+        addMouseMotionListener(this);
         this.persona = persona;
         if (persona.getHerramientaPersona() == null) {
             switch (persona.getTipo_persona()) {
@@ -148,6 +155,13 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_DescargaBaseDatosJButtonActionPerformed
 
+
+    private void HerramientaAdministrativaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HerramientaAdministrativaJButtonActionPerformed
+        // TODO add your handling code here:
+        new PanelControlAdmin((Administrador) persona).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_HerramientaAdministrativaJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BusquedaPacientesJButton;
     private javax.swing.JButton DescargaBaseDatosJButton;
@@ -156,4 +170,55 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel TituloJLabel;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
 }

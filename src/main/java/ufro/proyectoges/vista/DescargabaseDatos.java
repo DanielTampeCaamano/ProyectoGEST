@@ -5,15 +5,21 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.sql.Date;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 
 /**
  * Esta ventana se encarga de la descarga de base de datos
  *
  * @author Roald
  */
-public class DescargabaseDatos extends javax.swing.JFrame {
+public class DescargabaseDatos extends javax.swing.JFrame implements MouseListener, KeyListener,MouseMotionListener {
 
     private final Persona p;
 
@@ -25,6 +31,7 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     public DescargabaseDatos(Persona p) {
         this.p = p;
         initComponents();
+        addMouseMotionListener(this);
     }
 
     /**
@@ -403,4 +410,54 @@ public class DescargabaseDatos extends javax.swing.JFrame {
     private javax.swing.JButton VolverJButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
 }

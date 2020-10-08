@@ -7,7 +7,9 @@ package ufro.proyectoges.backend.entidades.temporizador;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import ufro.proyectoges.vista.Login;
 
 
 
@@ -20,34 +22,35 @@ import javax.swing.JOptionPane;
 public class Temporizador {
     
     private static Timer timer;
+    private static Temporizador instance;
+    public static int miliseconds;
 
+    public static Temporizador getTemporizador() {
+        if (instance != null){
+           instance = new Temporizador();
+        }
+        return instance;
+    }
     
+    private Temporizador(){
+        
+    }
+
+    public static void resetTemporizador(JFrame frame){
+        timer.cancel();
+        initTimerThatLasts(frame);
+    }
     
-    public static boolean initTimerThatLasts(int miliseconds){
-        System.out.println("iniciando timer");
+    public static boolean initTimerThatLasts(JFrame frame){
+        
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                int op = JOptionPane.showConfirmDialog(null, "Quiere continuar con la sesion?");
-                switch (op){
-                    case 0://yes
-                        Temporizador.initTimerThatLasts(miliseconds);
-                        timer.cancel();
-                        break;
-                    case 1:
-                        JOptionPane.showMessageDialog(null, "Finalizando 1");
-                        System.exit(0);
-                        break;
-                    case 2:
-                        JOptionPane.showMessageDialog(null, "Finalizando 2");
-                        System.exit(0);
-                        break;
-                    default:
-                        System.out.println("Algo fallo");
-                        System.exit(0);
-                        break;
-                }
+                JOptionPane.showMessageDialog(null, "La sesion expiro");
+                frame.dispose();
+                timer.cancel();
+                new Login().setVisible(true);
             }
         }, miliseconds, miliseconds);
         return true;//timer finalizado

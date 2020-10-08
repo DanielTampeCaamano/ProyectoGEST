@@ -70,6 +70,14 @@ public class SqlHandler {
             System.out.println("query: " + "UPDATE " + table_name + " SET " + set + " WHERE " + where);
         }
     }
+    
+    public void deleteFromWhere(String table_name,String column_name,String value){
+        try {
+            statement.executeUpdate("DELETE FROM "+table_name+" WHERE "+column_name+"=%"+value+"%;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Metodo para consultar a la basde datos, que "seleccione" datos de

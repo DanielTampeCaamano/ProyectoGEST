@@ -5,7 +5,14 @@
  */
 package ufro.proyectoges.vista;
 
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import ufro.proyectoges.backend.entidades.Monitor;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.Registrador;
+import ufro.proyectoges.backend.entidades.rut.Rut;
 
 /**
  * Esta ventana meneja las acciones del administrador
@@ -18,6 +25,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form PanelControlAdmin
+     *
      * @param persona Persona que suar este programa
      */
     public PanelControlAdmin(Persona persona) {
@@ -51,6 +59,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         claveLabel = new javax.swing.JLabel();
         confirmClaveLabel = new javax.swing.JLabel();
         confirmClaveField = new javax.swing.JTextField();
+        confirmarNuevoJButton = new javax.swing.JButton();
         elimRegis = new javax.swing.JRadioButton();
         elimMonitor = new javax.swing.JRadioButton();
         panelElim = new javax.swing.JPanel();
@@ -67,13 +76,16 @@ public class PanelControlAdmin extends javax.swing.JFrame {
         confirmClaveLabel2 = new javax.swing.JLabel();
         confirmClaveField2 = new javax.swing.JTextField();
         confirmModif = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        modifDatosJCombobox = new javax.swing.JComboBox<>();
         modifRegis = new javax.swing.JRadioButton();
         modisMoni = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelAdmin.setLayout(null);
+        panelAdmin.setOpaque(false);
+        panelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agregarRegistradorRadioButton.setText("Agregar Registrador");
         agregarRegistradorRadioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,8 +93,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
                 agregarRegistradorRadioButtonActionPerformed(evt);
             }
         });
-        panelAdmin.add(agregarRegistradorRadioButton);
-        agregarRegistradorRadioButton.setBounds(32, 31, 124, 23);
+        panelAdmin.add(agregarRegistradorRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 31, -1, -1));
 
         agregarMonitorButton.setText("Agregar Monitor");
         agregarMonitorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,212 +101,107 @@ public class PanelControlAdmin extends javax.swing.JFrame {
                 agregarMonitorButtonActionPerformed(evt);
             }
         });
-        panelAdmin.add(agregarMonitorButton);
-        agregarMonitorButton.setBounds(354, 31, 103, 23);
+        panelAdmin.add(agregarMonitorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 31, -1, -1));
+
+        paneAgreg.setOpaque(false);
+        paneAgreg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelNombre.setText("Nombre");
-
-        fieldNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNombreActionPerformed(evt);
-            }
-        });
+        paneAgreg.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 18, 52, -1));
+        paneAgreg.add(fieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 16, 358, -1));
 
         labelRut.setText("Rut");
-
-        rutFielld1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rutFielld1ActionPerformed(evt);
-            }
-        });
+        paneAgreg.add(labelRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 49, -1, -1));
+        paneAgreg.add(rutFielld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 47, 151, -1));
+        paneAgreg.add(rutField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 47, 21, -1));
+        paneAgreg.add(claveField, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 78, 241, -1));
 
         claveLabel.setText("Clave");
+        paneAgreg.add(claveLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         confirmClaveLabel.setText("Confirme clave");
+        paneAgreg.add(confirmClaveLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 111, -1, -1));
+        paneAgreg.add(confirmClaveField, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 109, 241, -1));
 
-        confirmClaveField.addActionListener(new java.awt.event.ActionListener() {
+        confirmarNuevoJButton.setText("Confirmar");
+        confirmarNuevoJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmClaveFieldActionPerformed(evt);
+                confirmarNuevoJButtonActionPerformed(evt);
             }
         });
+        paneAgreg.add(confirmarNuevoJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 108, -1, -1));
 
-        javax.swing.GroupLayout paneAgregLayout = new javax.swing.GroupLayout(paneAgreg);
-        paneAgreg.setLayout(paneAgregLayout);
-        paneAgregLayout.setHorizontalGroup(
-            paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneAgregLayout.createSequentialGroup()
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAgregLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRut)
-                            .addComponent(claveLabel)))
-                    .addGroup(paneAgregLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(confirmClaveLabel)))
-                .addGap(19, 19, 19)
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAgregLayout.createSequentialGroup()
-                        .addComponent(rutFielld1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rutField2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(confirmClaveField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                        .addComponent(claveField, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(123, Short.MAX_VALUE))
-        );
-        paneAgregLayout.setVerticalGroup(
-            paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneAgregLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNombre)
-                    .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRut)
-                    .addComponent(rutFielld1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rutField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(claveField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(claveLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(paneAgregLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmClaveLabel)
-                    .addComponent(confirmClaveField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelAdmin.add(paneAgreg);
-        paneAgreg.setBounds(71, 56, 584, 140);
+        panelAdmin.add(paneAgreg, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 56, -1, 140));
 
         elimRegis.setText("Eliminar Registrador");
-        panelAdmin.add(elimRegis);
-        elimRegis.setBounds(32, 203, 120, 23);
+        elimRegis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elimRegisActionPerformed(evt);
+            }
+        });
+        panelAdmin.add(elimRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 203, -1, -1));
 
         elimMonitor.setText("Eliminar Monitor");
-        panelAdmin.add(elimMonitor);
-        elimMonitor.setBounds(428, 203, 99, 23);
+        elimMonitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elimMonitorActionPerformed(evt);
+            }
+        });
+        panelAdmin.add(elimMonitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 203, -1, -1));
+
+        panelElim.setOpaque(false);
+        panelElim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         registradores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        panelElim.add(registradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 33, -1, -1));
 
         elimRegisSeleccionado.setText("Eliminar Seleccionado");
+        elimRegisSeleccionado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elimRegisSeleccionadoActionPerformed(evt);
+            }
+        });
+        panelElim.add(elimRegisSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 33, -1, -1));
 
-        javax.swing.GroupLayout panelElimLayout = new javax.swing.GroupLayout(panelElim);
-        panelElim.setLayout(panelElimLayout);
-        panelElimLayout.setHorizontalGroup(
-            panelElimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelElimLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(registradores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(elimRegisSeleccionado)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        panelElimLayout.setVerticalGroup(
-            panelElimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelElimLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(panelElimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(registradores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(elimRegisSeleccionado))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        panelAdmin.add(panelElim, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 228, -1, -1));
 
-        panelAdmin.add(panelElim);
-        panelElim.setBounds(136, 228, 277, 79);
+        panelModificacion.setOpaque(false);
+        panelModificacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelNombre2.setText("Nombre");
-
-        fieldNombre2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNombre2ActionPerformed(evt);
-            }
-        });
+        panelModificacion.add(labelNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 24, 52, -1));
+        panelModificacion.add(fieldNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 22, 358, -1));
 
         labelRut2.setText("Rut");
-
-        rutFielld3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rutFielld3ActionPerformed(evt);
-            }
-        });
+        panelModificacion.add(labelRut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 51, -1, -1));
+        panelModificacion.add(rutFielld3, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 49, 151, -1));
+        panelModificacion.add(rutField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 49, 21, -1));
+        panelModificacion.add(claveField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 74, 241, -1));
 
         claveLabel2.setText("Clave");
+        panelModificacion.add(claveLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 76, -1, -1));
 
         confirmClaveLabel2.setText("Confirme clave");
-
-        confirmClaveField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmClaveField2ActionPerformed(evt);
-            }
-        });
+        panelModificacion.add(confirmClaveLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 99, -1, -1));
+        panelModificacion.add(confirmClaveField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 99, 241, -1));
 
         confirmModif.setText("Confirmar");
+        confirmModif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmModifActionPerformed(evt);
+            }
+        });
+        panelModificacion.add(confirmModif, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 124, 96, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        modifDatosJCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        modifDatosJCombobox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                modifDatosJComboboxItemStateChanged(evt);
+            }
+        });
+        panelModificacion.add(modifDatosJCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, -1, -1));
 
-        javax.swing.GroupLayout panelModificacionLayout = new javax.swing.GroupLayout(panelModificacion);
-        panelModificacion.setLayout(panelModificacionLayout);
-        panelModificacionLayout.setHorizontalGroup(
-            panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificacionLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(labelNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificacionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(confirmClaveLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelRut2)
-                                .addComponent(claveLabel2)))))
-                .addGap(18, 18, 18)
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelModificacionLayout.createSequentialGroup()
-                        .addComponent(rutFielld3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rutField4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(fieldNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(claveField2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(confirmClaveField2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(confirmModif, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
-        );
-        panelModificacionLayout.setVerticalGroup(
-            panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelModificacionLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNombre2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRut2)
-                    .addComponent(rutFielld3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rutField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(claveLabel2)
-                    .addComponent(claveField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelModificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(confirmClaveLabel2)
-                    .addComponent(confirmClaveField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(confirmModif)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        panelAdmin.add(panelModificacion);
-        panelModificacion.setBounds(20, 353, 583, 199);
+        panelAdmin.add(panelModificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 353, -1, -1));
 
         modifRegis.setText("Modificar Datos Registrador");
         modifRegis.addActionListener(new java.awt.event.ActionListener() {
@@ -303,109 +209,170 @@ public class PanelControlAdmin extends javax.swing.JFrame {
                 modifRegisActionPerformed(evt);
             }
         });
-        panelAdmin.add(modifRegis);
-        modifRegis.setBounds(32, 328, 159, 23);
+        panelAdmin.add(modifRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 328, -1, -1));
 
         modisMoni.setText("Modificar Datos Monitor");
-        panelAdmin.add(modisMoni);
-        modisMoni.setBounds(390, 328, 138, 23);
+        modisMoni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modisMoniActionPerformed(evt);
+            }
+        });
+        panelAdmin.add(modisMoni, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 328, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
-        );
+        getContentPane().add(panelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 631, 518));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/med2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void agregarRegistradorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarRegistradorRadioButtonActionPerformed
         // TODO add your handling code here:
+        this.agregarRegistradorRadioButton.setSelected(true);
+        this.agregarMonitorButton.setSelected(false);
     }//GEN-LAST:event_agregarRegistradorRadioButtonActionPerformed
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void agregarMonitorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMonitorButtonActionPerformed
         // TODO add your handling code here:
+        this.agregarRegistradorRadioButton.setSelected(false);
+        this.agregarMonitorButton.setSelected(true);
     }//GEN-LAST:event_agregarMonitorButtonActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
-     * @param evt .
-     */
-    private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNombreActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
-     * @param evt .
-     */
-    private void rutFielld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rutFielld1ActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
-     * @param evt .
-     */
-    private void confirmClaveFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmClaveFieldActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
-     * @param evt .
-     */
-    private void fieldNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombre2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNombre2ActionPerformed
+
     /**
      * no contiene implementaciones
      *
      *
-     * @param evt .
-     */
-    private void rutFielld3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rutFielld3ActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
-     * @param evt .
-     */
-    private void confirmClaveField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmClaveField2ActionPerformed
-    /**
-     * no contiene implementaciones
-     *
-     * 
      * @param evt .
      */
     private void modifRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifRegisActionPerformed
-        // TODO add your handling code here:
+        this.modifRegis.setSelected(true);
+        this.modisMoni.setSelected(false);
+        this.modifDatosJCombobox.setModel(new DefaultComboBoxModel<>(persona.getHerramientaPersona().obtenerRegistradores()));
+
     }//GEN-LAST:event_modifRegisActionPerformed
+
+    private void elimRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimRegisActionPerformed
+        // TODO add your handling code here:
+        this.elimRegis.setSelected(true);
+        this.elimMonitor.setSelected(false);
+        this.registradores.setModel(new DefaultComboBoxModel<>(persona.getHerramientaPersona().obtenerRegistradores()));
+    }//GEN-LAST:event_elimRegisActionPerformed
+
+    private void elimMonitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimMonitorActionPerformed
+        // TODO add your handling code here:
+        this.elimRegis.setSelected(false);
+        this.elimMonitor.setSelected(true);
+        this.registradores.setModel(new DefaultComboBoxModel<>(persona.getHerramientaPersona().obtenerMonitores()));
+    }//GEN-LAST:event_elimMonitorActionPerformed
+
+    private void elimRegisSeleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimRegisSeleccionadoActionPerformed
+        // TODO add your handling code here:
+        if (elimRegis.isSelected()) {
+            this.persona.getHerramientaPersona().eliminarRegistrador(registradores.getSelectedItem().toString());
+        } else if (elimMonitor.isSelected()) {
+            this.persona.getHerramientaPersona().eliminarMonitor(registradores.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_elimRegisSeleccionadoActionPerformed
+
+    private void modisMoniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modisMoniActionPerformed
+        this.modifRegis.setSelected(true);
+        this.modisMoni.setSelected(false);
+        this.modifDatosJCombobox.setModel(new DefaultComboBoxModel<>(persona.getHerramientaPersona().obtenerMonitores()));
+    }//GEN-LAST:event_modisMoniActionPerformed
+
+    private void confirmModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmModifActionPerformed
+        if (claveField2.getText().equalsIgnoreCase(confirmClaveField2.getText())) {
+            if (modifRegis.isSelected()) {
+                this.persona.getHerramientaPersona()
+                        .actualizarDatosRegistrador(
+                                new Registrador(
+                                        Integer.parseInt(
+                                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                                        this.fieldNombre2.getText(),
+                                        new Rut(
+                                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                                        this.claveField2.getText()));
+            } else if (modisMoni.isSelected()) {
+                this.persona.getHerramientaPersona()
+                        .actualizarDatosMonitor(
+                                new Monitor(
+                                        Integer.parseInt(
+                                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                                        this.fieldNombre2.getText(),
+                                        new Rut(
+                                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                                        this.claveField2.getText()));
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Las claves no coinciden",
+                    "Error de claves",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_confirmModifActionPerformed
+
+    private void modifDatosJComboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_modifDatosJComboboxItemStateChanged
+        if (modifRegis.isSelected()) {
+            List<Registrador> registradores = this.persona.getHerramientaPersona().obtenerListaRegistradores();
+            for (Registrador registradore : registradores) {
+                if (modifDatosJCombobox.getSelectedItem().toString().contains(registradore.getNombre())) {
+                    fieldNombre2.setText(registradore.getNombre());
+                    rutFielld3.setText(registradore.getRut().getRut());
+                    rutField4.setText("" + registradore.getRut().obtenerDigitoVerificado());
+                    claveField2.setText(registradore.getClave());
+                }
+            }
+        } else if (modisMoni.isSelected()) {
+            List<Monitor> monitores = this.persona.getHerramientaPersona().obtenerListaMonitores();
+            for (Monitor monitor : monitores) {
+                if (modifDatosJCombobox.getSelectedItem().toString().contains(monitor.getNombre())) {
+                    fieldNombre2.setText(monitor.getNombre());
+                    rutFielld3.setText(monitor.getRut().getRut());
+                    rutField4.setText("" + monitor.getRut().obtenerDigitoVerificado());
+                    claveField2.setText(monitor.getClave());
+                }
+            }
+        }
+
+
+    }//GEN-LAST:event_modifDatosJComboboxItemStateChanged
+
+    private void confirmarNuevoJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarNuevoJButtonActionPerformed
+        if (confirmClaveField.getText().equalsIgnoreCase(claveField.getText())) {
+            if (agregarRegistradorRadioButton.isSelected()) {
+                this.persona.getHerramientaPersona().registrarRegistrador(new Registrador(
+                        Integer.parseInt(
+                                this.rutFielld1.getText() + "" + this.rutField2.getText()),
+                        this.fieldNombre.getText(),
+                        new Rut(
+                                this.rutFielld1.getText() + "" + this.rutField2.getText()),
+                        this.claveField.getText()));
+            } else if (agregarMonitorButton.isSelected()) {
+                this.persona.getHerramientaPersona().registrarMonitor(new Monitor(
+                        Integer.parseInt(
+                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                        this.fieldNombre2.getText(),
+                        new Rut(
+                                this.rutFielld3.getText() + "" + this.rutField4.getText()),
+                        this.claveField2.getText()));
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "La claves no coinciden, por favor verifique que sean iguales",
+                    "Error de claves",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_confirmarNuevoJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton agregarMonitorButton;
@@ -423,16 +390,18 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel confirmClaveLabel;
     private javax.swing.JLabel confirmClaveLabel2;
     private javax.swing.JButton confirmModif;
+    private javax.swing.JButton confirmarNuevoJButton;
     private javax.swing.JRadioButton elimMonitor;
     private javax.swing.JRadioButton elimRegis;
     private javax.swing.JToggleButton elimRegisSeleccionado;
     private javax.swing.JTextField fieldNombre;
     private javax.swing.JTextField fieldNombre2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelNombre;
     private javax.swing.JLabel labelNombre2;
     private javax.swing.JLabel labelRut;
     private javax.swing.JLabel labelRut2;
+    private javax.swing.JComboBox<String> modifDatosJCombobox;
     private javax.swing.JRadioButton modifRegis;
     private javax.swing.JRadioButton modisMoni;
     private javax.swing.JPanel paneAgreg;

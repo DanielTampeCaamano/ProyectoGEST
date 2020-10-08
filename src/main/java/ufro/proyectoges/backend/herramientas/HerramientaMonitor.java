@@ -332,4 +332,48 @@ public class HerramientaMonitor implements Herramienta {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public String[] obtenerMonitores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+    @Override
+    public String[] obtenerRegistradores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void eliminarMonitor(String nombre) {
+        
+    }
+
+    @Override
+    public void eliminarRegistrador(String nombre) {
+        
+    }
+
+    @Override
+    public List<Registrador> obtenerListaRegistradores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Monitor> obtenerListaMonitores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void actualizarDatosMonitor(Monitor monitor) {
+
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void actualizarDatosRegistrador(Registrador registrador) {
+
+    }
+
 }

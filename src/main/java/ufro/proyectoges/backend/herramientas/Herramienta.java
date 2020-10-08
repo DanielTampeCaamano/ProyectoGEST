@@ -36,6 +36,8 @@ public interface Herramienta {
 
     public abstract boolean personaExiste(Persona p);
 
+    public List<Registrador> obtenerListaRegistradores();
+    
     public abstract Persona buscarPersona(Rut rut);
 
     public abstract List<Paciente> obtenerPacientes();
@@ -49,6 +51,20 @@ public interface Herramienta {
     public abstract void registrarIPD(IPDPaciente ipd, Registrador registrador);
 
     public abstract String[] obtenerPatologias();
+    
+    public abstract String[] obtenerMonitores();
+    
+    public List<Monitor> obtenerListaMonitores();
+    
+    public void actualizarDatosMonitor(Monitor monitor);
+    
+    public abstract String[] obtenerRegistradores();
+    
+    public void actualizarDatosRegistrador(Registrador registrador);
+    
+    public abstract void eliminarMonitor(String nombre);
+    
+    public abstract void eliminarRegistrador(String nombre);
 
     public abstract int consultarIDPatologiaPorNombre(String nombre);
 

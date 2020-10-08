@@ -5,6 +5,11 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -17,6 +22,7 @@ import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.fecha.Fecha;
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
@@ -24,7 +30,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author Roald
  */
-public class IPD extends javax.swing.JFrame {
+public class IPD extends javax.swing.JFrame implements KeyListener, MouseListener, MouseMotionListener {
 
     private IngresoCasoPaciente formPaciente;
     private IngresoCasoPaciente previous;
@@ -43,6 +49,7 @@ public class IPD extends javax.swing.JFrame {
     public IPD(Persona p, IngresoCasoPaciente formPaciente, Paciente paciente) {
 
         initComponents();
+        addMouseMotionListener(this);
         if (p instanceof Registrador) {
             this.formPaciente = formPaciente;
             this.p = p;
@@ -502,4 +509,54 @@ public class IPD extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
 }

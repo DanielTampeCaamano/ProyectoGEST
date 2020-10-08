@@ -133,7 +133,8 @@ public class Login extends javax.swing.JFrame {
                         new Menu(p).setVisible(true);
                         this.dispose();
                     }
-                    Temporizador.initTimerThatLasts(10000);
+                    Temporizador.miliseconds = 10000;
+                    Temporizador.initTimerThatLasts(this);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario no existe y/o clave incorrecta", "Error de credenciales", JOptionPane.QUESTION_MESSAGE);
                 }

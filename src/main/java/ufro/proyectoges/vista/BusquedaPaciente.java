@@ -5,8 +5,12 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -15,18 +19,28 @@ import javax.swing.table.DefaultTableModel;
 import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 
 /**
  * Esta es la ventana que se usa para la busqueda de pacientes
  *
  * @author Roald
  */
-public class BusquedaPaciente extends javax.swing.JFrame implements MouseListener {
+public class BusquedaPaciente extends javax.swing.JFrame implements MouseListener, KeyListener,MouseMotionListener {
 
     private final Persona p;
     private DefaultTableModel model;
     private final List<Paciente> pacientesObtenidos;
     private final Menu menu;
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
 
     /**
      * Creates new form BusquedaPaciente 0
@@ -43,6 +57,9 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         ResultadosJTable.setRowSelectionAllowed(true);
         pacientesObtenidos = new ArrayList<>();
         this.ResultadosJTable.addMouseListener(this);
+        
+        addMouseMotionListener(this);
+        
     }
 
     /**
@@ -310,7 +327,6 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
         return pacientesObtenidos.stream().anyMatch(pacientesObtenido -> (p.getRutValidado().equals(pacientesObtenido.getRutValidado())));
     }
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarNombreJButton;
@@ -361,6 +377,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
      */
     @Override
     public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -370,6 +387,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
      */
     @Override
     public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -379,6 +397,7 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
      */
     @Override
     public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -388,5 +407,21 @@ public class BusquedaPaciente extends javax.swing.JFrame implements MouseListene
      */
     @Override
     public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
     }
 }

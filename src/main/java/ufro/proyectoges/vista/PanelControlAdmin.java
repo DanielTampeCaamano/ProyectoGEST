@@ -5,24 +5,32 @@
  */
 package ufro.proyectoges.vista;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import ufro.proyectoges.backend.entidades.Persona;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 
 /**
  * Esta ventana meneja las acciones del administrador
  *
  * @author shido
  */
-public class PanelControlAdmin extends javax.swing.JFrame {
+public class PanelControlAdmin extends javax.swing.JFrame implements MouseListener, KeyListener, MouseMotionListener {
 
     private final Persona persona;
 
     /**
      * Creates new form PanelControlAdmin
+     *
      * @param persona Persona que suar este programa
      */
     public PanelControlAdmin(Persona persona) {
         this.persona = persona;
         initComponents();
+        addMouseMotionListener(this);
     }
 
     /**
@@ -328,7 +336,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
 /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void agregarRegistradorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarRegistradorRadioButtonActionPerformed
@@ -337,7 +345,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void agregarMonitorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMonitorButtonActionPerformed
@@ -346,7 +354,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
@@ -355,7 +363,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void rutFielld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutFielld1ActionPerformed
@@ -364,7 +372,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void confirmClaveFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveFieldActionPerformed
@@ -373,7 +381,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void fieldNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombre2ActionPerformed
@@ -391,7 +399,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void confirmClaveField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmClaveField2ActionPerformed
@@ -400,7 +408,7 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     /**
      * no contiene implementaciones
      *
-     * 
+     *
      * @param evt .
      */
     private void modifRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifRegisActionPerformed
@@ -445,4 +453,54 @@ public class PanelControlAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField rutFielld1;
     private javax.swing.JTextField rutFielld3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
 }

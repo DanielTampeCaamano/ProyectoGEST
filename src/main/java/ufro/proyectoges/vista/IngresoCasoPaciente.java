@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ComboBoxModel;
@@ -22,6 +25,7 @@ import ufro.proyectoges.backend.entidades.Paciente;
 import ufro.proyectoges.backend.entidades.Persona;
 import ufro.proyectoges.backend.entidades.Registrador;
 import ufro.proyectoges.backend.entidades.rut.Rut;
+import ufro.proyectoges.backend.entidades.temporizador.Temporizador;
 import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
 
 /**
@@ -30,7 +34,7 @@ import ufro.proyectoges.backend.herramientas.HerramientaRegistrador;
  *
  * @author Roald
  */
-public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener, ActionListener {
+public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListener, ActionListener, MouseListener, MouseMotionListener {
 
     private Persona personaOcupandoElPrograma;
     private IPDPaciente ipd;
@@ -49,11 +53,13 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
      * usando el programa
      */
     public IngresoCasoPaciente(Persona p) {
+        
         editando = false;
         this.personaOcupandoElPrograma = p;
         this.ipd = null;
         patologias = new ArrayList<>();
         initComponents();
+        addMouseMotionListener(this);
         this.soloVista = false;
         this.PatologiasJTextField.setEditable(false);
         this.confirmacionIPD.setText("IPD no cargado");
@@ -563,7 +569,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
      */
     @Override
     public void keyTyped(KeyEvent e) {
-
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -577,6 +583,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         if (ipd != null) {
             advertirCambios();
         }
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -586,7 +593,7 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
      */
     @Override
     public void keyReleased(KeyEvent e) {
-
+        Temporizador.resetTemporizador(this);
     }
 
     /**
@@ -609,5 +616,40 @@ public class IngresoCasoPaciente extends javax.swing.JFrame implements KeyListen
         if (e.getSource() == this.PatologiasJComboBox && ipd != null) {
             advertirCambios();
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        Temporizador.resetTemporizador(this);
     }
 }
